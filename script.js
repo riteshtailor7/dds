@@ -5,7 +5,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initHeroSlider();
-  initStatCounters();
   initMapTelemetry();
   initBackToTop();
   initPartnersMarquee();
@@ -138,79 +137,129 @@ function initHeroSlider() {
   }
 }
 
-/* -------------------- 3. STAT COUNTERS ANIMATION -------------------- */
-function initStatCounters() {
-  const numbers = document.querySelectorAll('.kpi-number');
-  if (!numbers.length) return;
 
-  let animated = false;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !animated) {
-        animated = true;
-        numbers.forEach(numEl => {
-          const target = parseInt(numEl.getAttribute('data-target'), 10);
-          const suffix = numEl.getAttribute('data-suffix') || '';
-          animateCounter(numEl, target, suffix, 1800);
-        });
-      }
-    });
-  }, { threshold: 0.2 });
-
-  const firstSection = numbers[0].closest('section') || numbers[0];
-  observer.observe(firstSection);
-}
-
-function animateCounter(element, target, suffix, duration) {
-  let start = 0;
-  const stepTime = Math.abs(Math.floor(duration / 60));
-  const increment = target / (duration / stepTime);
-
-  const timer = setInterval(() => {
-    start += increment;
-    if (start >= target) {
-      start = target;
-      clearInterval(timer);
-      element.textContent = target.toLocaleString() + suffix;
-    } else {
-      element.textContent = Math.floor(start).toLocaleString() + suffix;
-    }
-  }, stepTime);
-}
-
-/* -------------------- 4. INTERACTIVE GLOBAL MAP TELEMETRY -------------------- */
+/* -------------------- 4. REAL INTERACTIVE MAP TELEMETRY (LEAFLET.JS) -------------------- */
 function initMapTelemetry() {
-  const mapPins = document.querySelectorAll('.map-pin');
-  const tooltip = document.getElementById('mapTooltip');
-  const tooltipCity = document.getElementById('tooltipCity');
-  const tooltipMetrics = document.getElementById('tooltipMetrics');
-  const mapWrapper = document.querySelector('.interactive-map-wrapper');
+  const mapContainer = document.getElementById('realLeafletMap');
+  if (!mapContainer) return;
 
-  if (!mapWrapper || !tooltip) return;
+  if (typeof L === 'undefined') return;
+  if (mapContainer._leaflet_id) return;
 
-  mapPins.forEach(pin => {
-    pin.addEventListener('mouseenter', (e) => {
-      const city = pin.getAttribute('data-city');
-      const metrics = pin.getAttribute('data-metrics');
-      if (tooltipCity) tooltipCity.textContent = city;
-      if (tooltipMetrics) tooltipMetrics.innerHTML = metrics;
-
-      const rect = pin.getBoundingClientRect();
-      const parentRect = mapWrapper.getBoundingClientRect();
-
-      const top = rect.top - parentRect.top - 60;
-      const left = rect.left - parentRect.left + 10;
-
-      tooltip.style.top = `${Math.max(10, top)}px`;
-      tooltip.style.left = `${Math.max(10, left)}px`;
-      tooltip.classList.add('visible');
-    });
-
-    pin.addEventListener('mouseleave', () => {
-      tooltip.classList.remove('visible');
-    });
+  const map = L.map('realLeafletMap', {
+    center: [23.5, 65.0],
+    zoom: 4,
+    minZoom: 2,
+    maxZoom: 14,
+    scrollWheelZoom: false
   });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> &copy; <a href="https://carto.com/" target="_blank">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  const orangeIcon = L.divIcon({
+    className: 'custom-leaflet-marker orange-marker',
+    html: '<div class="marker-pulse orange-pulse"></div><div class="marker-core orange-core"></div>',
+    iconSize: [26, 26],
+    iconAnchor: [13, 13],
+    popupAnchor: [0, -14]
+  });
+
+  const cyanIcon = L.divIcon({
+    className: 'custom-leaflet-marker cyan-marker',
+    html: '<div class="marker-pulse cyan-pulse"></div><div class="marker-core cyan-core"></div>',
+    iconSize: [22, 22],
+    iconAnchor: [11, 11],
+    popupAnchor: [0, -12]
+  });
+
+  const locations = [
+    {
+      city: "Surat, Gujarat (DDS HQ)",
+      coords: [21.1702, 72.8311],
+      metrics: "Corporate HQ &bull; Detailed Design Center &bull; Bhilosa & Garden Silk Mills Projects",
+      type: "hq"
+    },
+    {
+      city: "Silvassa / DNH",
+      coords: [20.2763, 73.0083],
+      metrics: "Polymer Transfer Line Projects &bull; Sanathan, DNH Spinners & Beekaylon",
+      type: "site"
+    },
+    {
+      city: "Dahej & Bharuch",
+      coords: [21.7051, 72.9959],
+      metrics: "750 TPD Sumilon Polyester & Dornier Film Line OSBL/ISBL",
+      type: "site"
+    },
+    {
+      city: "Gaziantep & Adana, Turkey",
+      coords: [37.0662, 37.3833],
+      metrics: "Koza Polyester Melt Lines & SASA Polymer Cooler Addition",
+      type: "site"
+    },
+    {
+      city: "Purwakarta, Indonesia",
+      coords: [-6.5569, 107.4433],
+      metrics: "Indorama Indonesia Polymer Transfer Line Redesign & APF Consulting",
+      type: "site"
+    },
+    {
+      city: "Colombo, Sri Lanka",
+      coords: [6.9271, 79.8612],
+      metrics: "Process Consultancy for Extruder POY Spinners & Texturisers",
+      type: "site"
+    },
+    {
+      city: "Germany Technical Base",
+      coords: [50.1109, 8.6821],
+      metrics: "Girma Makonnen (Technical Head) &bull; European Engineering Liaison",
+      type: "site"
+    }
+  ];
+
+  const bounds = L.latLngBounds();
+
+  locations.forEach(loc => {
+    const markerIcon = loc.type === 'hq' ? orangeIcon : cyanIcon;
+    const marker = L.marker(loc.coords, { icon: markerIcon }).addTo(map);
+
+    const popupHtml = `
+      <strong>📍 ${loc.city}</strong>
+      <p>${loc.metrics}</p>
+    `;
+
+    marker.bindPopup(popupHtml, { closeButton: false });
+
+    marker.on('mouseover', function () {
+      this.openPopup();
+    });
+
+    bounds.extend(loc.coords);
+  });
+
+  map.fitBounds(bounds, { padding: [50, 50] });
+
+  // Invalidate map size when section enters screen to ensure 100% tile rendering
+  setTimeout(() => {
+    map.invalidateSize();
+  }, 300);
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          map.invalidateSize();
+          map.fitBounds(bounds, { padding: [50, 50] });
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(mapContainer);
+  }
 }
 
 /* -------------------- 5. MILESTONE STEPPER (About Page) -------------------- */
@@ -616,3 +665,4 @@ function scrollToTop() {
     behavior: 'smooth'
   });
 }
+

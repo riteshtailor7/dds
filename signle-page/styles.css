@@ -132,6 +132,7 @@ button {
 section {
   padding: 100px 0;
   position: relative;
+  overflow: hidden;
 }
 
 .light-section {
@@ -147,6 +148,84 @@ section {
 .dark-deep-section {
   background-color: var(--bg-space);
   color: var(--text-slate-100);
+}
+
+/* -------------------- SECTION REVEAL STYLES (MOTION LIBRARY DRIVEN) -------------------- */
+/* Base initial states when JS is enabled; Motion JS handles all animation keyframes */
+body.js-reveal-enabled section,
+body.js-reveal-enabled .section-reveal,
+body.js-reveal-enabled .reveal {
+  will-change: transform, opacity;
+}
+
+/* Specific initial state helper classes before Motion triggers */
+body.js-reveal-enabled .reveal-up { opacity: 0; transform: translateY(45px); }
+body.js-reveal-enabled .reveal-scale { opacity: 0; transform: scale(0.94) translateY(20px); }
+body.js-reveal-enabled .reveal-fade { opacity: 0; }
+body.js-reveal-enabled .reveal-left { opacity: 0; transform: translateX(-45px); }
+body.js-reveal-enabled .reveal-right { opacity: 0; transform: translateX(45px); }
+
+/* Revealed final states */
+body.js-reveal-enabled section.is-visible,
+body.js-reveal-enabled .section-reveal.is-visible,
+body.js-reveal-enabled .reveal.is-visible,
+body.js-reveal-enabled .reveal-up.is-visible,
+body.js-reveal-enabled .reveal-scale.is-visible,
+body.js-reveal-enabled .reveal-fade.is-visible,
+body.js-reveal-enabled .reveal-left.is-visible,
+body.js-reveal-enabled .reveal-right.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Staggered Children Initial States for Motion */
+body.js-reveal-enabled section:not(.is-visible) .reveal-child,
+body.js-reveal-enabled section:not(.is-visible) .stagger-item {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+body.js-reveal-enabled section.is-visible .reveal-child,
+body.js-reveal-enabled section.is-visible .stagger-item,
+body.js-reveal-enabled .is-visible .reveal-child,
+body.js-reveal-enabled .is-visible .stagger-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Top & Bottom Smooth Transition Glow Dividers */
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 94, 20, 0.18) 30%, rgba(0, 210, 255, 0.25) 70%, transparent 100%);
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+section.no-divider::before,
+section:first-of-type::before {
+  display: none;
+}
+
+/* Reduced motion accessibility standard */
+@media (prefers-reduced-motion: reduce) {
+  body.js-reveal-enabled section,
+  body.js-reveal-enabled .section-reveal,
+  body.js-reveal-enabled .reveal,
+  body.js-reveal-enabled .reveal-up,
+  body.js-reveal-enabled .reveal-scale,
+  body.js-reveal-enabled .reveal-fade,
+  body.js-reveal-enabled .reveal-left,
+  body.js-reveal-enabled .reveal-right,
+  body.js-reveal-enabled .reveal-child,
+  body.js-reveal-enabled .stagger-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 .section-header {
@@ -982,6 +1061,10 @@ section {
   margin-bottom: 24px;
 }
 
+.about-section {
+  overflow: hidden;
+}
+
 .feature-checklist {
   display: flex;
   flex-direction: column;
@@ -1148,6 +1231,10 @@ section {
 }
 
 /* -------------------- 8. MILESTONES & ACHIEVEMENTS / KPI DASHBOARD (Callout 4) -------------------- */
+.milestones-section {
+  overflow: hidden;
+}
+
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1161,20 +1248,45 @@ section {
   border-radius: 16px;
   padding: 32px 20px;
   text-align: center;
-  transition: var(--transition-smooth);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-orange), var(--accent-cyan));
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
 .kpi-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-8px) scale(1.03) rotateX(4deg);
+  border-color: rgba(255, 94, 20, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 94, 20, 0.25);
+}
+
+.kpi-card:hover::before {
+  opacity: 1;
 }
 
 .kpi-number {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 4vw, 3.25rem);
+  font-size: clamp(2.2rem, 3.5vw, 3.25rem);
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.1;
   margin-bottom: 12px;
+  display: block;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .kpi-label {
@@ -1276,28 +1388,164 @@ section {
   100% { transform: scale(2.2); opacity: 0; }
 }
 
+.map-pin * {
+  pointer-events: none;
+}
+
+.map-hint-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-orange);
+  background: rgba(255, 94, 20, 0.12);
+  border: 1px solid rgba(255, 94, 20, 0.3);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
 .map-tooltip {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(7, 11, 18, 0.95);
-  border: 1px solid var(--accent-orange);
-  border-radius: 8px;
-  padding: 8px 14px;
+  background: rgba(11, 17, 30, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 94, 20, 0.5);
+  border-radius: 10px;
+  padding: 10px 16px;
   color: #FFFFFF;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   pointer-events: none;
   opacity: 0;
-  transition: opacity var(--transition-fast);
-  z-index: 20;
+  transform: translateY(6px);
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 50;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  gap: 4px;
+  max-width: 320px;
+  white-space: normal;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 94, 20, 0.2);
 }
 
 .map-tooltip.visible {
   opacity: 1;
+  transform: translateY(0);
+}
+
+.map-tooltip strong {
+  color: var(--accent-cyan);
+  font-size: 0.875rem;
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.map-tooltip span {
+  color: var(--text-slate-300);
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+/* Real Leaflet Map Container & Custom Markers */
+.real-leaflet-map {
+  width: 100%;
+  height: 480px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-space);
+  z-index: 1;
+}
+
+.leaflet-container {
+  font-family: var(--font-body) !important;
+  background: #090D16 !important;
+}
+
+.custom-leaflet-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: leafletPulse 2.2s infinite ease-out;
+}
+
+.marker-pulse.orange-pulse {
+  background: rgba(255, 94, 20, 0.4);
+  border: 1px solid rgba(255, 94, 20, 0.8);
+}
+
+.marker-pulse.cyan-pulse {
+  background: rgba(0, 210, 255, 0.4);
+  border: 1px solid rgba(0, 210, 255, 0.8);
+}
+
+.marker-core {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.marker-core.orange-core {
+  background: #FF5E14;
+  box-shadow: 0 0 12px #FF5E14;
+}
+
+.marker-core.cyan-core {
+  background: #00D2FF;
+  box-shadow: 0 0 12px #00D2FF;
+}
+
+@keyframes leafletPulse {
+  0% { transform: scale(0.5); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(11, 17, 30, 0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 94, 20, 0.5) !important;
+  border-radius: 10px !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 94, 20, 0.25) !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(11, 17, 30, 0.96) !important;
+  border: 1px solid rgba(255, 94, 20, 0.5) !important;
+}
+
+.leaflet-popup-content {
+  margin: 10px 14px !important;
+  line-height: 1.45 !important;
+}
+
+.leaflet-popup-content strong {
+  color: var(--accent-cyan) !important;
+  font-size: 0.9rem !important;
+  font-family: var(--font-heading) !important;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.leaflet-popup-content p {
+  color: var(--text-slate-300) !important;
+  font-size: 0.78rem !important;
+  margin: 0 !important;
 }
 
 /* -------------------- 9. VISION, MISSION & STRENGTH PILLARS (Callout 5) -------------------- */
