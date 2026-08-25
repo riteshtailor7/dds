@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Specialized Capabilities | DDS Engineering | Melt Transfer Lines &amp; CP Plants</title>
+  <meta name="description" content="Discover DDS Engineering's niche capabilities: Melt Polymer Transfer Lines with proprietary PDRTC software, Continuous Polymerisation (CP) Plants up to 400 TPD, and 100 TPD Conning Oil Plants.">
+  
+  <!-- Google Fonts: Outfit (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" id="navLogo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.18" stroke="#00D2FF" stroke-width="2"/>
+            <circle cx="18" cy="18" r="3.5" fill="#FF5E14"/>
+            <path d="M18 2V8M3 10.5L8 13.5M33 10.5L28 13.5M3 25.5L8 22.5M33 25.5L28 22.5M18 34V28" stroke="#FF5E14" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">DDS</span>
+          <span class="logo-sub">ENGINEERING</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+          <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+          <li><a href="services.html" class="nav-link" id="navServices">Services</a></li>
+          <li><a href="specialized.html" class="nav-link active" id="navSpecialized">Specialized</a></li>
+          <li><a href="projects.html" class="nav-link" id="navProjects">Projects</a></li>
+          <li><a href="resources.html" class="nav-link" id="navResources">Resources</a></li>
+          <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="header-actions">
+        <button class="btn btn-primary btn-glow" id="btnRequestQuoteHeader" onclick="openQuoteModal()">
+          Request RFQ
+          <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="logo-text">
+        <span class="logo-main">DDS</span>
+        <span class="logo-sub">ENGINEERING (INDIA)</span>
+      </div>
+      <button class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link" onclick="closeDrawer()">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link" onclick="closeDrawer()">About Company</a></li>
+      <li><a href="services.html" class="mobile-nav-link" onclick="closeDrawer()">Engineering Services</a></li>
+      <li><a href="specialized.html" class="mobile-nav-link" onclick="closeDrawer()">Specialized &amp; Melt Lines</a></li>
+      <li><a href="projects.html" class="mobile-nav-link" onclick="closeDrawer()">Featured Projects</a></li>
+      <li><a href="resources.html" class="mobile-nav-link" onclick="closeDrawer()">Software &amp; Tools</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" onclick="closeDrawer()">Contact Us</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <button class="btn btn-primary btn-block" onclick="closeDrawer(); openQuoteModal();">Request Engineering RFQ</button>
+      <div class="drawer-contact-info">
+        <p>📞 +91 (261) 3515039 / +91 9601402333</p>
+        <p>✉️ business@ddsengineering.in</p>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+  <main>
+    <!-- ==================== SUBPAGE HERO BANNER ==================== -->
+    <section class="page-hero-banner">
+      <div class="container page-hero-container">
+        <div class="page-breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">Specialized Capabilities</span>
+        </div>
+        <span class="section-badge-pill cyan">PROPRIETARY ENGINEERING</span>
+        <h1 class="page-hero-title">NICHE TECHNICAL DOMAINS &amp; HIGH-PRESSURE MELT LINES</h1>
+        <p class="page-hero-desc">
+          Proprietary PDRTC software algorithms, high-temperature (&gt;280&deg;C) jacketed melt distribution systems, Continuous Polymerisation plants up to 400 TPD, and turnkey Conning Oil production know-how.
+        </p>
+
+        <div class="page-hero-metrics">
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot orange"></span>
+            <span>Operating Temp: <strong>&gt; 280&deg;C</strong></span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot cyan"></span>
+            <span>Design Pressure: <strong>&gt; 150 Bar</strong></span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot green"></span>
+            <span>CP Capacity: <strong>Up to 400 TPD</strong></span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot orange"></span>
+            <span>Conning Oil: <strong>100 TPD Know-How</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 1. DEEP-DIVE SPECIALIZED EXPERTISE SECTION ==================== -->
+    <section class="expertise-section dark-deep-section" id="specialized">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge-pill cyan">TECHNICAL BLUEPRINTS</span>
+          <h2 class="section-title text-white">SPECIALIZED ENGINEERING PILLARS</h2>
+          <p class="section-description text-gray">
+            Select a specialized competency below to inspect technical parameters, flow diagrams, and operating metrics.
+          </p>
+        </div>
+
+        <!-- Interactive Tabs -->
+        <div class="expertise-tabs">
+          <button class="tab-btn active" onclick="switchExpertiseTab('melt-transfer')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Melt Polymer Transfer Line (PDRTC)
+          </button>
+          <button class="tab-btn" onclick="switchExpertiseTab('cp-plants')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Continuous Polymerisation (400 TPD)
+          </button>
+          <button class="tab-btn" onclick="switchExpertiseTab('conning-oil')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Texturizing Oil Plants (100 TPD)
+          </button>
+        </div>
+
+        <!-- Tab 1: Melt Transfer Line -->
+        <div class="expertise-pane active" id="pane-melt-transfer">
+          <div class="expertise-grid">
+            <div class="expertise-info-col">
+              <span class="pill-mini orange">PROPRIETARY PDRTC SOFTWARE</span>
+              <h3 class="pane-title">Melt Polymer Transfer Line Design</h3>
+              <p class="pane-text">
+                Polymer transfer lines transport molten polymer from Continuous Polymerisation (CP) plants or extruders directly to spinning machines (POY / FDY / PSF / Nonwoven). Operating at extreme conditions (<strong>temperature &gt;280&deg;C, pressure &gt;150 bar</strong>), molten polymer is highly sensitive to residence time variance, thermal degradation, and shear rate fluctuations.
+              </p>
+              <p class="pane-text">
+                To ensure uniform polymer Intrinsic Viscosity (IV) and eliminate quality discrepancies across dozens of spinning positions, DDS developed its proprietary <strong>Pressure Drop and Residence Time Calculation (PDRTC)</strong> software suite. We perform complete static and dynamic CAESAR II stress analysis of jacketed melt lines and HTM vapor/liquid heating circuits.
+              </p>
+
+              <div class="architecture-flowchart">
+                <div class="flow-step">
+                  <div class="step-badge">01. HYDRAULIC SIZING &amp; PDRTC</div>
+                  <div class="step-box">Proprietary Residence Time &amp; Uniform Shear Balancing</div>
+                </div>
+                <div class="flow-arrow">&darr;</div>
+                <div class="flow-step">
+                  <div class="step-badge">02. THERMAL &amp; STRESS MODELING</div>
+                  <div class="step-box active-glow">CAESAR II 290&deg;C Jacketed HTM Stress &amp; Hangers</div>
+                </div>
+                <div class="flow-arrow">&darr;</div>
+                <div class="flow-step">
+                  <div class="step-badge">03. COMMISSING &amp; SPINNING</div>
+                  <div class="step-box">Zero-Defect Polymer Delivery to POY/FDY/PSF Beams</div>
+                </div>
+              </div>
+
+              <div class="case-study-callout">
+                <span class="case-tag">FLAGSHIP TRACK RECORD</span>
+                <h4>Bhilosa Industries CP4/5 (1680 TPD)</h4>
+                <p>Designed and commissioned the massive 1680 TPD transfer line network feeding POY/FDY/PSF with zero quality deviations across all spinning positions.</p>
+                <a href="projects.html" class="inline-link">Explore Bhilosa Project Details &rarr;</a>
+              </div>
+            </div>
+
+            <div class="expertise-visual-col">
+              <div class="architecture-card glass-panel-dark">
+                <div class="visual-header">
+                  <span class="terminal-dots"><span></span><span></span><span></span></span>
+                  <span class="terminal-title">pdrtc-melt-flow-simulation.eng</span>
+                </div>
+                <img src="assets/dds_melt_transfer.jpg" alt="Jacketed Melt Polymer Transfer Line" class="pane-img" loading="lazy">
+                <div class="live-metrics-bar">
+                  <div class="metric-item">
+                    <span class="m-lbl">OPERATING TEMP</span>
+                    <span class="m-val text-orange">&gt; 280&deg;C</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="m-lbl">DESIGN PRESSURE</span>
+                    <span class="m-val text-cyan">&gt; 150 Bar</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="m-lbl">RESIDENCE VARIANCE</span>
+                    <span class="m-val text-green">&lt; 0.5% Uniform</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: CP Plants -->
+        <div class="expertise-pane" id="pane-cp-plants">
+          <div class="expertise-grid">
+            <div class="expertise-info-col">
+              <span class="pill-mini cyan">BASIC &amp; DETAIL ENGINEERING</span>
+              <h3 class="pane-title">Continuous Polymerisation (CP) Plants</h3>
+              <p class="pane-text">
+                DDS offers complete basic and detailed engineering for Continuous Polymerisation plants. We design all proprietary reactors, esterifiers, polycondensation columns, vacuum systems, glycol recovery, and fractionation columns.
+              </p>
+              <p class="pane-text">
+                Having engineered and successfully commissioned a complete <strong>70 TPD Continuous Polymerisation project</strong> operating on-spec, DDS is fully equipped to deliver turnkey CP plants of various capacities <strong>up to 400 TPD</strong>.
+              </p>
+
+              <div class="swimlane-wrapper">
+                <div class="swimlane-card">
+                  <div class="lane-header orange">Phase 1: Process Sizing &amp; Kinetics</div>
+                  <p>Esterification &amp; Polycondensation reactor design, EG recovery, and vacuum systems.</p>
+                </div>
+                <div class="swimlane-card">
+                  <div class="lane-header cyan">Phase 2: Multidisciplinary Detail Design</div>
+                  <p>3D Plant Layout, Jacketed Piping, HTM Boilers, Electrical Substations, DCS architecture.</p>
+                </div>
+                <div class="swimlane-card">
+                  <div class="lane-header blue">Phase 3: Erection &amp; Commissioning</div>
+                  <p>Field erection supervision, pre-commissioning flushes, safety checks, and stable start-up.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="expertise-visual-col">
+              <div class="architecture-card glass-panel-dark">
+                <div class="visual-header">
+                  <span class="terminal-dots"><span></span><span></span><span></span></span>
+                  <span class="terminal-title">cp-plant-reactor-detail.cad</span>
+                </div>
+                <img src="assets/dds_plant_hero.jpg" alt="Continuous Polymerisation Plant" class="pane-img" loading="lazy">
+                <div class="live-metrics-bar">
+                  <div class="metric-item">
+                    <span class="m-lbl">CAPACITY RANGE</span>
+                    <span class="m-val text-orange">70 to 400 TPD</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="m-lbl">GLOBAL TECH EXP</span>
+                    <span class="m-val text-cyan">8+ Commissioned</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Texturizing Oil Plants -->
+        <div class="expertise-pane" id="pane-conning-oil">
+          <div class="expertise-grid">
+            <div class="expertise-info-col">
+              <span class="pill-mini orange">PROPRIETARY TECHNICAL KNOW-HOW</span>
+              <h3 class="pane-title">Texturizing Oil (Conning Oil) Plants</h3>
+              <p class="pane-text">
+                DDS has developed complete in-house technical know-how for Texturizing Oil manufacturing (also known as <strong>Conning Oil for DTY Machines</strong>).
+              </p>
+              <p class="pane-text">
+                We successfully designed, engineered, and commissioned a <strong>100 TPD Texturizing Oil Plant</strong> operating with consistent product quality, tight viscosity control, and an exceptionally fast financial payback. DDS caters to Conning Oil plants of any capacity worldwide.
+              </p>
+
+              <div class="feature-spec-list">
+                <div class="spec-row">
+                  <span class="spec-name">Plant Capacity Delivered</span>
+                  <span class="spec-val">100 TPD (Scalable to any capacity)</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-name">Application</span>
+                  <span class="spec-val">Conning Oil for High-Speed DTY Machines</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-name">Scope Provided</span>
+                  <span class="spec-val">Basic Design, Detail Engineering &amp; Know-How</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-name">Economic ROI</span>
+                  <span class="spec-val">Optimal Payback with High Margin Stability</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="expertise-visual-col">
+              <div class="architecture-card glass-panel-dark">
+                <div class="visual-header">
+                  <span class="terminal-dots"><span></span><span></span><span></span></span>
+                  <span class="terminal-title">conning-oil-blending-flow.sys</span>
+                </div>
+                <img src="assets/dds_cad_piping.jpg" alt="Conning Oil Plant CAD" class="pane-img" loading="lazy">
+                <div class="live-metrics-bar">
+                  <div class="metric-item">
+                    <span class="m-lbl">BATCH HOMOGENEITY</span>
+                    <span class="m-val text-green">100% On-Spec</span>
+                  </div>
+                  <div class="metric-item">
+                    <span class="m-lbl">PAYBACK PERIOD</span>
+                    <span class="m-val text-cyan">Optimal</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 2. FABRICATION & ERECTION FACILITATION ==================== -->
+    <section class="subpage-section bg-light">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge-pill">INDIAN MANUFACTURING ECOSYSTEM</span>
+          <h2 class="section-title">EQUIPMENT FABRICATION &amp; SITE ERECTION FACILITATION</h2>
+          <p class="section-description">
+            We bridge international engineering specifications with India's most capable ASME-certified equipment manufacturers and erection contractors.
+          </p>
+        </div>
+
+        <div class="facilitation-callout-box">
+          <h3 class="f-box-title">End-to-End Mechanical &amp; Plant Erection Support</h3>
+          <div class="f-box-grid">
+            <div class="f-item">
+              <span class="f-check">✓</span>
+              <span><strong>Mechanical Erection &amp; Piping:</strong> High-pressure jacketing spools, HTM circuit loop fabrication, and precision pipe alignment.</span>
+            </div>
+            <div class="f-item">
+              <span class="f-check">✓</span>
+              <span><strong>Heavy Equipment Lifting &amp; Vessels:</strong> Reactor vessels, vacuum columns, esterification pots, and skid module assembly.</span>
+            </div>
+            <div class="f-item">
+              <span class="f-check">✓</span>
+              <span><strong>Premier Vendor Network:</strong> Direct coordination with certified Indian fabricators for cost-effective, high-precision delivery.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== SUBPAGE CALLOUT BANNER ==================== -->
+    <section class="subpage-section bg-space" style="padding-top: 0;">
+      <div class="container">
+        <div class="subpage-cta-banner">
+          <div class="subpage-cta-content">
+            <h3>Planning a Polymer Transfer Line or CP Plant Project?</h3>
+            <p>Consult our principal experts to review melt line sizing, pressure drops, or continuous polymerization reactor specifications.</p>
+          </div>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-glow" onclick="openQuoteModal()">REQUEST ENGINEERING RFQ</button>
+            <a href="contact.html" class="btn btn-outline-cyan">DISCUSS YOUR SCOPE &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== GLOBAL FOOTER ==================== -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5"/>
+                <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.2" stroke="#00D2FF" stroke-width="2"/>
+                <circle cx="18" cy="18" r="3.5" fill="#FF5E14"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-main">DDS</span>
+              <span class="logo-sub">ENGINEERING (INDIA)</span>
+            </div>
+          </a>
+          <p class="footer-bio">
+            DDS Engineering (INDIA) Private Limited is a multi-dimensional detailed-engineering consultancy specializing in Process, Piping, Mechanical, Electrical &amp; Instrumentation Engineering for the global polyester and process industries.
+          </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/dds-engineering-9b109b209/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.7a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/dds_engineering/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Pages &amp; Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About DDS</a></li>
+            <li><a href="services.html">Engineering Services</a></li>
+            <li><a href="specialized.html">Melt Lines &amp; CP Plants</a></li>
+            <li><a href="projects.html">Projects &amp; Case Studies</a></li>
+            <li><a href="resources.html">Software &amp; Tools</a></li>
+            <li><a href="contact.html">Contact &amp; RFQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Services Portfolio</h4>
+          <ul class="footer-nav">
+            <li><a href="services.html#process">Process Simulation (HYSYS)</a></li>
+            <li><a href="services.html#piping">Pipe Stress (CAESAR II)</a></li>
+            <li><a href="services.html#equipment">Pressure Vessels (PV Elite)</a></li>
+            <li><a href="services.html#electrical">E&amp;I Engineering Design</a></li>
+            <li><a href="services.html#civil">Structural Analysis (STAAD)</a></li>
+            <li><a href="services.html#audits">Energy &amp; Safety Audits</a></li>
+            <li><a href="services.html#scanning">3D Laser Scanning</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Corporate Office</h4>
+          <p class="newsletter-desc">Trinnity Business Park, 412, 4th Floor, Madhuvan Circle, New L.P. Savani Road, Adajan, Surat-395009, Gujarat, INDIA</p>
+          <div class="footer-contact-links">
+            <a href="tel:+912613515039" class="f-contact-link">📞 +91 (261) 3515039</a>
+            <a href="tel:+919601402333" class="f-contact-link">📱 +91 9601402333</a>
+            <a href="mailto:business@ddsengineering.in" class="f-contact-link">✉️ business@ddsengineering.in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 DDS Engineering (INDIA) Pvt. Ltd. All Rights Reserved.</p>
+        <p class="footer-tagline">PROCESS &bull; PIPING &bull; MECHANICAL &bull; ELECTRICAL &bull; INSTRUMENTATION</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Request RFQ Modal -->
+  <div class="modal-backdrop" id="quoteModalBackdrop" onclick="closeQuoteModal(event)">
+    <div class="modal-dialog glass-panel-dark">
+      <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
+      <div class="modal-header">
+        <span class="pill-mini orange">ENGINEERING RFQ</span>
+        <h3 class="modal-title">Request Detailed Engineering RFQ</h3>
+        <p class="modal-subtitle">Submit your plant parameters, capacity, and design scope to our principal consultants.</p>
+      </div>
+      <form class="modal-form" onsubmit="handleQuoteSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Neeraj Sharma">
+          </div>
+          <div class="form-group">
+            <label>Company / Organization *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Synthetic Polymer Corp">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Work Email *</label>
+            <input type="email" required class="form-control" placeholder="n.sharma@corp.com">
+          </div>
+          <div class="form-group">
+            <label>Service Area Required</label>
+            <select class="form-control">
+              <option>Melt Polymer Transfer Line Design</option>
+              <option>Complete Plant Detail Engineering</option>
+              <option>Continuous Polymerisation (CP) Plant</option>
+              <option>Texturizing / Conning Oil Plant</option>
+              <option>Pipe Stress Analysis &amp; 3D Modeling</option>
+              <option>Energy / Safety Audit &amp; Debottlenecking</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Scope / Operating Parameters (TPD, Temperature, Fluid) *</label>
+          <textarea rows="3" required class="form-control" placeholder="Provide plant capacity, polymer type (PET/POY/FDY/PSF), line layout or timeline..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-glow">SUBMIT ENGINEERING RFQ</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

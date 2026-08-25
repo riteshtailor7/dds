@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects &amp; Case Studies | DDS Engineering | Proven Global Track Record</title>
+  <meta name="description" content="Explore DDS Engineering's hallmark case studies: 1680 TPD Bhilosa CP4/5 Transfer Line, 750 TPD Sumilon Polyester, 70 TPD CP Plant, 100 TPD Conning Oil, and international projects in Turkey &amp; Indonesia.">
+  
+  <!-- Google Fonts: Outfit (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" id="navLogo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.18" stroke="#00D2FF" stroke-width="2"/>
+            <circle cx="18" cy="18" r="3.5" fill="#FF5E14"/>
+            <path d="M18 2V8M3 10.5L8 13.5M33 10.5L28 13.5M3 25.5L8 22.5M33 25.5L28 22.5M18 34V28" stroke="#FF5E14" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">DDS</span>
+          <span class="logo-sub">ENGINEERING</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+          <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+          <li><a href="services.html" class="nav-link" id="navServices">Services</a></li>
+          <li><a href="specialized.html" class="nav-link" id="navSpecialized">Specialized</a></li>
+          <li><a href="projects.html" class="nav-link active" id="navProjects">Projects</a></li>
+          <li><a href="resources.html" class="nav-link" id="navResources">Resources</a></li>
+          <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="header-actions">
+        <button class="btn btn-primary btn-glow" id="btnRequestQuoteHeader" onclick="openQuoteModal()">
+          Request RFQ
+          <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="logo-text">
+        <span class="logo-main">DDS</span>
+        <span class="logo-sub">ENGINEERING (INDIA)</span>
+      </div>
+      <button class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link" onclick="closeDrawer()">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link" onclick="closeDrawer()">About Company</a></li>
+      <li><a href="services.html" class="mobile-nav-link" onclick="closeDrawer()">Engineering Services</a></li>
+      <li><a href="specialized.html" class="mobile-nav-link" onclick="closeDrawer()">Specialized &amp; Melt Lines</a></li>
+      <li><a href="projects.html" class="mobile-nav-link" onclick="closeDrawer()">Featured Projects</a></li>
+      <li><a href="resources.html" class="mobile-nav-link" onclick="closeDrawer()">Software &amp; Tools</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" onclick="closeDrawer()">Contact Us</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <button class="btn btn-primary btn-block" onclick="closeDrawer(); openQuoteModal();">Request Engineering RFQ</button>
+      <div class="drawer-contact-info">
+        <p>📞 +91 (261) 3515039 / +91 9601402333</p>
+        <p>✉️ business@ddsengineering.in</p>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+  <main>
+    <!-- ==================== SUBPAGE HERO BANNER ==================== -->
+    <section class="page-hero-banner">
+      <div class="container page-hero-container">
+        <div class="page-breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">Projects &amp; Case Studies</span>
+        </div>
+        <span class="section-badge-pill orange">PROVEN TRACK RECORD</span>
+        <h1 class="page-hero-title">FEATURED PROJECTS &amp; CASE STUDIES</h1>
+        <p class="page-hero-desc">
+          Explore hallmark detailed-engineering deliveries across major continuous polymerization plants, high-capacity polymer transfer lines, and specialty chemical facilities worldwide.
+        </p>
+
+        <div class="page-hero-metrics">
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot orange"></span>
+            <span>Flagship: <strong>1680 TPD Transfer Line</strong></span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot cyan"></span>
+            <span>Greenfield: <strong>750 TPD Polyester Plant</strong></span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot green"></span>
+            <span>International: <strong>Turkey &amp; Indonesia</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 1. PORTFOLIO & FILTER GRID ==================== -->
+    <section class="subpage-section bg-light" id="projects">
+      <div class="container">
+        <!-- Filter Tabs -->
+        <div class="portfolio-filter-nav">
+          <button class="filter-btn active" data-filter="all" onclick="filterProjects('all')">All Projects</button>
+          <button class="filter-btn" data-filter="transfer-line" onclick="filterProjects('transfer-line')">Polymer Transfer Lines</button>
+          <button class="filter-btn" data-filter="cp-plant" onclick="filterProjects('cp-plant')">CP &amp; Polyester Plants</button>
+          <button class="filter-btn" data-filter="specialty" onclick="filterProjects('specialty')">Specialty &amp; Utilities</button>
+        </div>
+
+        <!-- 3x3 Project Grid -->
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Card 1: Bhilosa CP4/5 -->
+          <div class="project-card" data-category="transfer-line">
+            <div class="project-thumb">
+              <img src="assets/dds_melt_transfer.jpg" alt="Bhilosa CP4/5 Transfer Line" loading="lazy">
+              <span class="project-badge">TRANSFER LINE</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Bhilosa Industries &bull; CP4/5 Project</h3>
+              <p class="project-snippet">Detail engineering of 1680 TPD Polymer Melt Transfer Line supplying direct melt to POY, FDY &amp; PSF machines.</p>
+              <div class="project-footer">
+                <span class="project-metric">1680 TPD Capacity</span>
+                <button class="read-more-btn" onclick="openProjectModal(1)">Read Case Study &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Bhilosa CP2/3/6 & CP1 -->
+          <div class="project-card" data-category="transfer-line">
+            <div class="project-thumb">
+              <img src="assets/dds_plant_hero.jpg" alt="Bhilosa CP2/3/6 Project" loading="lazy">
+              <span class="project-badge">TRANSFER LINE</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Bhilosa Industries &bull; CP2/3/6 &amp; CP1</h3>
+              <p class="project-snippet">Detailed design of CP2/3/6 (1650 TPD POY/FDY) transfer line and comprehensive redesign of existing CP1 melt lines.</p>
+              <div class="project-footer">
+                <span class="project-metric">1650 TPD POY/FDY</span>
+                <button class="read-more-btn" onclick="openProjectModal(2)">Read Case Study &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Sumilon Industries 750 TPD -->
+          <div class="project-card" data-category="cp-plant">
+            <div class="project-thumb">
+              <img src="assets/dds_cad_piping.jpg" alt="Sumilon Industries 750 TPD" loading="lazy">
+              <span class="project-badge">CP PLANT &amp; OSBL</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Sumilon Industries &bull; 750 TPD Plant</h3>
+              <p class="project-snippet">OSBL Engineering for 750 TPD polyester plant (OBHE) and Dornier Film Line ISBL/OSBL piping and electrical design.</p>
+              <div class="project-footer">
+                <span class="project-metric">750 TPD + Dornier Film</span>
+                <button class="read-more-btn" onclick="openProjectModal(3)">Read Case Study &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Global Transfer Lines -->
+          <div class="project-card" data-category="transfer-line">
+            <div class="project-thumb">
+              <img src="assets/dds_melt_transfer.jpg" alt="International Transfer Lines" loading="lazy">
+              <span class="project-badge">GLOBAL SITES</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">International Transfer Lines &amp; Coolers</h3>
+              <p class="project-snippet">Transfer lines at Koza Polyester, Polymer Cooler addition at SASA (Turkey), and transfer line revamps at Indorama Indonesia.</p>
+              <div class="project-footer">
+                <span class="project-metric">Turkey &amp; Indonesia</span>
+                <button class="read-more-btn" onclick="openProjectModal(4)">Read Case Study &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: 70 TPD CP Plant -->
+          <div class="project-card" data-category="cp-plant">
+            <div class="project-thumb">
+              <img src="assets/dds_plant_hero.jpg" alt="70 TPD CP Plant Execution" loading="lazy">
+              <span class="project-badge">CP PLANT</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">70 TPD Continuous Polymerisation Plant</h3>
+              <p class="project-snippet">Complete basic design, reactor equipment fabrication drawings, and full detail engineering running successfully.</p>
+              <div class="project-footer">
+                <span class="project-metric">70 TPD Turnkey Design</span>
+                <button class="read-more-btn" onclick="openProjectModal(5)">Read Case Study &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: 100 TPD Conning Oil -->
+          <div class="project-card" data-category="specialty">
+            <div class="project-thumb">
+              <img src="assets/dds_cad_piping.jpg" alt="100 TPD Texturizing Oil Plant" loading="lazy">
+              <span class="project-badge">SPECIALTY PLANT</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">100 TPD Texturizing (Conning) Oil Plant</h3>
+              <p class="project-snippet">Proprietary process know-how and complete detail design for conning oil production for high-speed DTY texturizing machines.</p>
+              <div class="project-footer">
+                <span class="project-metric">100 TPD Fast Payback</span>
+                <button class="read-more-btn" onclick="openProjectModal(6)">Read Case Study &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: Sanathan Textiles -->
+          <div class="project-card" data-category="transfer-line">
+            <div class="project-thumb">
+              <img src="assets/dds_melt_transfer.jpg" alt="Sanathan Textiles Polymer Piping" loading="lazy">
+              <span class="project-badge">TRANSFER LINE</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Sanathan Textiles &bull; Melt Transfer Piping</h3>
+              <p class="project-snippet">Melt transfer line stress calculation, PDRTC residence time optimization, and direct spinning manifold balancing.</p>
+              <div class="project-footer">
+                <span class="project-metric">Silvassa Plant</span>
+                <button class="read-more-btn" onclick="openProjectModal(1)">Read Details &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: Garden Silk Mills -->
+          <div class="project-card" data-category="specialty">
+            <div class="project-thumb">
+              <img src="assets/dds_plant_hero.jpg" alt="Garden Silk Mills Debottlenecking" loading="lazy">
+              <span class="project-badge">ENERGY &amp; AUDITS</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Garden Silk Mills &bull; Plant Optimization</h3>
+              <p class="project-snippet">Thermal energy balancing, HTM boiler circuit optimization, vacuum column debottlenecking, and capex reduction.</p>
+              <div class="project-footer">
+                <span class="project-metric">Surat Complex</span>
+                <button class="read-more-btn" onclick="openProjectModal(2)">Read Details &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9: DNH Spinners & Beekaylon -->
+          <div class="project-card" data-category="transfer-line">
+            <div class="project-thumb">
+              <img src="assets/dds_cad_piping.jpg" alt="DNH Spinners & Beekaylon" loading="lazy">
+              <span class="project-badge">TRANSFER LINE</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">DNH Spinners &amp; Beekaylon Synthetics</h3>
+              <p class="project-snippet">Jacketed piping stress modeling with CAESAR II, spring hanger distribution, and plant 3D layout integration.</p>
+              <div class="project-footer">
+                <span class="project-metric">Direct Melt POY</span>
+                <button class="read-more-btn" onclick="openProjectModal(4)">Read Details &rarr;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== SUBPAGE CALLOUT BANNER ==================== -->
+    <section class="subpage-section bg-space" style="padding-top: 0;">
+      <div class="container">
+        <div class="subpage-cta-banner">
+          <div class="subpage-cta-content">
+            <h3>Have a High-Capacity Engineering Project in Mind?</h3>
+            <p>Our principal consultants are ready to review your process flow, line parameters, or brownfield revamp requirements.</p>
+          </div>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-glow" onclick="openQuoteModal()">REQUEST ENGINEERING RFQ</button>
+            <a href="contact.html" class="btn btn-outline-cyan">CONTACT US DIRECTLY &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== GLOBAL FOOTER ==================== -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5"/>
+                <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.2" stroke="#00D2FF" stroke-width="2"/>
+                <circle cx="18" cy="18" r="3.5" fill="#FF5E14"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-main">DDS</span>
+              <span class="logo-sub">ENGINEERING (INDIA)</span>
+            </div>
+          </a>
+          <p class="footer-bio">
+            DDS Engineering (INDIA) Private Limited is a multi-dimensional detailed-engineering consultancy specializing in Process, Piping, Mechanical, Electrical &amp; Instrumentation Engineering for the global polyester and process industries.
+          </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/dds-engineering-9b109b209/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.7a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/dds_engineering/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Pages &amp; Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About DDS</a></li>
+            <li><a href="services.html">Engineering Services</a></li>
+            <li><a href="specialized.html">Melt Lines &amp; CP Plants</a></li>
+            <li><a href="projects.html">Projects &amp; Case Studies</a></li>
+            <li><a href="resources.html">Software &amp; Tools</a></li>
+            <li><a href="contact.html">Contact &amp; RFQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Services Portfolio</h4>
+          <ul class="footer-nav">
+            <li><a href="services.html#process">Process Simulation (HYSYS)</a></li>
+            <li><a href="services.html#piping">Pipe Stress (CAESAR II)</a></li>
+            <li><a href="services.html#equipment">Pressure Vessels (PV Elite)</a></li>
+            <li><a href="services.html#electrical">E&amp;I Engineering Design</a></li>
+            <li><a href="services.html#civil">Structural Analysis (STAAD)</a></li>
+            <li><a href="services.html#audits">Energy &amp; Safety Audits</a></li>
+            <li><a href="services.html#scanning">3D Laser Scanning</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Corporate Office</h4>
+          <p class="newsletter-desc">Trinnity Business Park, 412, 4th Floor, Madhuvan Circle, New L.P. Savani Road, Adajan, Surat-395009, Gujarat, INDIA</p>
+          <div class="footer-contact-links">
+            <a href="tel:+912613515039" class="f-contact-link">📞 +91 (261) 3515039</a>
+            <a href="tel:+919601402333" class="f-contact-link">📱 +91 9601402333</a>
+            <a href="mailto:business@ddsengineering.in" class="f-contact-link">✉️ business@ddsengineering.in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 DDS Engineering (INDIA) Pvt. Ltd. All Rights Reserved.</p>
+        <p class="footer-tagline">PROCESS &bull; PIPING &bull; MECHANICAL &bull; ELECTRICAL &bull; INSTRUMENTATION</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Request RFQ Modal -->
+  <div class="modal-backdrop" id="quoteModalBackdrop" onclick="closeQuoteModal(event)">
+    <div class="modal-dialog glass-panel-dark">
+      <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
+      <div class="modal-header">
+        <span class="pill-mini orange">ENGINEERING RFQ</span>
+        <h3 class="modal-title">Request Detailed Engineering RFQ</h3>
+        <p class="modal-subtitle">Submit your plant parameters, capacity, and design scope to our principal consultants.</p>
+      </div>
+      <form class="modal-form" onsubmit="handleQuoteSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Neeraj Sharma">
+          </div>
+          <div class="form-group">
+            <label>Company / Organization *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Synthetic Polymer Corp">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Work Email *</label>
+            <input type="email" required class="form-control" placeholder="n.sharma@corp.com">
+          </div>
+          <div class="form-group">
+            <label>Service Area Required</label>
+            <select class="form-control">
+              <option>Melt Polymer Transfer Line Design</option>
+              <option>Complete Plant Detail Engineering</option>
+              <option>Continuous Polymerisation (CP) Plant</option>
+              <option>Texturizing / Conning Oil Plant</option>
+              <option>Pipe Stress Analysis &amp; 3D Modeling</option>
+              <option>Energy / Safety Audit &amp; Debottlenecking</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Scope / Operating Parameters (TPD, Temperature, Fluid) *</label>
+          <textarea rows="3" required class="form-control" placeholder="Provide plant capacity, polymer type (PET/POY/FDY/PSF), line layout or timeline..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-glow">SUBMIT ENGINEERING RFQ</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Project Detail Modal -->
+  <div class="modal-backdrop" id="projectModalBackdrop" onclick="closeProjectModal(event)">
+    <div class="modal-dialog glass-panel-dark modal-large">
+      <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+      <div id="projectModalContent"></div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

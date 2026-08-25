@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | DDS Engineering (INDIA) Pvt. Ltd. | 20+ Years Engineering Pedigree</title>
+  <meta name="description"
+    content="Learn about DDS Engineering (INDIA) Pvt. Ltd., our 20+ years heritage in detailed engineering, leadership team, proprietary PDRTC software, and global synthetic fiber track record.">
+
+  <!-- Google Fonts: Outfit (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" id="navLogo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5"
+              stroke-linejoin="round" />
+            <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.18" stroke="#00D2FF"
+              stroke-width="2" />
+            <circle cx="18" cy="18" r="3.5" fill="#FF5E14" />
+            <path d="M18 2V8M3 10.5L8 13.5M33 10.5L28 13.5M3 25.5L8 22.5M33 25.5L28 22.5M18 34V28" stroke="#FF5E14"
+              stroke-width="1.5" />
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">DDS</span>
+          <span class="logo-sub">ENGINEERING</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+          <li><a href="about.html" class="nav-link active" id="navAbout">About Us</a></li>
+          <li><a href="services.html" class="nav-link" id="navServices">Services</a></li>
+          <li><a href="specialized.html" class="nav-link" id="navSpecialized">Specialized</a></li>
+          <li><a href="projects.html" class="nav-link" id="navProjects">Projects</a></li>
+          <li><a href="resources.html" class="nav-link" id="navResources">Resources</a></li>
+          <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="header-actions">
+        <button class="btn btn-primary btn-glow" id="btnRequestQuoteHeader" onclick="openQuoteModal()">
+          Request RFQ
+          <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="logo-text">
+        <span class="logo-main">DDS</span>
+        <span class="logo-sub">ENGINEERING (INDIA)</span>
+      </div>
+      <button class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link" onclick="closeDrawer()">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link" onclick="closeDrawer()">About Company</a></li>
+      <li><a href="services.html" class="mobile-nav-link" onclick="closeDrawer()">Engineering Services</a></li>
+      <li><a href="specialized.html" class="mobile-nav-link" onclick="closeDrawer()">Specialized &amp; Melt Lines</a>
+      </li>
+      <li><a href="projects.html" class="mobile-nav-link" onclick="closeDrawer()">Featured Projects</a></li>
+      <li><a href="resources.html" class="mobile-nav-link" onclick="closeDrawer()">Software &amp; Tools</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" onclick="closeDrawer()">Contact Us</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <button class="btn btn-primary btn-block" onclick="closeDrawer(); openQuoteModal();">Request Engineering
+        RFQ</button>
+      <div class="drawer-contact-info">
+        <p>📞 +91 (261) 3515039 / +91 9601402333</p>
+        <p>✉️ business@ddsengineering.in</p>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+  <main>
+    <!-- ==================== SUBPAGE HERO BANNER ==================== -->
+    <section class="page-hero-banner">
+      <div class="container page-hero-container">
+        <div class="page-breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">About DDS Engineering</span>
+        </div>
+        <span class="section-badge-pill orange">HERITAGE &amp; PEDIGREE</span>
+        <h1 class="page-hero-title">ENGINEERING EXCELLENCE &amp; GLOBAL REPUTATION</h1>
+        <p class="page-hero-desc">
+          Founded by senior chemical engineers with 20+ years of plant operations and detailed design leadership, DDS
+          delivers multi-dimensional engineering solutions from conception to commissioning worldwide.
+        </p>
+
+        <div class="page-hero-metrics">
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot orange"></span>
+            <span>Est. <strong>2012</strong></span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot green"></span>
+            <span><strong>20+</strong> Years Domain Mastery</span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot cyan"></span>
+            <span><strong>8+</strong> CP Plants Commissioned</span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot orange"></span>
+            <span>Global Presence: <strong>India, Germany, Turkey, Indonesia</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 1. COMPANY STORY & OVERVIEW ==================== -->
+    <section class="subpage-section bg-light">
+      <div class="container">
+        <div class="about-feature-split">
+          <div class="about-card-left">
+            <div class="feature-badge">ABOUT OUR FOUNDATION</div>
+            <h2 class="about-feature-title">A Premier Multidisciplinary Consultancy Built on Real Plant Operations</h2>
+            <p class="about-feature-p">
+              <strong>DDS Engineering (INDIA) Private Limited (DDS)</strong> is a rapidly growing multidisciplinary
+              technical and detailed-engineering consultancy firm. Unlike traditional design offices, our foundation is
+              deeply rooted in <strong>real shop-floor plant operations</strong>, chemical reaction kinetics, and
+              large-scale project execution.
+            </p>
+            <p class="about-feature-p">
+              With specialized authority in the <strong>Polyester Industry (PES)</strong>, continuous polymerization,
+              and high-temperature polymer melt conveyance, we provide end-to-end integrated engineering services to
+              leading synthetic fiber manufacturers worldwide.
+            </p>
+            <div class="feature-checklist">
+              <div class="check-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Complete basic and detailed plant engineering for Greenfield, Revamp &amp; Debottlenecking</span>
+              </div>
+              <div class="check-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Proprietary Pressure Drop &amp; Residence Time Calculation (PDRTC) software algorithms</span>
+              </div>
+              <div class="check-item">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>Full lifecycle integration from simulation (HYSYS) and stress (CAESAR II) to site
+                  commissioning</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-card-right">
+            <div class="img-wrapper">
+              <img src="assets/dds_plant_hero.jpg" alt="DDS Engineering Plant Capability" class="feature-img"
+                loading="lazy">
+              <div class="floating-experience-pill">
+                <span class="exp-num">20+</span>
+                <span class="exp-text">Years of Engineering Leadership</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 2. MILESTONE STEPPER ROADMAP ==================== -->
+    <section class="subpage-section bg-dark">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge-pill">OUR JOURNEY</span>
+          <h2 class="section-title text-white">THE DDS EVOLUTION ROADMAP</h2>
+          <p class="section-description text-gray">
+            From technical consultancy inception to engineering 1680 TPD megaprojects and multinational synthetic
+            polymer facilities.
+          </p>
+        </div>
+
+        <div class="timeline-roadmap-wrapper">
+          <div class="roadmap-line-track">
+            <div class="roadmap-line-progress" id="roadmapProgress" style="width: 50%;"></div>
+          </div>
+
+          <div class="roadmap-nodes">
+            <div class="roadmap-node active" data-node="0">
+              <div class="node-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <div class="node-content">
+                <span class="node-year">2012</span>
+                <h4 class="node-title">Founding &amp; Expertise</h4>
+                <p class="node-desc">Formed by senior chemical engineers with 20+ years of plant operations and project
+                  execution pedigree.</p>
+              </div>
+            </div>
+
+            <div class="roadmap-node active" data-node="1">
+              <div class="node-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div class="node-content">
+                <span class="node-year">2016</span>
+                <h4 class="node-title">PDRTC Software</h4>
+                <p class="node-desc">Engineered proprietary algorithms for uniform polymer residence time in large-scale
+                  direct melt spinning.</p>
+              </div>
+            </div>
+
+            <div class="roadmap-node active" data-node="2">
+              <div class="node-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <div class="node-content">
+                <span class="node-year">2019</span>
+                <h4 class="node-title">1680 TPD Megaproject</h4>
+                <p class="node-desc">Executed Bhilosa CP4/5 1680 TPD detail engineering &amp; 70 TPD Continuous
+                  Polymerisation reactor plant.</p>
+              </div>
+            </div>
+
+            <div class="roadmap-node" data-node="3">
+              <div class="node-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+              </div>
+              <div class="node-content">
+                <span class="node-year">2023</span>
+                <h4 class="node-title">Global Reach</h4>
+                <p class="node-desc">International projects delivered across Turkey (Koza, SASA), Indonesia (Indorama,
+                  APF), and Sri Lanka.</p>
+              </div>
+            </div>
+
+            <div class="roadmap-node" data-node="4">
+              <div class="node-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <div class="node-content">
+                <span class="node-year">2026+</span>
+                <h4 class="node-title">Next-Gen Industry 4.0</h4>
+                <p class="node-desc">Leading green engineering, 3D laser scanning, energy audits, and continuous
+                  polymerization expansions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 3. VISION, MISSION & STRENGTHS ==================== -->
+    <section class="pillars-section bg-space" id="pillars">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge-pill cyan">GUIDING PRINCIPLES</span>
+          <h2 class="section-title text-white">VISION, MISSION &amp; CORE STRENGTHS</h2>
+          <p class="section-description text-gray">
+            The core engineering pillars that define our commitment to precision, safety, and client success.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <!-- Vision -->
+          <div class="pillar-card" id="pillarVision">
+            <div class="pillar-circle-badge cyan-glow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+              </svg>
+            </div>
+            <h3 class="pillar-title text-cyan">VISION</h3>
+            <p class="pillar-desc">
+              To be a globally trusted multi-dimensional detailed engineering consultancy, delivering cutting-edge
+              process design, innovative plant engineering, and sustainable industrial growth.
+            </p>
+            <div class="pillar-tag">Innovation &bull; Sustainability &bull; Global Standards</div>
+          </div>
+
+          <!-- Mission -->
+          <div class="pillar-card active" id="pillarMission">
+            <div class="pillar-circle-badge orange-glow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FF5E14" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
+            </div>
+            <h3 class="pillar-title text-orange">MISSION</h3>
+            <p class="pillar-desc">
+              Empower synthetic fiber and chemical manufacturers with comprehensive, high-precision engineering
+              solutions, delivering zero-defect plant commissioning strictly on time and within budget.
+            </p>
+            <div class="pillar-tag">Precision Execution &bull; Budget Discipline &bull; Quality</div>
+          </div>
+
+          <!-- Strengths -->
+          <div class="pillar-card" id="pillarStrength">
+            <div class="pillar-circle-badge orange-glow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FF5E14" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="pillar-title text-orange">STRENGTHS</h3>
+            <p class="pillar-desc">
+              A seasoned multidisciplinary team in Process, Piping, Mechanical, E&amp;I, and Structural engineering with
+              hands-on shop-floor mastery and proprietary PDRTC software algorithms.
+            </p>
+            <div class="pillar-tag">20+ Yrs Shop Floor &bull; Proprietary PDRTC &bull; Multi-discipline</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 4. LICENSOR & TECHNOLOGY PEDIGREE ==================== -->
+    <section class="subpage-section dark-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge-pill">GLOBAL TECHNOLOGY EXPOSURE</span>
+          <h2 class="section-title text-white">WORLD-CLASS PROCESS LICENSOR FAMILIARITY</h2>
+          <p class="section-description text-gray">
+            Our engineers have deep, direct project experience interfacing with premier global technology providers and
+            licensors.
+          </p>
+        </div>
+
+        <div class="resources-grid">
+          <div class="resource-card">
+            <div class="res-icon-wrap bg-orange-soft"><span class="res-code">DUP</span></div>
+            <h4 class="res-title">DuPont / Chemtex Technology</h4>
+            <p class="res-desc">Continuous Polymerization, Finisher Reactor dynamics, EG recovery, and direct melt
+              distribution systems.</p>
+          </div>
+
+          <div class="resource-card">
+            <div class="res-icon-wrap bg-cyan-soft"><span class="res-code">ZIM</span></div>
+            <h4 class="res-title">Zimmer AG (Germany)</h4>
+            <p class="res-desc">Continuous polycondensation processes, high-viscosity polymer reactors, and jacketed
+              thermal loops.</p>
+          </div>
+
+          <div class="resource-card">
+            <div class="res-icon-wrap bg-blue-soft"><span class="res-code">OER</span></div>
+            <h4 class="res-title">Oerlikon Barmag</h4>
+            <p class="res-desc">Direct melt spinning, POY, FDY, PSF spinning manifolds, polymer coolers, and texturizing
+              systems.</p>
+          </div>
+
+          <div class="resource-card">
+            <div class="res-icon-wrap bg-purple-soft"><span class="res-code">CTI</span></div>
+            <h4 class="res-title">CTIEI &amp; Huitong Technology</h4>
+            <p class="res-desc">Large-scale Asian polyester CP plant designs, esterification columns, and high-capacity
+              melt lines.</p>
+          </div>
+
+          <div class="resource-card">
+            <div class="res-icon-wrap bg-orange-soft"><span class="res-code">JB</span></div>
+            <h4 class="res-title">John Brown / Joyou</h4>
+            <p class="res-desc">Petrochemical reactor configurations, vacuum systems, HTM boiler networks, and
+              debottlenecking schemes.</p>
+          </div>
+
+          <div class="resource-card">
+            <div class="res-icon-wrap bg-cyan-soft"><span class="res-code">OBHE</span></div>
+            <h4 class="res-title">OBHE &amp; Dornier Film Lines</h4>
+            <p class="res-desc">750 TPD Continuous polyester lines, specialized BOPET / film casting lines, and complete
+              OSBL plant design.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 5. LEADERSHIP TEAM SHOWCASE ==================== -->
+    <section class="team-section light-section" id="team">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge-pill">OUR LEADERSHIP</span>
+          <h2 class="section-title">MEET OUR DIRECTORS &amp; MULTIDISCIPLINARY EXPERTS</h2>
+          <p class="section-description">
+            Led by veteran chemical and detailed engineering authorities with over two decades of grassroots plant
+            commissioning and global consultancy tenure.
+          </p>
+        </div>
+
+        <div class="team-grid" id="teamGrid">
+          <!-- Member 1: Neeraj Dhavse -->
+          <div class="team-card featured-director">
+            <div class="member-avatar">
+              <div class="avatar-photo-placeholder bg-orange-grad">
+                <span>ND</span>
+              </div>
+              <a href="https://www.linkedin.com/in/dds-engineering-9b109b209/" target="_blank" rel="noopener noreferrer"
+                class="linkedin-badge" aria-label="LinkedIn Profile">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.7a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z" />
+                </svg>
+              </a>
+            </div>
+            <div class="member-info">
+              <span class="director-badge">DIRECTOR &amp; PRINCIPAL CONSULTANT</span>
+              <h4 class="member-name">Neeraj Dhavse</h4>
+              <p class="member-role">Chemical Engineer (LIT, Nagpur)</p>
+              <ul class="director-highlights">
+                <li><strong>20+ Years</strong> of Shop Floor, Project Management &amp; Admin at <em>Indorama, Garden
+                    Silk Mills, Bhilosa Industries</em> and 3 years at <em>Oerlikon Barmag Engineering</em>.</li>
+                <li>Headed a grassroots CP project of <strong>$55 Million USD</strong> from inception to execution well
+                  within budget and time limit; served as Plant-Site Head.</li>
+                <li>Commissioned <strong>8 Continuous Polymerization plants</strong>; pioneer in energy saving schemes,
+                  capex revamping, and debottlenecking.</li>
+                <li>Deep technology mastery: <em>DuPont (Chemtex), Zimmer, CTIEI, Huitong, John Brown, and Joyou CP
+                    Technologies</em>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Member 2: Girma Makonnen -->
+          <div class="team-card featured-director">
+            <div class="member-avatar">
+              <div class="avatar-photo-placeholder bg-blue-grad">
+                <span>GM</span>
+              </div>
+              <a href="https://www.linkedin.com/in/dds-engineering-9b109b209/" target="_blank" rel="noopener noreferrer"
+                class="linkedin-badge" aria-label="LinkedIn Profile">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.7a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z" />
+                </svg>
+              </a>
+            </div>
+            <div class="member-info">
+              <span class="director-badge cyan">TECHNICAL EXPERT (GERMANY)</span>
+              <h4 class="member-name">Girma Makonnen</h4>
+              <p class="member-role">Chemical Engineer (Germany)</p>
+              <ul class="director-highlights">
+                <li>Vast international Detailed Engineering and Project Management pedigree across Europe and Asia.</li>
+                <li>Retired from <strong>Oerlikon Barmag</strong> as <em>Technical Head for Continuous Polymerisation
+                    and Polymer Melt Transfer Lines</em>.</li>
+                <li>Leads basic designs, hydraulic sizing, and advanced thermal calculations for Polymer melt transfer
+                  lines and CP units.</li>
+                <li>Operates directly from Germany supporting DDS global projects and international standards
+                  compliance.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Member 3: Lead Process & Simulation Engineer -->
+          <div class="team-card">
+            <div class="member-avatar">
+              <div class="avatar-photo-placeholder bg-cyan-grad">
+                <span>PE</span>
+              </div>
+              <div class="role-icon-pill">HYSYS</div>
+            </div>
+            <div class="member-info">
+              <h4 class="member-name">Process Engineering Lead</h4>
+              <p class="member-role">Heat &amp; Mass Balance / Simulation</p>
+              <p class="member-bio">Specialist in Aspen HYSYS, PRO-II, HTRI heat exchangers, PFD/P&amp;ID generation,
+                reactor kinetics, and process safety audits.</p>
+            </div>
+          </div>
+
+          <!-- Member 4: Lead Piping & Stress Analysis Engineer -->
+          <div class="team-card">
+            <div class="member-avatar">
+              <div class="avatar-photo-placeholder bg-orange-grad">
+                <span>PS</span>
+              </div>
+              <div class="role-icon-pill">CAESAR II</div>
+            </div>
+            <div class="member-info">
+              <h4 class="member-name">Piping Stress &amp; 3D Lead</h4>
+              <p class="member-role">CAESAR II &amp; Plant 3D Specialist</p>
+              <p class="member-bio">High-temperature jacketed melt line flexibility calculations, spring hanger design,
+                dynamic analysis, and 3D clash resolution.</p>
+            </div>
+          </div>
+
+          <!-- Member 5: Lead Electrical & Instrumentation Engineer -->
+          <div class="team-card">
+            <div class="member-avatar">
+              <div class="avatar-photo-placeholder bg-purple-grad">
+                <span>EI</span>
+              </div>
+              <div class="role-icon-pill">E&amp;I</div>
+            </div>
+            <div class="member-info">
+              <h4 class="member-name">Electrical &amp; Instrumentation Lead</h4>
+              <p class="member-role">DCS / PLC / HT / LT Systems</p>
+              <p class="member-bio">Single line diagrams, transformer sizing, hazardous area classification, instrument
+                datasheets, loop schematics, and DCS architecture.</p>
+            </div>
+          </div>
+
+          <!-- Member 6: Lead Mechanical Equipment & Vessel Designer -->
+          <div class="team-card">
+            <div class="member-avatar">
+              <div class="avatar-photo-placeholder bg-blue-grad">
+                <span>ME</span>
+              </div>
+              <div class="role-icon-pill">PV ELITE</div>
+            </div>
+            <div class="member-info">
+              <h4 class="member-name">Static &amp; Rotating Equipment Lead</h4>
+              <p class="member-role">ASME Pressure Vessels &amp; Machinery</p>
+              <p class="member-bio">Reactor mechanical design, distillation columns, shell &amp; tube heat exchangers,
+                agitator seals, polymer filters, and rotating pumps.</p>
+            </div>
+          </div>
+
+          <!-- Extended Members (collapsible) -->
+          <div class="team-card extended-member hidden">
+            <div class="member-avatar">
+              <div class="avatar-photo-placeholder bg-cyan-grad">
+                <span>CS</span>
+              </div>
+              <div class="role-icon-pill">STAAD</div>
+            </div>
+            <div class="member-info">
+              <h4 class="member-name">Civil &amp; Structural Lead</h4>
+              <p class="member-role">STAAD.Pro Industrial Structures</p>
+              <p class="member-bio">Multi-tier plant building frameworks, heavy equipment foundations, pipe rack stress
+                analysis, and dynamic vibration damping.</p>
+            </div>
+          </div>
+
+          <div class="team-card extended-member hidden">
+            <div class="member-avatar">
+              <div class="avatar-photo-placeholder bg-orange-grad">
+                <span>LS</span>
+              </div>
+              <div class="role-icon-pill">3D SCAN</div>
+            </div>
+            <div class="member-info">
+              <h4 class="member-name">Laser Scanning &amp; As-Built Specialist</h4>
+              <p class="member-role">Point Cloud &amp; Brownfield Survey</p>
+              <p class="member-bio">3D Terrestrial laser scanning of operating polymer plants, reverse engineering,
+                brownfield tie-in modeling, and as-built validation.</p>
+            </div>
+          </div>
+
+          <div class="team-card extended-member hidden">
+            <div class="member-avatar">
+              <div class="avatar-photo-placeholder bg-purple-grad">
+                <span>PM</span>
+              </div>
+              <div class="role-icon-pill">FIELD</div>
+            </div>
+            <div class="member-info">
+              <h4 class="member-name">Project Execution &amp; Site Manager</h4>
+              <p class="member-role">Erection Supervision &amp; Commissioning</p>
+              <p class="member-bio">Managing on-site mechanical erection, piping hydrotests, pre-commissioning chemical
+                flushes, and seamless plant start-ups.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-40">
+          <p class="team-quote-note">"We are equipped with highly experienced professionals in all dimensions and
+            disciplines, and as required, we seek support from our associates."</p>
+          <button class="btn btn-navy" id="btnToggleTeam" onclick="toggleEntireTeam()">
+            VIEW ENTIRE ENGINEERING TEAM (9)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== SUBPAGE CALLOUT BANNER ==================== -->
+    <section class="subpage-section bg-space" style="padding-top: 0;">
+      <div class="container">
+        <div class="subpage-cta-banner">
+          <div class="subpage-cta-content">
+            <h3>Engage with DDS Engineering Leadership</h3>
+            <p>Schedule a technical conference with Neeraj Dhavse or our domain heads to discuss your upcoming project
+              or plant expansion.</p>
+          </div>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-glow" onclick="openQuoteModal()">REQUEST ENGINEERING RFQ</button>
+            <a href="contact.html" class="btn btn-outline-cyan">CONTACT US DIRECTLY &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== GLOBAL FOOTER ==================== -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5" />
+                <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.2" stroke="#00D2FF"
+                  stroke-width="2" />
+                <circle cx="18" cy="18" r="3.5" fill="#FF5E14" />
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-main">DDS</span>
+              <span class="logo-sub">ENGINEERING (INDIA)</span>
+            </div>
+          </a>
+          <p class="footer-bio">
+            DDS Engineering (INDIA) Private Limited is a multi-dimensional detailed-engineering consultancy specializing
+            in Process, Piping, Mechanical, Electrical &amp; Instrumentation Engineering for the global polyester and
+            process industries.
+          </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/dds-engineering-9b109b209/" target="_blank" rel="noopener noreferrer"
+              class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.7a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/dds_engineering/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank"
+              rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Pages &amp; Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About DDS</a></li>
+            <li><a href="services.html">Engineering Services</a></li>
+            <li><a href="specialized.html">Melt Lines &amp; CP Plants</a></li>
+            <li><a href="projects.html">Projects &amp; Case Studies</a></li>
+            <li><a href="resources.html">Software &amp; Tools</a></li>
+            <li><a href="contact.html">Contact &amp; RFQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Services Portfolio</h4>
+          <ul class="footer-nav">
+            <li><a href="services.html#process">Process Simulation (HYSYS)</a></li>
+            <li><a href="services.html#piping">Pipe Stress (CAESAR II)</a></li>
+            <li><a href="services.html#equipment">Pressure Vessels (PV Elite)</a></li>
+            <li><a href="services.html#electrical">E&amp;I Engineering Design</a></li>
+            <li><a href="services.html#civil">Structural Analysis (STAAD)</a></li>
+            <li><a href="services.html#audits">Energy &amp; Safety Audits</a></li>
+            <li><a href="services.html#scanning">3D Laser Scanning</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Corporate Office</h4>
+          <p class="newsletter-desc">Trinnity Business Park, 412, 4th Floor, Madhuvan Circle, New L.P. Savani Road,
+            Adajan, Surat-395009, Gujarat, INDIA</p>
+          <div class="footer-contact-links">
+            <a href="tel:+912613515039" class="f-contact-link">📞 +91 (261) 3515039</a>
+            <a href="tel:+919601402333" class="f-contact-link">📱 +91 9601402333</a>
+            <a href="mailto:business@ddsengineering.in" class="f-contact-link">✉️ business@ddsengineering.in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 DDS Engineering (INDIA) Pvt. Ltd. All Rights Reserved.</p>
+        <p class="footer-tagline">PROCESS &bull; PIPING &bull; MECHANICAL &bull; ELECTRICAL &bull; INSTRUMENTATION</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Request RFQ Modal -->
+  <div class="modal-backdrop" id="quoteModalBackdrop" onclick="closeQuoteModal(event)">
+    <div class="modal-dialog glass-panel-dark">
+      <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
+      <div class="modal-header">
+        <span class="pill-mini orange">ENGINEERING RFQ</span>
+        <h3 class="modal-title">Request Detailed Engineering RFQ</h3>
+        <p class="modal-subtitle">Submit your plant parameters, capacity, and design scope to our principal consultants.
+        </p>
+      </div>
+      <form class="modal-form" onsubmit="handleQuoteSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Neeraj Sharma">
+          </div>
+          <div class="form-group">
+            <label>Company / Organization *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Synthetic Polymer Corp">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Work Email *</label>
+            <input type="email" required class="form-control" placeholder="n.sharma@corp.com">
+          </div>
+          <div class="form-group">
+            <label>Service Area Required</label>
+            <select class="form-control">
+              <option>Melt Polymer Transfer Line Design</option>
+              <option>Complete Plant Detail Engineering</option>
+              <option>Continuous Polymerisation (CP) Plant</option>
+              <option>Texturizing / Conning Oil Plant</option>
+              <option>Pipe Stress Analysis &amp; 3D Modeling</option>
+              <option>Energy / Safety Audit &amp; Debottlenecking</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Scope / Operating Parameters (TPD, Temperature, Fluid) *</label>
+          <textarea rows="3" required class="form-control"
+            placeholder="Provide plant capacity, polymer type (PET/POY/FDY/PSF), line layout or timeline..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-glow">SUBMIT ENGINEERING RFQ</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Software &amp; Tools | DDS Engineering (INDIA) Pvt. Ltd.</title>
+  <meta name="description" content="Explore DDS Engineering's software infrastructure: Aspen HYSYS, HTRI, PV Elite, AutoCAD Plant 3D, CAESAR II, STAAD.Pro, and try our Interactive Polymer Residence Time Estimator.">
+  
+  <!-- Google Fonts: Outfit (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" id="navLogo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.18" stroke="#00D2FF" stroke-width="2"/>
+            <circle cx="18" cy="18" r="3.5" fill="#FF5E14"/>
+            <path d="M18 2V8M3 10.5L8 13.5M33 10.5L28 13.5M3 25.5L8 22.5M33 25.5L28 22.5M18 34V28" stroke="#FF5E14" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">DDS</span>
+          <span class="logo-sub">ENGINEERING</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+          <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+          <li><a href="services.html" class="nav-link" id="navServices">Services</a></li>
+          <li><a href="specialized.html" class="nav-link" id="navSpecialized">Specialized</a></li>
+          <li><a href="projects.html" class="nav-link" id="navProjects">Projects</a></li>
+          <li><a href="resources.html" class="nav-link active" id="navResources">Resources</a></li>
+          <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="header-actions">
+        <button class="btn btn-primary btn-glow" id="btnRequestQuoteHeader" onclick="openQuoteModal()">
+          Request RFQ
+          <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="logo-text">
+        <span class="logo-main">DDS</span>
+        <span class="logo-sub">ENGINEERING (INDIA)</span>
+      </div>
+      <button class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link" onclick="closeDrawer()">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link" onclick="closeDrawer()">About Company</a></li>
+      <li><a href="services.html" class="mobile-nav-link" onclick="closeDrawer()">Engineering Services</a></li>
+      <li><a href="specialized.html" class="mobile-nav-link" onclick="closeDrawer()">Specialized &amp; Melt Lines</a></li>
+      <li><a href="projects.html" class="mobile-nav-link" onclick="closeDrawer()">Featured Projects</a></li>
+      <li><a href="resources.html" class="mobile-nav-link" onclick="closeDrawer()">Software &amp; Tools</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" onclick="closeDrawer()">Contact Us</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <button class="btn btn-primary btn-block" onclick="closeDrawer(); openQuoteModal();">Request Engineering RFQ</button>
+      <div class="drawer-contact-info">
+        <p>📞 +91 (261) 3515039 / +91 9601402333</p>
+        <p>✉️ business@ddsengineering.in</p>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+  <main>
+    <!-- ==================== SUBPAGE HERO BANNER ==================== -->
+    <section class="page-hero-banner">
+      <div class="container page-hero-container">
+        <div class="page-breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">Software &amp; Engineering Tools</span>
+        </div>
+        <span class="section-badge-pill cyan">HIGH-TECH INFRASTRUCTURE</span>
+        <h1 class="page-hero-title">COMPUTATIONAL ENGINEERING SUITES &amp; TOOLS</h1>
+        <p class="page-hero-desc">
+          State-of-the-art computational simulation, pipe stress analysis, 3D intelligent modeling, and structural design suites powering zero-defect plant engineering.
+        </p>
+
+        <div class="page-hero-metrics">
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot orange"></span>
+            <span>Simulation: <strong>Aspen HYSYS &amp; PRO-II</strong></span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot cyan"></span>
+            <span>Pipe Stress: <strong>CAESAR II</strong></span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot green"></span>
+            <span>Vessel Design: <strong>PV Elite</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 1. SOFTWARE SUITE SHOWCASE ==================== -->
+    <section class="subpage-section bg-light" id="software">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge-pill">TOOLS &amp; INFRASTRUCTURE</span>
+          <h2 class="section-title">INDUSTRY-STANDARD SOFTWARE SUITES</h2>
+          <p class="section-description">
+            We employ licensed, cutting-edge engineering applications to ensure every flow calculation, thermal loop, and structural beam conforms to global safety factors.
+          </p>
+        </div>
+
+        <div class="resources-grid">
+          <!-- Tool 1: HYSYS -->
+          <div class="resource-card">
+            <div class="res-icon-wrap bg-orange-soft"><span class="res-code">HYSYS</span></div>
+            <h4 class="res-title">Aspen HYSYS &amp; PRO-II</h4>
+            <p class="res-desc">Process simulation, heat &amp; material balances, thermodynamic vapor-liquid equilibrium (VLE), chemical reaction kinetics, and column hydraulics.</p>
+          </div>
+
+          <!-- Tool 2: HTRI -->
+          <div class="resource-card">
+            <div class="res-icon-wrap bg-cyan-soft"><span class="res-code">HTRI</span></div>
+            <h4 class="res-title">HTRI Xchanger Suite</h4>
+            <p class="res-desc">Rigorous thermal rating, vibration analysis, and mechanical sizing of Shell &amp; Tube, Air-Cooled, and Plate Heat Exchangers in HTM circuits.</p>
+          </div>
+
+          <!-- Tool 3: PV Elite -->
+          <div class="resource-card">
+            <div class="res-icon-wrap bg-blue-soft"><span class="res-code">PVE</span></div>
+            <h4 class="res-title">PV Elite (ASME VIII)</h4>
+            <p class="res-desc">ASME Section VIII Div 1 &amp; 2 pressure vessel design, chemical reactors, vacuum distillation columns, and external nozzle loading analysis.</p>
+          </div>
+
+          <!-- Tool 4: AutoCAD Plant 3D -->
+          <div class="resource-card">
+            <div class="res-icon-wrap bg-purple-soft"><span class="res-code">3D</span></div>
+            <h4 class="res-title">AutoCAD Plant 3D</h4>
+            <p class="res-desc">Comprehensive 3D plant layout, intelligent P&amp;ID synchronization, equipment modeling, clash detection, and automated isometric spool generation.</p>
+          </div>
+
+          <!-- Tool 5: CAESAR II -->
+          <div class="resource-card">
+            <div class="res-icon-wrap bg-orange-soft"><span class="res-code">C-II</span></div>
+            <h4 class="res-title">CAESAR II (Intergraph)</h4>
+            <p class="res-desc">Static and dynamic pipe stress analysis, thermal expansion calculations for 280&deg;C+ jacketed piping, nozzle loads, and spring hanger sizing.</p>
+          </div>
+
+          <!-- Tool 6: STAAD.Pro -->
+          <div class="resource-card">
+            <div class="res-icon-wrap bg-cyan-soft"><span class="res-code">STAAD</span></div>
+            <h4 class="res-title">STAAD.Pro (Bentley)</h4>
+            <p class="res-desc">Finite element structural steel framework analysis, heavy equipment foundation RCC design, wind loading, and seismic dynamic damping.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 2. INTERACTIVE ESTIMATOR TOOL ==================== -->
+    <section class="subpage-section bg-dark" id="estimator">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge-pill cyan">ENGINEERING UTILITY</span>
+          <h2 class="section-title text-white">POLYMER RESIDENCE TIME &amp; FLOW ESTIMATOR</h2>
+          <p class="section-description text-gray">
+            Simulate melt polymer conveyance parameters, mass flow rates, estimated manifold pressure drops, and throughput per spinning position.
+          </p>
+        </div>
+
+        <div class="calculator-card">
+          <!-- Input Column -->
+          <div class="calc-inputs-col">
+            <h3>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              Operating Line Parameters
+            </h3>
+
+            <form id="estimatorForm" onsubmit="event.preventDefault()">
+              <div class="calc-group">
+                <label for="calcCapacity">Plant Capacity (TPD — Tons Per Day)</label>
+                <input type="number" id="calcCapacity" value="750" min="10" max="2500" step="10">
+              </div>
+
+              <div class="calc-group">
+                <label for="calcPolymer">Polymer Type</label>
+                <select id="calcPolymer">
+                  <option value="PET">Polyester (PET / PES) — ~1200 kg/m³ melt</option>
+                  <option value="PBT">Polybutylene (PBT) — ~1180 kg/m³ melt</option>
+                  <option value="PA6">Polyamide (Nylon 6) — ~1000 kg/m³ melt</option>
+                  <option value="PP">Polypropylene (PP) — ~780 kg/m³ melt</option>
+                </select>
+              </div>
+
+              <div class="calc-group">
+                <label for="calcPositions">Spinning Positions / Take-up Beams</label>
+                <input type="number" id="calcPositions" value="48" min="2" max="256" step="2">
+              </div>
+
+              <div class="calc-group">
+                <label for="calcTemp">Operating Melt Temperature (°C)</label>
+                <input type="number" id="calcTemp" value="285" min="220" max="320" step="5">
+              </div>
+            </form>
+          </div>
+
+          <!-- Result Column -->
+          <div class="calc-results-col">
+            <h3>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00D2FF" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              Calculated Hydraulic Telemetry
+            </h3>
+
+            <div class="calc-results-panel">
+              <div class="calc-metric-grid">
+                <div class="calc-metric-item highlight">
+                  <span class="lbl">Estimated Residence Time</span>
+                  <span class="val" id="calcResTime">6.5 min</span>
+                </div>
+
+                <div class="calc-metric-item">
+                  <span class="lbl">Total Melt Mass Flow</span>
+                  <span class="val" id="calcMassFlow">31,250 kg/hr</span>
+                </div>
+
+                <div class="calc-metric-item">
+                  <span class="lbl">Approx. Pressure Drop (ΔP)</span>
+                  <span class="val" id="calcPressureDrop">41 bar</span>
+                </div>
+
+                <div class="calc-metric-item">
+                  <span class="lbl">Per Position Throughput</span>
+                  <span class="val" id="calcPerPosition">651.04 kg/hr</span>
+                </div>
+              </div>
+
+              <div class="calc-disclaimer">
+                * Note: Preliminary calculation based on standard polymer rheology. Detailed design requires DDS proprietary <strong>PDRTC</strong> software with exact Non-Newtonian shear viscosity curves.
+                <div style="margin-top: 14px;">
+                  <button class="btn btn-primary btn-block" onclick="openQuoteModal()">REQUEST RIGOROUS PDRTC SIMULATION</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 3. INTERNATIONAL CODES & STANDARDS ==================== -->
+    <section class="subpage-section bg-light">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge-pill">COMPLIANCE &amp; SAFETY</span>
+          <h2 class="section-title">INTERNATIONAL DESIGN CODES &amp; STANDARDS</h2>
+          <p class="section-description">
+            All detailed design deliverables strictly comply with global engineering standards, ensuring worldwide regulatory approval and operator safety.
+          </p>
+        </div>
+
+        <div class="discipline-deep-grid">
+          <div class="discipline-card">
+            <h3 class="discipline-title" style="color: var(--accent-orange); margin-bottom: 12px;">ASME &amp; Piping Codes</h3>
+            <p style="color: var(--text-slate-600); font-size: 0.9375rem;">
+              • <strong>ASME B31.3:</strong> Process Piping &amp; High-Pressure Jacketed Lines<br>
+              • <strong>ASME B31.1:</strong> Power Piping &amp; Steam Systems<br>
+              • <strong>ASME Section VIII Div 1 &amp; 2:</strong> Pressure Vessels &amp; Reactors<br>
+              • <strong>ASME Section IX:</strong> Welding Qualifications &amp; Procedures
+            </p>
+          </div>
+
+          <div class="discipline-card">
+            <h3 class="discipline-title" style="color: var(--accent-cyan); margin-bottom: 12px;">Equipment &amp; Tank Standards</h3>
+            <p style="color: var(--text-slate-600); font-size: 0.9375rem;">
+              • <strong>API 650 / API 620:</strong> Welded Chemical &amp; Polymer Storage Tanks<br>
+              • <strong>TEMA Class R &amp; C:</strong> Shell &amp; Tube Heat Exchangers<br>
+              • <strong>API 520 / 521:</strong> Pressure Relief Sizing &amp; Flare Depressurization<br>
+              • <strong>DIN EN 13445:</strong> European Unfired Pressure Vessels
+            </p>
+          </div>
+
+          <div class="discipline-card">
+            <h3 class="discipline-title" style="color: var(--accent-orange); margin-bottom: 12px;">Electrical &amp; Structural Codes</h3>
+            <p style="color: var(--text-slate-600); font-size: 0.9375rem;">
+              • <strong>IEC 60079:</strong> Hazardous Area Electrical Classification<br>
+              • <strong>IS 800 / AISC 360:</strong> Structural Steel Building Frameworks<br>
+              • <strong>IS 456 / ACI 318:</strong> Reinforced Concrete Dynamic Foundations<br>
+              • <strong>IS 1893:</strong> Seismic &amp; Dynamic Earthquake Resistance
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== SUBPAGE CALLOUT BANNER ==================== -->
+    <section class="subpage-section bg-space" style="padding-top: 0;">
+      <div class="container">
+        <div class="subpage-cta-banner">
+          <div class="subpage-cta-content">
+            <h3>Need Exact Stress, Flow or Thermal Calculations?</h3>
+            <p>Our licensed CAESAR II, HYSYS, and PV Elite engineering specialists are available for consultation.</p>
+          </div>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-glow" onclick="openQuoteModal()">REQUEST ENGINEERING RFQ</button>
+            <a href="contact.html" class="btn btn-outline-cyan">CONTACT US DIRECTLY &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== GLOBAL FOOTER ==================== -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5"/>
+                <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.2" stroke="#00D2FF" stroke-width="2"/>
+                <circle cx="18" cy="18" r="3.5" fill="#FF5E14"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-main">DDS</span>
+              <span class="logo-sub">ENGINEERING (INDIA)</span>
+            </div>
+          </a>
+          <p class="footer-bio">
+            DDS Engineering (INDIA) Private Limited is a multi-dimensional detailed-engineering consultancy specializing in Process, Piping, Mechanical, Electrical &amp; Instrumentation Engineering for the global polyester and process industries.
+          </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/dds-engineering-9b109b209/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.7a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/dds_engineering/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Pages &amp; Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About DDS</a></li>
+            <li><a href="services.html">Engineering Services</a></li>
+            <li><a href="specialized.html">Melt Lines &amp; CP Plants</a></li>
+            <li><a href="projects.html">Projects &amp; Case Studies</a></li>
+            <li><a href="resources.html">Software &amp; Tools</a></li>
+            <li><a href="contact.html">Contact &amp; RFQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Services Portfolio</h4>
+          <ul class="footer-nav">
+            <li><a href="services.html#process">Process Simulation (HYSYS)</a></li>
+            <li><a href="services.html#piping">Pipe Stress (CAESAR II)</a></li>
+            <li><a href="services.html#equipment">Pressure Vessels (PV Elite)</a></li>
+            <li><a href="services.html#electrical">E&amp;I Engineering Design</a></li>
+            <li><a href="services.html#civil">Structural Analysis (STAAD)</a></li>
+            <li><a href="services.html#audits">Energy &amp; Safety Audits</a></li>
+            <li><a href="services.html#scanning">3D Laser Scanning</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Corporate Office</h4>
+          <p class="newsletter-desc">Trinnity Business Park, 412, 4th Floor, Madhuvan Circle, New L.P. Savani Road, Adajan, Surat-395009, Gujarat, INDIA</p>
+          <div class="footer-contact-links">
+            <a href="tel:+912613515039" class="f-contact-link">📞 +91 (261) 3515039</a>
+            <a href="tel:+919601402333" class="f-contact-link">📱 +91 9601402333</a>
+            <a href="mailto:business@ddsengineering.in" class="f-contact-link">✉️ business@ddsengineering.in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 DDS Engineering (INDIA) Pvt. Ltd. All Rights Reserved.</p>
+        <p class="footer-tagline">PROCESS &bull; PIPING &bull; MECHANICAL &bull; ELECTRICAL &bull; INSTRUMENTATION</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Request RFQ Modal -->
+  <div class="modal-backdrop" id="quoteModalBackdrop" onclick="closeQuoteModal(event)">
+    <div class="modal-dialog glass-panel-dark">
+      <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
+      <div class="modal-header">
+        <span class="pill-mini orange">ENGINEERING RFQ</span>
+        <h3 class="modal-title">Request Detailed Engineering RFQ</h3>
+        <p class="modal-subtitle">Submit your plant parameters, capacity, and design scope to our principal consultants.</p>
+      </div>
+      <form class="modal-form" onsubmit="handleQuoteSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Neeraj Sharma">
+          </div>
+          <div class="form-group">
+            <label>Company / Organization *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Synthetic Polymer Corp">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Work Email *</label>
+            <input type="email" required class="form-control" placeholder="n.sharma@corp.com">
+          </div>
+          <div class="form-group">
+            <label>Service Area Required</label>
+            <select class="form-control">
+              <option>Melt Polymer Transfer Line Design</option>
+              <option>Complete Plant Detail Engineering</option>
+              <option>Continuous Polymerisation (CP) Plant</option>
+              <option>Texturizing / Conning Oil Plant</option>
+              <option>Pipe Stress Analysis &amp; 3D Modeling</option>
+              <option>Energy / Safety Audit &amp; Debottlenecking</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Scope / Operating Parameters (TPD, Temperature, Fluid) *</label>
+          <textarea rows="3" required class="form-control" placeholder="Provide plant capacity, polymer type (PET/POY/FDY/PSF), line layout or timeline..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-glow">SUBMIT ENGINEERING RFQ</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

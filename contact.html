@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us &amp; RFQ | DDS Engineering (INDIA) Pvt. Ltd. | Surat HQ &amp; Global Desks</title>
+  <meta name="description" content="Contact DDS Engineering (INDIA) Pvt. Ltd. for detailed engineering proposals, PDRTC polymer transfer line inquiries, and CP plant consultations. Corporate HQ in Surat, Gujarat.">
+  
+  <!-- Google Fonts: Outfit (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" id="navLogo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.18" stroke="#00D2FF" stroke-width="2"/>
+            <circle cx="18" cy="18" r="3.5" fill="#FF5E14"/>
+            <path d="M18 2V8M3 10.5L8 13.5M33 10.5L28 13.5M3 25.5L8 22.5M33 25.5L28 22.5M18 34V28" stroke="#FF5E14" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">DDS</span>
+          <span class="logo-sub">ENGINEERING</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+          <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+          <li><a href="services.html" class="nav-link" id="navServices">Services</a></li>
+          <li><a href="specialized.html" class="nav-link" id="navSpecialized">Specialized</a></li>
+          <li><a href="projects.html" class="nav-link" id="navProjects">Projects</a></li>
+          <li><a href="resources.html" class="nav-link" id="navResources">Resources</a></li>
+          <li><a href="contact.html" class="nav-link active" id="navContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="header-actions">
+        <button class="btn btn-primary btn-glow" id="btnRequestQuoteHeader" onclick="openQuoteModal()">
+          Request RFQ
+          <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="logo-text">
+        <span class="logo-main">DDS</span>
+        <span class="logo-sub">ENGINEERING (INDIA)</span>
+      </div>
+      <button class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link" onclick="closeDrawer()">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link" onclick="closeDrawer()">About Company</a></li>
+      <li><a href="services.html" class="mobile-nav-link" onclick="closeDrawer()">Engineering Services</a></li>
+      <li><a href="specialized.html" class="mobile-nav-link" onclick="closeDrawer()">Specialized &amp; Melt Lines</a></li>
+      <li><a href="projects.html" class="mobile-nav-link" onclick="closeDrawer()">Featured Projects</a></li>
+      <li><a href="resources.html" class="mobile-nav-link" onclick="closeDrawer()">Software &amp; Tools</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" onclick="closeDrawer()">Contact Us</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <button class="btn btn-primary btn-block" onclick="closeDrawer(); openQuoteModal();">Request Engineering RFQ</button>
+      <div class="drawer-contact-info">
+        <p>📞 +91 (261) 3515039 / +91 9601402333</p>
+        <p>✉️ business@ddsengineering.in</p>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+  <main>
+    <!-- ==================== SUBPAGE HERO BANNER ==================== -->
+    <section class="page-hero-banner">
+      <div class="container page-hero-container">
+        <div class="page-breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">Contact Us</span>
+        </div>
+        <span class="section-badge-pill orange">DIRECT CONSULTATION</span>
+        <h1 class="page-hero-title">START YOUR DETAILED ENGINEERING CONSULTATION</h1>
+        <p class="page-hero-desc">
+          Connect directly with DDS Engineering directors and principal technical authorities in Surat, Gujarat (India) or our European liaison desk in Germany.
+        </p>
+
+        <div class="page-hero-metrics">
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot green"></span>
+            <span>Response Time: <strong>&lt; 24 Hours</strong></span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot orange"></span>
+            <span>Direct Line: <strong>+91 (261) 3515039</strong></span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot cyan"></span>
+            <span>Email: <strong>business@ddsengineering.in</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 1. CONTACT FORM & INFO GRID ==================== -->
+    <section class="contact-section light-section" id="contact" style="padding-top: 60px;">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Left: Contact Form -->
+          <div class="contact-form-card">
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--text-slate-900); margin-bottom: 8px;">Submit Engineering Inquiry / RFQ</h3>
+            <p style="color: var(--text-slate-600); font-size: 0.9375rem; margin-bottom: 24px;">
+              Provide your plant parameters, capacity, and design scope. Our principal consultants will review your technical requirements.
+            </p>
+
+            <form id="mainContactForm" onsubmit="handleContactSubmit(event)">
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="contactName">Full Name *</label>
+                  <input type="text" id="contactName" name="name" required placeholder="e.g. Rajesh Sharma" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="contactCompany">Company Name *</label>
+                  <input type="text" id="contactCompany" name="company" required placeholder="e.g. ABC Textiles Ltd." class="form-control">
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="contactEmail">Corporate Email *</label>
+                  <input type="email" id="contactEmail" name="email" required placeholder="e.g. r.sharma@abctextiles.com" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="contactPhone">Phone / Mobile *</label>
+                  <input type="tel" id="contactPhone" name="phone" required placeholder="e.g. +91 98765 43210" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contactService">Engineering Service Required</label>
+                <select id="contactService" name="service" class="form-control">
+                  <option value="melt-transfer">Melt Polymer Transfer Line Design (PDRTC)</option>
+                  <option value="detail-design">Complete Detail Engineering (Piping, Process, E&amp;I)</option>
+                  <option value="cp-plant">Continuous Polymerisation (CP) Plant Design</option>
+                  <option value="conning-oil">Texturizing / Conning Oil Plant</option>
+                  <option value="stress-analysis">CAESAR II Pipe Stress &amp; 3D Plant Modeling</option>
+                  <option value="energy-audit">Energy, Safety &amp; Debottlenecking Audits</option>
+                  <option value="project-mgmt">Project Management &amp; Commissioning Supervision</option>
+                  <option value="other">Other Technical Consultancy</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage">Project Scope &amp; Operating Parameters *</label>
+                <textarea id="contactMessage" name="message" rows="4" required placeholder="Specify capacity (TPD), fluid temperature, plant location, and timeline requirements..." class="form-control"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-glow" id="btnSubmitContact">
+                SUBMIT ENGINEERING INQUIRY
+                <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Right: Direct Contact Details & Map Card -->
+          <div class="contact-info-card">
+            <div class="info-items">
+              <!-- Item 1: Surat HQ -->
+              <div class="info-item">
+                <div class="info-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#FF5E14" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="info-title">Corporate Headquarters</h4>
+                  <p class="info-detail">
+                    <strong>DDS Engineering (INDIA) Private Limited</strong><br>
+                    Trinnity Business Park, 412, 4th Floor,<br>
+                    Madhuvan Circle, New L.P. Savani Road, Adajan,<br>
+                    Surat - 395009, Gujarat, INDIA
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2: Telephone -->
+              <div class="info-item">
+                <div class="info-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#FF5E14" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="info-title">Direct Telephone &amp; Mobile</h4>
+                  <p class="info-detail">
+                    <a href="tel:+912613515039" class="phone-link">+91 (261) 3515039 (Office)</a><br>
+                    <a href="tel:+919601402333" class="phone-link">+91 9601402333 (Director Direct)</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 3: Email -->
+              <div class="info-item">
+                <div class="info-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#FF5E14" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="info-title">Consultancy Inquiries</h4>
+                  <p class="info-detail">
+                    <a href="mailto:business@ddsengineering.in" class="email-link">business@ddsengineering.in</a><br>
+                    <a href="mailto:jiten@ddsengineering.in" class="email-link">jiten@ddsengineering.in</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 4: German Base -->
+              <div class="info-item">
+                <div class="info-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="info-title">European Technical Desk (Germany)</h4>
+                  <p class="info-detail">
+                    <strong>Girma Makonnen</strong> (Technical Expert)<br>
+                    Continuous Polymerisation &amp; International Projects Liaison
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Radar Geo Map Widget -->
+            <div class="mini-map-preview">
+              <div class="map-overlay-badge">
+                <span class="pulse-dot orange"></span> SURAT, GUJARAT &bull; LAT 21.1702° N, 72.8311° E
+              </div>
+              <div class="radar-scan-line"></div>
+              <svg viewBox="0 0 400 160" class="mini-map-svg">
+                <rect width="100%" height="100%" fill="#0F172A"/>
+                <circle cx="200" cy="80" r="40" fill="none" stroke="#334155" stroke-width="1"/>
+                <circle cx="200" cy="80" r="70" fill="none" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+                <line x1="200" y1="0" x2="200" y2="160" stroke="#1E293B"/>
+                <line x1="0" y1="80" x2="400" y2="80" stroke="#1E293B"/>
+                <circle cx="200" cy="80" r="8" fill="#FF5E14" fill-opacity="0.3" class="radar-wave"/>
+                <circle cx="200" cy="80" r="4" fill="#FF5E14"/>
+                <text x="215" y="84" fill="#FFFFFF" font-size="10" font-family="Plus Jakarta Sans" font-weight="600">Surat HQ &bull; Trinnity Business Park</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 2. FAQ ACCORDION SECTION ==================== -->
+    <section class="subpage-section bg-dark">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge-pill cyan">CLIENT INQUIRIES</span>
+          <h2 class="section-title text-white">FREQUENTLY ASKED QUESTIONS</h2>
+          <p class="section-description text-gray">
+            Common questions regarding our engineering scope, deliverables, turnaround times, and field capabilities.
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <!-- FAQ 1 -->
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>What information is needed to initiate a Polymer Transfer Line RFQ?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              To size and quote a Melt Polymer Transfer Line, we typically need: (1) Total plant capacity in TPD, (2) Polymer type (PET, POY, FDY, PSF, PBT, PA6) and target IV, (3) Operating temperature and design pressure, (4) Number of spinning positions/take-up beams, and (5) Preliminary plot plan or building geometry.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How does DDS ensure uniform residence time across dozens of spinning positions?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              DDS utilizes our proprietary <strong>Pressure Drop &amp; Residence Time Calculation (PDRTC)</strong> software suite. We compute the exact non-Newtonian polymer rheology, shear rate distribution, and hydraulic head loss across every individual branch to ensure balanced residence time (variance &lt;0.5%) and eliminate IV discrepancy.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What is the typical turnaround time for a detailed engineering proposal?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Upon receiving your initial project parameters and technical scope, our principal consultants provide a comprehensive technical approach and proposal within <strong>24 to 48 hours</strong>.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Does DDS provide on-site erection supervision and commissioning support?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. DDS provides seasoned site managers and discipline leads who oversee mechanical equipment positioning, high-pressure piping alignment, hydrostatic testing, pre-commissioning chemical flushes, and seamless plant start-ups until on-spec polymer is achieved.
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can DDS revamp or debottleneck existing operating continuous polymerization lines?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Absolutely. We specialize in brownfield revamps, 3D terrestrial laser scanning to capture as-built point clouds, thermal balancing of HTM loops, polymer cooler retrofits (such as SASA Turkey), and capacity expansions with minimal shutdown duration.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== GLOBAL FOOTER ==================== -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5"/>
+                <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.2" stroke="#00D2FF" stroke-width="2"/>
+                <circle cx="18" cy="18" r="3.5" fill="#FF5E14"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-main">DDS</span>
+              <span class="logo-sub">ENGINEERING (INDIA)</span>
+            </div>
+          </a>
+          <p class="footer-bio">
+            DDS Engineering (INDIA) Private Limited is a multi-dimensional detailed-engineering consultancy specializing in Process, Piping, Mechanical, Electrical &amp; Instrumentation Engineering for the global polyester and process industries.
+          </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/dds-engineering-9b109b209/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.7a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/dds_engineering/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Pages &amp; Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About DDS</a></li>
+            <li><a href="services.html">Engineering Services</a></li>
+            <li><a href="specialized.html">Melt Lines &amp; CP Plants</a></li>
+            <li><a href="projects.html">Projects &amp; Case Studies</a></li>
+            <li><a href="resources.html">Software &amp; Tools</a></li>
+            <li><a href="contact.html">Contact &amp; RFQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Services Portfolio</h4>
+          <ul class="footer-nav">
+            <li><a href="services.html#process">Process Simulation (HYSYS)</a></li>
+            <li><a href="services.html#piping">Pipe Stress (CAESAR II)</a></li>
+            <li><a href="services.html#equipment">Pressure Vessels (PV Elite)</a></li>
+            <li><a href="services.html#electrical">E&amp;I Engineering Design</a></li>
+            <li><a href="services.html#civil">Structural Analysis (STAAD)</a></li>
+            <li><a href="services.html#audits">Energy &amp; Safety Audits</a></li>
+            <li><a href="services.html#scanning">3D Laser Scanning</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Corporate Office</h4>
+          <p class="newsletter-desc">Trinnity Business Park, 412, 4th Floor, Madhuvan Circle, New L.P. Savani Road, Adajan, Surat-395009, Gujarat, INDIA</p>
+          <div class="footer-contact-links">
+            <a href="tel:+912613515039" class="f-contact-link">📞 +91 (261) 3515039</a>
+            <a href="tel:+919601402333" class="f-contact-link">📱 +91 9601402333</a>
+            <a href="mailto:business@ddsengineering.in" class="f-contact-link">✉️ business@ddsengineering.in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 DDS Engineering (INDIA) Pvt. Ltd. All Rights Reserved.</p>
+        <p class="footer-tagline">PROCESS &bull; PIPING &bull; MECHANICAL &bull; ELECTRICAL &bull; INSTRUMENTATION</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Request RFQ Modal -->
+  <div class="modal-backdrop" id="quoteModalBackdrop" onclick="closeQuoteModal(event)">
+    <div class="modal-dialog glass-panel-dark">
+      <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
+      <div class="modal-header">
+        <span class="pill-mini orange">ENGINEERING RFQ</span>
+        <h3 class="modal-title">Request Detailed Engineering RFQ</h3>
+        <p class="modal-subtitle">Submit your plant parameters, capacity, and design scope to our principal consultants.</p>
+      </div>
+      <form class="modal-form" onsubmit="handleQuoteSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Neeraj Sharma">
+          </div>
+          <div class="form-group">
+            <label>Company / Organization *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Synthetic Polymer Corp">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Work Email *</label>
+            <input type="email" required class="form-control" placeholder="n.sharma@corp.com">
+          </div>
+          <div class="form-group">
+            <label>Service Area Required</label>
+            <select class="form-control">
+              <option>Melt Polymer Transfer Line Design</option>
+              <option>Complete Plant Detail Engineering</option>
+              <option>Continuous Polymerisation (CP) Plant</option>
+              <option>Texturizing / Conning Oil Plant</option>
+              <option>Pipe Stress Analysis &amp; 3D Modeling</option>
+              <option>Energy / Safety Audit &amp; Debottlenecking</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Scope / Operating Parameters (TPD, Temperature, Fluid) *</label>
+          <textarea rows="3" required class="form-control" placeholder="Provide plant capacity, polymer type (PET/POY/FDY/PSF), line layout or timeline..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-glow">SUBMIT ENGINEERING RFQ</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

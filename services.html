@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Services | DDS Engineering (INDIA) Pvt. Ltd. | Process, Piping, E&amp;I</title>
+  <meta name="description" content="Explore DDS Engineering's multidisciplinary consultancy: Process Simulation (HYSYS), Piping Stress (CAESAR II), Mechanical Equipment (PV Elite), E&amp;I Design, Civil, Field PM, and 3D Laser Scanning.">
+  
+  <!-- Google Fonts: Outfit (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" id="navLogo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.18" stroke="#00D2FF" stroke-width="2"/>
+            <circle cx="18" cy="18" r="3.5" fill="#FF5E14"/>
+            <path d="M18 2V8M3 10.5L8 13.5M33 10.5L28 13.5M3 25.5L8 22.5M33 25.5L28 22.5M18 34V28" stroke="#FF5E14" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">DDS</span>
+          <span class="logo-sub">ENGINEERING</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+          <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+          <li><a href="services.html" class="nav-link active" id="navServices">Services</a></li>
+          <li><a href="specialized.html" class="nav-link" id="navSpecialized">Specialized</a></li>
+          <li><a href="projects.html" class="nav-link" id="navProjects">Projects</a></li>
+          <li><a href="resources.html" class="nav-link" id="navResources">Resources</a></li>
+          <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="header-actions">
+        <button class="btn btn-primary btn-glow" id="btnRequestQuoteHeader" onclick="openQuoteModal()">
+          Request RFQ
+          <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="logo-text">
+        <span class="logo-main">DDS</span>
+        <span class="logo-sub">ENGINEERING (INDIA)</span>
+      </div>
+      <button class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link" onclick="closeDrawer()">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link" onclick="closeDrawer()">About Company</a></li>
+      <li><a href="services.html" class="mobile-nav-link" onclick="closeDrawer()">Engineering Services</a></li>
+      <li><a href="specialized.html" class="mobile-nav-link" onclick="closeDrawer()">Specialized &amp; Melt Lines</a></li>
+      <li><a href="projects.html" class="mobile-nav-link" onclick="closeDrawer()">Featured Projects</a></li>
+      <li><a href="resources.html" class="mobile-nav-link" onclick="closeDrawer()">Software &amp; Tools</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" onclick="closeDrawer()">Contact Us</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <button class="btn btn-primary btn-block" onclick="closeDrawer(); openQuoteModal();">Request Engineering RFQ</button>
+      <div class="drawer-contact-info">
+        <p>📞 +91 (261) 3515039 / +91 9601402333</p>
+        <p>✉️ business@ddsengineering.in</p>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+  <main>
+    <!-- ==================== SUBPAGE HERO BANNER ==================== -->
+    <section class="page-hero-banner">
+      <div class="container page-hero-container">
+        <div class="page-breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <span class="current">Engineering Services</span>
+        </div>
+        <span class="section-badge-pill orange">MULTIDISCIPLINARY CAPABILITY</span>
+        <h1 class="page-hero-title">DETAILED ENGINEERING &amp; CONSULTANCY</h1>
+        <p class="page-hero-desc">
+          Comprehensive, turnkey plant engineering services across <strong>Process, Piping Stress, Mechanical Vessels, Electrical, Instrumentation, Civil Structures, Project Management, and Plant Audits</strong>.
+        </p>
+
+        <div class="page-hero-metrics">
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot orange"></span>
+            <span><strong>8</strong> Core Engineering Disciplines</span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot cyan"></span>
+            <span><strong>100%</strong> In-House 3D CAD &amp; Stress Modeling</span>
+          </div>
+          <div class="page-hero-metric-item">
+            <span class="pulse-dot green"></span>
+            <span>Conception to <strong>Start-Up &amp; Commissioning</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== 1. DISCIPLINE BREAKDOWNS ==================== -->
+    <section class="subpage-section bg-dark">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge-pill cyan">COMPLETE LIFECYCLE CAPABILITY</span>
+          <h2 class="section-title text-white">DISCIPLINE PORTFOLIO &amp; DELIVERABLES</h2>
+          <p class="section-description text-gray">
+            Click on any service area to explore detailed deliverables, technical software, and project applications.
+          </p>
+        </div>
+
+        <div class="discipline-deep-grid">
+          <!-- 1. Process Engineering -->
+          <div class="discipline-card" id="process">
+            <div>
+              <div class="discipline-header">
+                <div class="discipline-icon-sq">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#FF5E14" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="discipline-title">Process Engineering &amp; Simulation</h3>
+                  <span class="pill-mini orange">HYSYS &bull; PRO-II &bull; HTRI</span>
+                </div>
+              </div>
+              <div class="discipline-body">
+                <p>
+                  Rigorous chemical engineering calculations, thermodynamic phase equilibrium, heat &amp; material balances (HMB), and process flow diagram generation for continuous polymerization, esterification, and utility plants.
+                </p>
+                <ul class="discipline-deliverables">
+                  <li>Process Flow Diagrams (PFD) &amp; Heat/Mass Balances</li>
+                  <li>Piping &amp; Instrumentation Diagrams (P&amp;ID) with interlocks</li>
+                  <li>Equipment Process Data Sheets (Reactors, Columns, Pumps)</li>
+                  <li>HTRI rigorous thermal sizing of Shell &amp; Tube HTM exchangers</li>
+                  <li>Safety Relief Valve (PSV) sizing &amp; Flare relief networks</li>
+                </ul>
+              </div>
+            </div>
+            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('detail')">REQUEST PROCESS PROPOSAL</button>
+          </div>
+
+          <!-- 2. Piping & Stress Analysis -->
+          <div class="discipline-card" id="piping">
+            <div>
+              <div class="discipline-header">
+                <div class="discipline-icon-sq cyan">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2">
+                    <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="discipline-title">Piping Design &amp; Stress Analysis</h3>
+                  <span class="pill-mini cyan">CAESAR II &bull; PLANT 3D &bull; PDRTC</span>
+                </div>
+              </div>
+              <div class="discipline-body">
+                <p>
+                  India's foremost expertise in high-temperature (>280°C), high-pressure (>150 bar) jacketed polymer piping networks. Comprehensive static &amp; dynamic stress calculations to eliminate nozzle overloading and thermal fatigue.
+                </p>
+                <ul class="discipline-deliverables">
+                  <li>CAESAR II thermal flexibility &amp; pipe stress analysis</li>
+                  <li>Proprietary PDRTC polymer residence time optimization</li>
+                  <li>3D intelligent piping layout, routing &amp; clash detection</li>
+                  <li>Fabrication isometrics with complete Bill of Materials (BOM)</li>
+                  <li>Spring hanger, guide, anchor, and support design</li>
+                </ul>
+              </div>
+            </div>
+            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('specialized')">REQUEST PIPING PROPOSAL</button>
+          </div>
+
+          <!-- 3. Mechanical Static & Rotating -->
+          <div class="discipline-card" id="equipment">
+            <div>
+              <div class="discipline-header">
+                <div class="discipline-icon-sq">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#FF5E14" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="discipline-title">Mechanical Static &amp; Rotating Equipment</h3>
+                  <span class="pill-mini orange">PV ELITE &bull; ASME SEC VIII &bull; TEMA</span>
+                </div>
+              </div>
+              <div class="discipline-body">
+                <p>
+                  Mechanical sizing and structural design of heavy chemical equipment including polymer reactors, distillation columns, storage tanks, high-pressure filters, and continuous polymer pumps.
+                </p>
+                <ul class="discipline-deliverables">
+                  <li>ASME Section VIII Div 1 &amp; 2 pressure vessel calculations</li>
+                  <li>Distillation &amp; fractionation column mechanical design</li>
+                  <li>Agitator drive, mechanical seal, and shaft design</li>
+                  <li>Storage tank design per API 650 / IS 803</li>
+                  <li>Vendor fabrication drawing review &amp; QA/QC validation</li>
+                </ul>
+              </div>
+            </div>
+            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('detail')">REQUEST MECHANICAL PROPOSAL</button>
+          </div>
+
+          <!-- 4. Electrical & Instrumentation -->
+          <div class="discipline-card" id="electrical">
+            <div>
+              <div class="discipline-header">
+                <div class="discipline-icon-sq cyan">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="discipline-title">Electrical &amp; Instrumentation (E&amp;I)</h3>
+                  <span class="pill-mini cyan">DCS &bull; PLC &bull; HT/LT SUBSTATION</span>
+                </div>
+              </div>
+              <div class="discipline-body">
+                <p>
+                  Complete electrical power distribution and automation architecture. We engineer seamless control systems, DCS/PLC network topologies, hazardous area safety, and instrument specifications.
+                </p>
+                <ul class="discipline-deliverables">
+                  <li>Single Line Diagrams (SLD), Substation &amp; Transformer sizing</li>
+                  <li>Hazardous Area Classification (Zone 0, 1, 2) layouts</li>
+                  <li>Instrument index, datasheets, loop drawings &amp; hook-ups</li>
+                  <li>DCS/PLC I/O allocation, architecture &amp; interlock logic</li>
+                  <li>Cable tray routing, earthing &amp; lightning protection layouts</li>
+                </ul>
+              </div>
+            </div>
+            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('detail')">REQUEST E&amp;I PROPOSAL</button>
+          </div>
+
+          <!-- 5. Civil & Structural -->
+          <div class="discipline-card" id="civil">
+            <div>
+              <div class="discipline-header">
+                <div class="discipline-icon-sq">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#FF5E14" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="discipline-title">Civil &amp; Structural Engineering</h3>
+                  <span class="pill-mini orange">STAAD.PRO &bull; IS / AISC CODES</span>
+                </div>
+              </div>
+              <div class="discipline-body">
+                <p>
+                  Industrial civil and structural analysis engineered for heavy process plants. We design multi-tier technological structures, dynamic equipment foundations, piperacks, and deep RCC pedestals.
+                </p>
+                <ul class="discipline-deliverables">
+                  <li>STAAD.Pro 3D finite element structural steel modeling</li>
+                  <li>Multi-story continuous polymerization plant frameworks</li>
+                  <li>Vibration-damped rotating machine foundations</li>
+                  <li>Industrial main piperacks, sleepers &amp; trestles</li>
+                  <li>Architectural plant layout, roads, trenches &amp; drainage</li>
+                </ul>
+              </div>
+            </div>
+            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('detail')">REQUEST CIVIL PROPOSAL</button>
+          </div>
+
+          <!-- 6. Project Management & Field Services -->
+          <div class="discipline-card" id="field">
+            <div>
+              <div class="discipline-header">
+                <div class="discipline-icon-sq cyan">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="discipline-title">Project Management &amp; Commissioning</h3>
+                  <span class="pill-mini cyan">SITE MANAGEMENT &bull; QA/QC &bull; START-UP</span>
+                </div>
+              </div>
+              <div class="discipline-body">
+                <p>
+                  Turnkey site oversight from Capex budget formulation and procurement expediting to on-site mechanical erection supervision, pre-commissioning flushes, and seamless zero-defect plant start-ups.
+                </p>
+                <ul class="discipline-deliverables">
+                  <li>Detailed project master schedule &amp; critical path monitoring</li>
+                  <li>Procurement support, vendor qualification &amp; bid tabulations</li>
+                  <li>Site mechanical erection &amp; piping alignment supervision</li>
+                  <li>Hydrostatic / pneumatic test witnessing &amp; QA/QC signoff</li>
+                  <li>Pre-commissioning chemical flushes &amp; trial run leadership</li>
+                </ul>
+              </div>
+            </div>
+            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('project')">REQUEST PM PROPOSAL</button>
+          </div>
+
+          <!-- 7. Industrial Services & Audits -->
+          <div class="discipline-card" id="audits">
+            <div>
+              <div class="discipline-header">
+                <div class="discipline-icon-sq">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#FF5E14" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="discipline-title">Industrial Services &amp; Plant Audits</h3>
+                  <span class="pill-mini orange">ENERGY AUDITS &bull; DEBOTTLENECKING</span>
+                </div>
+              </div>
+              <div class="discipline-body">
+                <p>
+                  Applying 20+ years of operational plant leadership to inspect running polymer manufacturing facilities, cut thermal energy waste, balance utility loads, and unlock hidden plant throughput.
+                </p>
+                <ul class="discipline-deliverables">
+                  <li>Comprehensive Energy &amp; Thermal Balance Audits</li>
+                  <li>Process parameter tuning to eliminate spinning breaks</li>
+                  <li>Debottlenecking studies to increase daily TPD capacity</li>
+                  <li>Waste reduction &amp; polymer recycling feasibility</li>
+                  <li>Plant safety audits &amp; operational compliance review</li>
+                </ul>
+              </div>
+            </div>
+            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('industrial')">REQUEST AUDIT PROPOSAL</button>
+          </div>
+
+          <!-- 8. 3D Laser Scanning & Reverse Engineering -->
+          <div class="discipline-card" id="scanning">
+            <div>
+              <div class="discipline-header">
+                <div class="discipline-icon-sq cyan">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#00D2FF" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="discipline-title">3D Laser Scanning &amp; Reverse Engineering</h3>
+                  <span class="pill-mini cyan">POINT CLOUDS &bull; AS-BUILT 3D MODELING</span>
+                </div>
+              </div>
+              <div class="discipline-body">
+                <p>
+                  High-precision terrestrial 3D LiDAR laser scanning of existing brownfield plants. We convert dense point clouds into intelligent 3D CAD models for zero-clash brownfield tie-ins.
+                </p>
+                <ul class="discipline-deliverables">
+                  <li>Millimeter-accurate 3D terrestrial laser plant capture</li>
+                  <li>Point cloud conversion to AutoCAD Plant 3D models</li>
+                  <li>Brownfield revamp tie-in verification &amp; clash elimination</li>
+                  <li>As-built P&amp;ID drafting and validation</li>
+                  <li>Reverse engineering of obsolete equipment components</li>
+                </ul>
+              </div>
+            </div>
+            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('detail')">REQUEST 3D SCAN PROPOSAL</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== SUBPAGE CALLOUT BANNER ==================== -->
+    <section class="subpage-section bg-space" style="padding-top: 0;">
+      <div class="container">
+        <div class="subpage-cta-banner">
+          <div class="subpage-cta-content">
+            <h3>Need a Custom Multidisciplinary Engineering Scope?</h3>
+            <p>We tailor our engineering scope from single-discipline stress analysis to full-scale EPCm consultancy packages.</p>
+          </div>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-glow" onclick="openQuoteModal()">REQUEST ENGINEERING RFQ</button>
+            <a href="contact.html" class="btn btn-outline-cyan">CONSULT AN EXPERT &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== GLOBAL FOOTER ==================== -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5"/>
+                <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.2" stroke="#00D2FF" stroke-width="2"/>
+                <circle cx="18" cy="18" r="3.5" fill="#FF5E14"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-main">DDS</span>
+              <span class="logo-sub">ENGINEERING (INDIA)</span>
+            </div>
+          </a>
+          <p class="footer-bio">
+            DDS Engineering (INDIA) Private Limited is a multi-dimensional detailed-engineering consultancy specializing in Process, Piping, Mechanical, Electrical &amp; Instrumentation Engineering for the global polyester and process industries.
+          </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/dds-engineering-9b109b209/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.7a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/dds_engineering/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Pages &amp; Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About DDS</a></li>
+            <li><a href="services.html">Engineering Services</a></li>
+            <li><a href="specialized.html">Melt Lines &amp; CP Plants</a></li>
+            <li><a href="projects.html">Projects &amp; Case Studies</a></li>
+            <li><a href="resources.html">Software &amp; Tools</a></li>
+            <li><a href="contact.html">Contact &amp; RFQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Services Portfolio</h4>
+          <ul class="footer-nav">
+            <li><a href="services.html#process">Process Simulation (HYSYS)</a></li>
+            <li><a href="services.html#piping">Pipe Stress (CAESAR II)</a></li>
+            <li><a href="services.html#equipment">Pressure Vessels (PV Elite)</a></li>
+            <li><a href="services.html#electrical">E&amp;I Engineering Design</a></li>
+            <li><a href="services.html#civil">Structural Analysis (STAAD)</a></li>
+            <li><a href="services.html#audits">Energy &amp; Safety Audits</a></li>
+            <li><a href="services.html#scanning">3D Laser Scanning</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Corporate Office</h4>
+          <p class="newsletter-desc">Trinnity Business Park, 412, 4th Floor, Madhuvan Circle, New L.P. Savani Road, Adajan, Surat-395009, Gujarat, INDIA</p>
+          <div class="footer-contact-links">
+            <a href="tel:+912613515039" class="f-contact-link">📞 +91 (261) 3515039</a>
+            <a href="tel:+919601402333" class="f-contact-link">📱 +91 9601402333</a>
+            <a href="mailto:business@ddsengineering.in" class="f-contact-link">✉️ business@ddsengineering.in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 DDS Engineering (INDIA) Pvt. Ltd. All Rights Reserved.</p>
+        <p class="footer-tagline">PROCESS &bull; PIPING &bull; MECHANICAL &bull; ELECTRICAL &bull; INSTRUMENTATION</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Request RFQ Modal -->
+  <div class="modal-backdrop" id="quoteModalBackdrop" onclick="closeQuoteModal(event)">
+    <div class="modal-dialog glass-panel-dark">
+      <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
+      <div class="modal-header">
+        <span class="pill-mini orange">ENGINEERING RFQ</span>
+        <h3 class="modal-title">Request Detailed Engineering RFQ</h3>
+        <p class="modal-subtitle">Submit your plant parameters, capacity, and design scope to our principal consultants.</p>
+      </div>
+      <form class="modal-form" onsubmit="handleQuoteSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Neeraj Sharma">
+          </div>
+          <div class="form-group">
+            <label>Company / Organization *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Synthetic Polymer Corp">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Work Email *</label>
+            <input type="email" required class="form-control" placeholder="n.sharma@corp.com">
+          </div>
+          <div class="form-group">
+            <label>Service Area Required</label>
+            <select class="form-control">
+              <option>Melt Polymer Transfer Line Design</option>
+              <option>Complete Plant Detail Engineering</option>
+              <option>Continuous Polymerisation (CP) Plant</option>
+              <option>Texturizing / Conning Oil Plant</option>
+              <option>Pipe Stress Analysis &amp; 3D Modeling</option>
+              <option>Energy / Safety Audit &amp; Debottlenecking</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Scope / Operating Parameters (TPD, Temperature, Fluid) *</label>
+          <textarea rows="3" required class="form-control" placeholder="Provide plant capacity, polymer type (PET/POY/FDY/PSF), line layout or timeline..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-glow">SUBMIT ENGINEERING RFQ</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
