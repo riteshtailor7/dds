@@ -143,7 +143,7 @@ function initUniversalScrollProgress() {
 
           rightCol.style.transform = `translate3d(${rightOffset}px, 0, 0) scale(${0.88 + (easeP * 0.12)})`;
           rightCol.style.opacity = easeP;
-        } else if (!sec.querySelector('#realLeafletMap') && !sec.classList.contains('global-map-card')) {
+        } else if (!sec.querySelector('.interactive-map-wrapper') && !sec.classList.contains('global-map-card')) {
           const secContainer = sec.querySelector('.container') || sec;
           const yOffset = 50 * (1 - easeP);
           secContainer.style.transform = `translate3d(0, ${yOffset}px, 0) scale(${0.93 + (easeP * 0.07)})`;

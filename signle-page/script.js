@@ -141,127 +141,62 @@ function initHeroSlider() {
 
 
 
-/* -------------------- 4. REAL INTERACTIVE MAP TELEMETRY (LEAFLET.JS) -------------------- */
+/* -------------------- 4. INTERACTIVE GLOBAL MAP TELEMETRY (SVG VECTOR MAP) -------------------- */
 function initMapTelemetry() {
-  const mapContainer = document.getElementById('realLeafletMap');
-  if (!mapContainer) return;
+  const mapPins = document.querySelectorAll('.map-pin');
+  const tooltip = document.getElementById('mapTooltip');
+  const tooltipCity = document.getElementById('tooltipCity');
+  const tooltipMetrics = document.getElementById('tooltipMetrics');
+  const mapWrapper = document.querySelector('.interactive-map-wrapper');
 
-  if (typeof L === 'undefined') return;
-  if (mapContainer._leaflet_id) return;
+  if (!mapWrapper || !tooltip || !mapPins.length) return;
 
-  const map = L.map('realLeafletMap', {
-    center: [23.5, 65.0],
-    zoom: 4,
-    minZoom: 2,
-    maxZoom: 14,
-    scrollWheelZoom: false
-  });
+  function showTooltip(pin, e) {
+    const city = pin.getAttribute('data-city');
+    const metrics = pin.getAttribute('data-metrics');
+    if (tooltipCity) tooltipCity.textContent = city;
+    if (tooltipMetrics) tooltipMetrics.innerHTML = metrics;
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> &copy; <a href="https://carto.com/" target="_blank">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(map);
+    const parentRect = mapWrapper.getBoundingClientRect();
+    const pinRect = pin.getBoundingClientRect();
 
-  const orangeIcon = L.divIcon({
-    className: 'custom-leaflet-marker orange-marker',
-    html: '<div class="marker-pulse orange-pulse"></div><div class="marker-core orange-core"></div>',
-    iconSize: [26, 26],
-    iconAnchor: [13, 13],
-    popupAnchor: [0, -14]
-  });
+    let clientX = (e && e.clientX) ? e.clientX : (pinRect.left + pinRect.width / 2);
+    let clientY = (e && e.clientY) ? e.clientY : pinRect.top;
 
-  const cyanIcon = L.divIcon({
-    className: 'custom-leaflet-marker cyan-marker',
-    html: '<div class="marker-pulse cyan-pulse"></div><div class="marker-core cyan-core"></div>',
-    iconSize: [22, 22],
-    iconAnchor: [11, 11],
-    popupAnchor: [0, -12]
-  });
+    const tipWidth = tooltip.offsetWidth || 280;
+    const tipHeight = tooltip.offsetHeight || 65;
 
-  const locations = [
-    {
-      city: "Surat, Gujarat (DDS HQ)",
-      coords: [21.1702, 72.8311],
-      metrics: "Corporate HQ &bull; Detailed Design Center &bull; Bhilosa & Garden Silk Mills Projects",
-      type: "hq"
-    },
-    {
-      city: "Silvassa / DNH",
-      coords: [20.2763, 73.0083],
-      metrics: "Polymer Transfer Line Projects &bull; Sanathan, DNH Spinners & Beekaylon",
-      type: "site"
-    },
-    {
-      city: "Dahej & Bharuch",
-      coords: [21.7051, 72.9959],
-      metrics: "750 TPD Sumilon Polyester & Dornier Film Line OSBL/ISBL",
-      type: "site"
-    },
-    {
-      city: "Gaziantep & Adana, Turkey",
-      coords: [37.0662, 37.3833],
-      metrics: "Koza Polyester Melt Lines & SASA Polymer Cooler Addition",
-      type: "site"
-    },
-    {
-      city: "Purwakarta, Indonesia",
-      coords: [-6.5569, 107.4433],
-      metrics: "Indorama Indonesia Polymer Transfer Line Redesign & APF Consulting",
-      type: "site"
-    },
-    {
-      city: "Colombo, Sri Lanka",
-      coords: [6.9271, 79.8612],
-      metrics: "Process Consultancy for Extruder POY Spinners & Texturisers",
-      type: "site"
-    },
-    {
-      city: "Germany Technical Base",
-      coords: [50.1109, 8.6821],
-      metrics: "Girma Makonnen (Technical Head) &bull; European Engineering Liaison",
-      type: "site"
-    }
-  ];
+    let left = clientX - parentRect.left - (tipWidth / 2);
+    let top = clientY - parentRect.top - tipHeight - 14;
 
-  const bounds = L.latLngBounds();
+    left = Math.max(12, Math.min(left, parentRect.width - tipWidth - 12));
+    top = Math.max(10, top);
 
-  locations.forEach(loc => {
-    const markerIcon = loc.type === 'hq' ? orangeIcon : cyanIcon;
-    const marker = L.marker(loc.coords, { icon: markerIcon }).addTo(map);
-
-    const popupHtml = `
-      <strong>📍 ${loc.city}</strong>
-      <p>${loc.metrics}</p>
-    `;
-
-    marker.bindPopup(popupHtml, { closeButton: false });
-
-    marker.on('mouseover', function () {
-      this.openPopup();
-    });
-
-    bounds.extend(loc.coords);
-  });
-
-  map.fitBounds(bounds, { padding: [50, 50] });
-
-  // Invalidate map size when section enters screen to ensure 100% tile rendering
-  setTimeout(() => {
-    map.invalidateSize();
-  }, 300);
-
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          map.invalidateSize();
-          map.fitBounds(bounds, { padding: [50, 50] });
-        }
-      });
-    }, { threshold: 0.1 });
-    observer.observe(mapContainer);
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${top}px`;
+    tooltip.classList.add('visible');
   }
+
+  function hideTooltip() {
+    tooltip.classList.remove('visible');
+  }
+
+  mapPins.forEach(pin => {
+    pin.addEventListener('mouseenter', (e) => showTooltip(pin, e));
+    pin.addEventListener('mousemove', (e) => showTooltip(pin, e));
+    pin.addEventListener('mouseleave', hideTooltip);
+
+    pin.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showTooltip(pin, e);
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.map-pin')) {
+      hideTooltip();
+    }
+  });
 }
 
 /* -------------------- 5. LEADERSHIP TEAM TOGGLE -------------------- */
