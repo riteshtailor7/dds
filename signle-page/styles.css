@@ -2656,6 +2656,40 @@ section:first-of-type::before {
   color: #FFFFFF;
 }
 
+.modal-form select.form-control,
+.modal-dialog select.form-control,
+.glass-panel-dark select.form-control,
+#quoteServiceSelect {
+  background-color: #111A2E !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  cursor: pointer;
+}
+
+.modal-form select.form-control option,
+.modal-dialog select.form-control option,
+.glass-panel-dark select.form-control option,
+#quoteServiceSelect option {
+  background-color: #0B111E !important;
+  color: #FFFFFF !important;
+  padding: 10px 14px;
+}
+
+.modal-form select.form-control option:checked,
+.modal-form select.form-control option:hover,
+.modal-dialog select.form-control option:checked,
+.modal-dialog select.form-control option:hover,
+#quoteServiceSelect option:checked,
+#quoteServiceSelect option:hover {
+  background-color: var(--accent-orange, #FF5E14) !important;
+  color: #FFFFFF !important;
+}
+
+.contact-form-card select.form-control option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
 .modal-form .form-group label {
   color: var(--text-slate-200);
 }

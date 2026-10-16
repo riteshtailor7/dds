@@ -170,7 +170,7 @@
                 </ul>
               </div>
             </div>
-            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('detail')">REQUEST PROCESS PROPOSAL</button>
+            <button class="btn btn-outline-orange btn-block" onclick="openQuoteModal('Process Engineering &amp; Simulation')">REQUEST PROCESS PROPOSAL</button>
           </div>
 
           <!-- 2. Piping & Stress Analysis -->
@@ -200,7 +200,7 @@
                 </ul>
               </div>
             </div>
-            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('specialized')">REQUEST PIPING PROPOSAL</button>
+            <button class="btn btn-outline-orange btn-block" onclick="openQuoteModal('Piping Design &amp; Stress Analysis')">REQUEST PIPING PROPOSAL</button>
           </div>
 
           <!-- 3. Mechanical Static & Rotating -->
@@ -230,7 +230,7 @@
                 </ul>
               </div>
             </div>
-            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('detail')">REQUEST MECHANICAL PROPOSAL</button>
+            <button class="btn btn-outline-orange btn-block" onclick="openQuoteModal('Mechanical Static &amp; Rotating Equipment')">REQUEST MECHANICAL PROPOSAL</button>
           </div>
 
           <!-- 4. Electrical & Instrumentation -->
@@ -260,7 +260,7 @@
                 </ul>
               </div>
             </div>
-            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('detail')">REQUEST E&amp;I PROPOSAL</button>
+            <button class="btn btn-outline-orange btn-block" onclick="openQuoteModal('Electrical &amp; Instrumentation (E&amp;I)')">REQUEST E&amp;I PROPOSAL</button>
           </div>
 
           <!-- 5. Civil & Structural -->
@@ -290,7 +290,7 @@
                 </ul>
               </div>
             </div>
-            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('detail')">REQUEST CIVIL PROPOSAL</button>
+            <button class="btn btn-outline-orange btn-block" onclick="openQuoteModal('Civil &amp; Structural Engineering')">REQUEST CIVIL PROPOSAL</button>
           </div>
 
           <!-- 6. Project Management & Field Services -->
@@ -320,7 +320,7 @@
                 </ul>
               </div>
             </div>
-            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('project')">REQUEST PM PROPOSAL</button>
+            <button class="btn btn-outline-orange btn-block" onclick="openQuoteModal('Project Management &amp; Commissioning')">REQUEST PM PROPOSAL</button>
           </div>
 
           <!-- 7. Industrial Services & Audits -->
@@ -350,7 +350,7 @@
                 </ul>
               </div>
             </div>
-            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('industrial')">REQUEST AUDIT PROPOSAL</button>
+            <button class="btn btn-outline-orange btn-block" onclick="openQuoteModal('Industrial Services &amp; Plant Audits')">REQUEST AUDIT PROPOSAL</button>
           </div>
 
           <!-- 8. 3D Laser Scanning & Reverse Engineering -->
@@ -380,7 +380,7 @@
                 </ul>
               </div>
             </div>
-            <button class="btn btn-outline-orange btn-block" onclick="openServiceModal('detail')">REQUEST 3D SCAN PROPOSAL</button>
+            <button class="btn btn-outline-orange btn-block" onclick="openQuoteModal('3D Laser Scanning &amp; Reverse Engineering')">REQUEST 3D SCAN PROPOSAL</button>
           </div>
         </div>
       </div>
@@ -483,14 +483,14 @@
     </div>
   </footer>
 
-  <!-- Request RFQ Modal -->
+  <!-- Request RFQ / Proposal Modal -->
   <div class="modal-backdrop" id="quoteModalBackdrop" onclick="closeQuoteModal(event)">
     <div class="modal-dialog glass-panel-dark">
       <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
       <div class="modal-header">
-        <span class="pill-mini orange">ENGINEERING RFQ</span>
-        <h3 class="modal-title">Request Detailed Engineering RFQ</h3>
-        <p class="modal-subtitle">Submit your plant parameters, capacity, and design scope to our principal consultants.</p>
+        <span class="pill-mini orange" id="quoteModalBadge">ENGINEERING RFQ</span>
+        <h3 class="modal-title" id="quoteModalTitle">Request Detailed Engineering RFQ</h3>
+        <p class="modal-subtitle" id="quoteModalSubtitle">Submit your plant parameters, capacity, and design scope to our principal consultants.</p>
       </div>
       <form class="modal-form" onsubmit="handleQuoteSubmit(event)">
         <div class="form-row">
@@ -510,13 +510,19 @@
           </div>
           <div class="form-group">
             <label>Service Area Required</label>
-            <select class="form-control">
-              <option>Melt Polymer Transfer Line Design</option>
-              <option>Complete Plant Detail Engineering</option>
-              <option>Continuous Polymerisation (CP) Plant</option>
-              <option>Texturizing / Conning Oil Plant</option>
-              <option>Pipe Stress Analysis &amp; 3D Modeling</option>
-              <option>Energy / Safety Audit &amp; Debottlenecking</option>
+            <select class="form-control" id="quoteServiceSelect">
+              <option value="Process Engineering &amp; Simulation">Process Engineering &amp; Simulation</option>
+              <option value="Piping Design &amp; Stress Analysis">Piping Design &amp; Stress Analysis</option>
+              <option value="Mechanical Static &amp; Rotating Equipment">Mechanical Static &amp; Rotating Equipment</option>
+              <option value="Electrical &amp; Instrumentation (E&amp;I)">Electrical &amp; Instrumentation (E&amp;I)</option>
+              <option value="Civil &amp; Structural Engineering">Civil &amp; Structural Engineering</option>
+              <option value="Project Management &amp; Commissioning">Project Management &amp; Commissioning</option>
+              <option value="Industrial Services &amp; Plant Audits">Industrial Services &amp; Plant Audits</option>
+              <option value="3D Laser Scanning &amp; Reverse Engineering">3D Laser Scanning &amp; Reverse Engineering</option>
+              <option value="Melt Polymer Transfer Line Design">Melt Polymer Transfer Line Design</option>
+              <option value="Complete Plant Detail Engineering">Complete Plant Detail Engineering</option>
+              <option value="Continuous Polymerisation (CP) Plant">Continuous Polymerisation (CP) Plant</option>
+              <option value="Texturizing / Conning Oil Plant">Texturizing / Conning Oil Plant</option>
             </select>
           </div>
         </div>
@@ -526,6 +532,16 @@
         </div>
         <button type="submit" class="btn btn-primary btn-block btn-glow">SUBMIT ENGINEERING RFQ</button>
       </form>
+    </div>
+  </div>
+
+  <!-- Modal: Service / Project Detail Viewer -->
+  <div class="modal-backdrop" id="projectModalBackdrop" onclick="closeProjectModal(event)">
+    <div class="modal-dialog glass-panel-dark modal-large">
+      <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+      <div id="projectModalContent">
+        <!-- Injected via JavaScript -->
+      </div>
     </div>
   </div>
 

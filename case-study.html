@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Case Study | DDS Engineering (INDIA) Pvt. Ltd.</title>
+  <meta name="description" id="pageMetaDesc"
+    content="Comprehensive engineering case study by DDS Engineering (INDIA) Pvt. Ltd., detailing process design, pipe stress modeling, and commissioning.">
+
+  <!-- Google Fonts: Outfit (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" id="navLogo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5"
+              stroke-linejoin="round" />
+            <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.18" stroke="#00D2FF"
+              stroke-width="2" />
+            <circle cx="18" cy="18" r="3.5" fill="#FF5E14" />
+            <path d="M18 2V8M3 10.5L8 13.5M33 10.5L28 13.5M3 25.5L8 22.5M33 25.5L28 22.5M18 34V28" stroke="#FF5E14"
+              stroke-width="1.5" />
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">DDS</span>
+          <span class="logo-sub">ENGINEERING</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" id="navHome">Home</a></li>
+          <li><a href="about.html" class="nav-link" id="navAbout">About Us</a></li>
+          <li><a href="services.html" class="nav-link" id="navServices">Services</a></li>
+          <li><a href="specialized.html" class="nav-link" id="navSpecialized">Specialized</a></li>
+          <li><a href="projects.html" class="nav-link active" id="navProjects">Projects</a></li>
+          <li><a href="resources.html" class="nav-link" id="navResources">Resources</a></li>
+          <li><a href="contact.html" class="nav-link" id="navContact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="header-actions">
+        <button class="btn btn-primary btn-glow" id="btnRequestQuoteHeader" onclick="openQuoteModal()">
+          Request RFQ
+          <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="logo-text">
+        <span class="logo-main">DDS</span>
+        <span class="logo-sub">ENGINEERING (INDIA)</span>
+      </div>
+      <button class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link" onclick="closeDrawer()">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link" onclick="closeDrawer()">About Company</a></li>
+      <li><a href="services.html" class="mobile-nav-link" onclick="closeDrawer()">Engineering Services</a></li>
+      <li><a href="specialized.html" class="mobile-nav-link" onclick="closeDrawer()">Specialized &amp; Melt Lines</a></li>
+      <li><a href="projects.html" class="mobile-nav-link" onclick="closeDrawer()">Featured Projects</a></li>
+      <li><a href="resources.html" class="mobile-nav-link" onclick="closeDrawer()">Software &amp; Tools</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" onclick="closeDrawer()">Contact Us</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <button class="btn btn-primary btn-block" onclick="closeDrawer(); openQuoteModal();">Request Engineering RFQ</button>
+      <div class="drawer-contact-info">
+        <p>📞 +91 (261) 3515039 / +91 9601402333</p>
+        <p>✉️ business@ddsengineering.in</p>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+  <main>
+    <!-- ==================== CASE STUDY HERO BANNER ==================== -->
+    <section class="page-hero-banner" id="caseHeroBanner">
+      <div class="container page-hero-container">
+        <div class="page-breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <a href="projects.html">Projects</a>
+          <span class="sep">/</span>
+          <span class="current" id="caseBreadcrumbTitle">Bhilosa CP4/5 Project</span>
+        </div>
+        <span class="section-badge-pill orange" id="caseHeroBadge">MELT POLYMER TRANSFER LINE</span>
+        <h1 class="page-hero-title" id="caseHeroTitle">Bhilosa Industries — CP4/5 Polymer Transfer Line (1680 TPD)</h1>
+        <p class="page-hero-desc" id="caseHeroDesc">
+          Comprehensive detail engineering and commissioning of high-pressure, high-temperature jacketed melt transfer piping supplying uniform IV direct melt to 48+ spinning take-up beams.
+        </p>
+
+        <!-- Top Metadata Chips -->
+        <div class="case-study-hero-meta" id="caseHeroMeta">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== MAIN CASE STUDY CONTENT ==================== -->
+    <section class="subpage-section bg-space" style="padding-top: 50px;">
+      <div class="container">
+        <div class="case-study-layout">
+
+          <!-- Left Column: Primary Content -->
+          <article class="case-study-main">
+
+            <!-- High-Res Plant Visual & Telemetry Box -->
+            <div class="case-study-media-wrap">
+              <img id="caseMainImage" src="assets/dds_melt_transfer.jpg" alt="Case Study Facility" class="case-study-hero-img">
+              <div class="case-study-img-overlay">
+                <div>
+                  <span class="pill-mini orange" id="caseOverlayTag">COMMISSIONED FACILITY</span>
+                  <h3 style="color: #FFFFFF; font-size: 1.15rem; margin-top: 6px;" id="caseOverlayCaption">Silvassa Integrated Manufacturing Complex</h3>
+                </div>
+                <div class="case-study-telemetry-badge">
+                  <div>
+                    <span class="telemetry-lbl">Primary Metric</span>
+                    <span class="telemetry-val" id="caseOverlayMetric">1680 TPD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Executive Summary -->
+            <div class="case-block-card">
+              <h2 class="case-block-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#FF5E14" stroke-width="2.2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Executive Project Overview
+              </h2>
+              <div id="caseOverviewBody">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+
+            <!-- The Engineering Challenge -->
+            <div class="case-block-card case-challenge-box">
+              <h2 class="case-block-title" style="color: #FF7733;">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#FF5E14" stroke-width="2.2">
+                  <polygon points="12 2 22 20 2 20 12 2"></polygon>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                The Engineering Challenge
+              </h2>
+              <div id="caseChallengeBody">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+
+            <!-- DDS Engineering Solution -->
+            <div class="case-block-card case-solution-box">
+              <h2 class="case-block-title" style="color: #00D2FF;">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00D2FF" stroke-width="2.2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                DDS Technical Methodology &amp; Engineering Solution
+              </h2>
+              <div id="caseSolutionBody">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+
+            <!-- Technical Specifications Table -->
+            <div class="case-block-card">
+              <h2 class="case-block-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#FF5E14" stroke-width="2.2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="3" y1="15" x2="21" y2="15"></line>
+                  <line x1="9" y1="3" x2="9" y2="21"></line>
+                  <line x1="15" y1="3" x2="15" y2="21"></line>
+                </svg>
+                Hydraulic &amp; Operating Parameters
+              </h2>
+              <p>Key technical design limits engineered, simulated, and validated by DDS Engineering:</p>
+              <div class="case-specs-table-wrap">
+                <table class="case-specs-table" id="caseSpecsTable">
+                  <thead>
+                    <tr>
+                      <th>Design Parameter</th>
+                      <th>Engineering Specification</th>
+                      <th>Simulation Standard / Code</th>
+                    </tr>
+                  </thead>
+                  <tbody id="caseSpecsBody">
+                    <!-- Injected via JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Scope of Deliverables -->
+            <div class="case-block-card">
+              <h2 class="case-block-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00D2FF" stroke-width="2.2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+                Detailed Engineering Deliverables
+              </h2>
+              <div class="case-deliverables-grid" id="caseDeliverablesGrid">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+
+            <!-- Measurable Outcomes & Impact -->
+            <div class="case-block-card" style="background: radial-gradient(circle at top right, rgba(0, 210, 255, 0.08) 0%, var(--bg-navy-card) 60%);">
+              <h2 class="case-block-title">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#FF5E14" stroke-width="2.2">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                Measurable Impact &amp; Client Outcomes
+              </h2>
+              <div id="caseOutcomesBody">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+
+          </article>
+
+          <!-- Right Sidebar: Quick Facts & Case Navigator -->
+          <aside class="case-study-sidebar">
+
+            <!-- Quick Project Summary Card -->
+            <div class="case-sidebar-card">
+              <h3 class="case-sidebar-heading">
+                <span>PROJECT SNAPSHOT</span>
+                <span class="pulse-dot orange"></span>
+              </h3>
+              <ul class="case-quick-meta-list" id="caseQuickMetaList">
+                <!-- Injected via JavaScript -->
+              </ul>
+              <div style="margin-top: 24px;">
+                <button class="btn btn-primary btn-block btn-glow" id="btnSidebarInquire" onclick="handleCaseStudyInquiry()">
+                  REQUEST SIMILAR PROPOSAL
+                </button>
+              </div>
+            </div>
+
+            <!-- Related Case Studies Navigator -->
+            <div class="case-sidebar-card">
+              <h3 class="case-sidebar-heading">
+                <span>CASE STUDY DIRECTORY</span>
+                <span style="font-size: 0.75rem; color: var(--accent-cyan); font-weight: 700;">(9)</span>
+              </h3>
+              <ul class="related-case-nav-list" id="caseNavList">
+                <!-- Injected via JavaScript -->
+              </ul>
+            </div>
+
+            <!-- Direct Contact Card -->
+            <div class="case-sidebar-card" style="background: rgba(255, 94, 20, 0.04); border-color: rgba(255, 94, 20, 0.2);">
+              <h4 style="color: #FFFFFF; font-size: 0.95rem; margin-bottom: 8px;">Talk to Principal Engineers</h4>
+              <p style="font-size: 0.8125rem; color: var(--text-slate-400); margin-bottom: 16px;">
+                Have questions about hydraulic balance or high-pressure jacketed piping? Consult our engineering leadership.
+              </p>
+              <a href="tel:+919601402333" class="btn btn-outline-orange btn-block" style="font-size: 0.8125rem; padding: 8px 12px;">
+                📞 +91 9601402333
+              </a>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION DIVIDER ==================== -->
+    <div class="section-divider-glow">
+      <div class="section-divider-diamond"></div>
+    </div>
+
+    <!-- ==================== EXPLORE ALL CASE STUDIES ==================== -->
+    <section class="case-study-switcher-section" id="allCaseStudies">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge-pill cyan">PORTFOLIO ARCHIVE</span>
+          <h2 class="section-title text-white">EXPLORE OTHER HALLMARK DELIVERIES</h2>
+          <p class="section-description text-gray">
+            Select any hallmark plant project below to inspect technical specifications, hydraulics, and execution scope.
+          </p>
+        </div>
+
+        <div class="case-study-switcher-grid" id="caseSwitcherGrid">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SUBPAGE CALLOUT BANNER ==================== -->
+    <section class="subpage-section bg-space" style="padding-top: 0;">
+      <div class="container">
+        <div class="subpage-cta-banner">
+          <div class="subpage-cta-content">
+            <h3>Need Tailored Detailed Engineering for Your Plant?</h3>
+            <p>From single transfer line stress simulations to full-scale greenfield EPCm consultancy packages.</p>
+          </div>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-glow" onclick="openQuoteModal()">REQUEST ENGINEERING RFQ</button>
+            <a href="projects.html" class="btn btn-outline-cyan">&larr; VIEW ALL PROJECTS</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== GLOBAL FOOTER ==================== -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2L3 10.5V25.5L18 34L33 25.5V10.5L18 2Z" stroke="#FF5E14" stroke-width="2.5" />
+                <path d="M18 8L8 13.5V22.5L18 28L28 22.5V13.5L18 8Z" fill="#00D2FF" fill-opacity="0.2" stroke="#00D2FF"
+                  stroke-width="2" />
+                <circle cx="18" cy="18" r="3.5" fill="#FF5E14" />
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-main">DDS</span>
+              <span class="logo-sub">ENGINEERING (INDIA)</span>
+            </div>
+          </a>
+          <p class="footer-bio">
+            DDS Engineering (INDIA) Private Limited is a multi-dimensional detailed-engineering consultancy specializing in
+            Process, Piping, Mechanical, Electrical &amp; Instrumentation Engineering for the global polyester and process
+            industries.
+          </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/dds-engineering-9b109b209/" target="_blank" rel="noopener noreferrer"
+              class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.7a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/dds_engineering/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank"
+              rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Pages &amp; Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About DDS</a></li>
+            <li><a href="services.html">Engineering Services</a></li>
+            <li><a href="specialized.html">Melt Lines &amp; CP Plants</a></li>
+            <li><a href="projects.html">Projects &amp; Case Studies</a></li>
+            <li><a href="resources.html">Software &amp; Tools</a></li>
+            <li><a href="contact.html">Contact &amp; RFQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Services Portfolio</h4>
+          <ul class="footer-nav">
+            <li><a href="services.html#process">Process Simulation (HYSYS)</a></li>
+            <li><a href="services.html#piping">Pipe Stress (CAESAR II)</a></li>
+            <li><a href="services.html#equipment">Pressure Vessels (PV Elite)</a></li>
+            <li><a href="services.html#electrical">E&amp;I Engineering Design</a></li>
+            <li><a href="services.html#civil">Structural Analysis (STAAD)</a></li>
+            <li><a href="services.html#audits">Energy &amp; Safety Audits</a></li>
+            <li><a href="services.html#scanning">3D Laser Scanning</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Corporate Office</h4>
+          <p class="newsletter-desc">Trinnity Business Park, 412, 4th Floor, Madhuvan Circle, New L.P. Savani Road, Adajan,
+            Surat-395009, Gujarat, INDIA</p>
+          <div class="footer-contact-links">
+            <a href="tel:+912613515039" class="f-contact-link">📞 +91 (261) 3515039</a>
+            <a href="tel:+919601402333" class="f-contact-link">📱 +91 9601402333</a>
+            <a href="mailto:business@ddsengineering.in" class="f-contact-link">✉️ business@ddsengineering.in</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 DDS Engineering (INDIA) Pvt. Ltd. All Rights Reserved.</p>
+        <p class="footer-tagline">PROCESS &bull; PIPING &bull; MECHANICAL &bull; ELECTRICAL &bull; INSTRUMENTATION</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== REQUEST RFQ / PROPOSAL MODAL ==================== -->
+  <div class="modal-backdrop" id="quoteModalBackdrop" onclick="closeQuoteModal(event)">
+    <div class="modal-dialog glass-panel-dark">
+      <button class="modal-close" onclick="closeQuoteModal()">&times;</button>
+      <div class="modal-header">
+        <span class="pill-mini orange" id="quoteModalBadge">ENGINEERING RFQ</span>
+        <h3 class="modal-title" id="quoteModalTitle">Request Detailed Engineering RFQ</h3>
+        <p class="modal-subtitle" id="quoteModalSubtitle">Submit your plant parameters, capacity, and design scope to our
+          principal consultants.</p>
+      </div>
+      <form class="modal-form" onsubmit="handleQuoteSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Neeraj Sharma">
+          </div>
+          <div class="form-group">
+            <label>Company / Organization *</label>
+            <input type="text" required class="form-control" placeholder="e.g. Synthetic Polymer Corp">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Work Email *</label>
+            <input type="email" required class="form-control" placeholder="n.sharma@corp.com">
+          </div>
+          <div class="form-group">
+            <label>Service Area Required</label>
+            <select class="form-control" id="quoteServiceSelect">
+              <option value="Melt Polymer Transfer Line Design">Melt Polymer Transfer Line Design</option>
+              <option value="Process Engineering &amp; Simulation">Process Engineering &amp; Simulation</option>
+              <option value="Piping Design &amp; Stress Analysis">Piping Design &amp; Stress Analysis</option>
+              <option value="Mechanical Static &amp; Rotating Equipment">Mechanical Static &amp; Rotating Equipment</option>
+              <option value="Electrical &amp; Instrumentation (E&amp;I)">Electrical &amp; Instrumentation (E&amp;I)</option>
+              <option value="Civil &amp; Structural Engineering">Civil &amp; Structural Engineering</option>
+              <option value="Project Management &amp; Commissioning">Project Management &amp; Commissioning</option>
+              <option value="Industrial Services &amp; Plant Audits">Industrial Services &amp; Plant Audits</option>
+              <option value="3D Laser Scanning &amp; Reverse Engineering">3D Laser Scanning &amp; Reverse Engineering</option>
+              <option value="Complete Plant Detail Engineering">Complete Plant Detail Engineering</option>
+              <option value="Continuous Polymerisation (CP) Plant">Continuous Polymerisation (CP) Plant</option>
+              <option value="Texturizing / Conning Oil Plant">Texturizing / Conning Oil Plant</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Scope / Operating Parameters (TPD, Temperature, Fluid) *</label>
+          <textarea rows="3" required class="form-control"
+            placeholder="Provide plant capacity, polymer type (PET/POY/FDY/PSF), line layout or timeline..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-glow">SUBMIT ENGINEERING RFQ</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Back to Top Floating Button -->
+  <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <script src="assets/motion.js"></script>
+  <script src="animations.js"></script>
+  <script src="script.js"></script>
+
+  <!-- ==================== DYNAMIC CASE STUDY CONTROLLER ==================== -->
+  <script>
+    const comprehensiveCaseStudies = {
+      1: {
+        id: 1,
+        title: 'Bhilosa Industries — CP4/5 Polymer Transfer Line (1680 TPD)',
+        tag: 'MELT POLYMER TRANSFER LINE',
+        badgeColor: 'orange',
+        heroDesc: 'Complete detailed engineering, hydraulic simulation, and on-site commissioning of the massive 1680 TPD polymer melt transfer line delivering direct melt to multiple POY, FDY, and PSF spinning manifolds.',
+        client: 'Bhilosa Industries Pvt. Ltd.',
+        location: 'Rakholi, Silvassa (DNH), India',
+        capacity: '1680 TPD Direct Melt Delivery',
+        duration: 'Turnkey Detail Design to Commissioning',
+        software: 'PDRTC Proprietary &bull; CAESAR II &bull; Plant 3D',
+        serviceArea: 'Melt Polymer Transfer Line Design',
+        image: 'assets/dds_melt_transfer.jpg',
+        overlayCaption: 'CP4/5 Polymer Transfer Line Manifold Complex',
+        overview: `<p>Bhilosa Industries Pvt. Ltd. commissioned DDS Engineering to execute the comprehensive detailed engineering for their flagship CP4/5 Continuous Polymerization plant expansion. With an unprecedented total throughput capacity of 1,680 Metric Tons Per Day (TPD), this project ranks among the largest single-site polyester melt distribution networks globally.</p>
+        <p>The scope demanded delivering molten polyethylene terephthalate (PET) at temperatures exceeding 280°C and pressures up to 160 bar from the polycondensation discharge directly to multiple spinning lines, including high-speed Partially Oriented Yarn (POY), Fully Drawn Yarn (FDY), and Polyester Staple Fiber (PSF) take-up beams.</p>`,
+        challenge: `<p>Engineering polymer melt transfer at 1680 TPD presents severe hydrodynamic and mechanical challenges:</p>
+        <ul class="discipline-deliverables" style="margin-top: 14px;">
+          <li><strong>Residence Time Uniformity:</strong> Molten PET is non-Newtonian and thermal degradation-sensitive. Any discrepancy in transit time causes Intrinsic Viscosity (IV) drops and yarn breaks in downstream spinning machines.</li>
+          <li><strong>Extreme Thermal Stress:</strong> Operating between 280°C and 290°C creates immense thermal expansion on jacketed pipe sections, risking nozzle overloading on booster pumps and filter manifolds.</li>
+          <li><strong>Complex Hydraulics:</strong> Symmetrical pressure balancing across 48+ individual spinning beam branch take-offs without creating stagnant "dead zones."</li>
+        </ul>`,
+        solution: `<p>DDS Engineering deployed our proprietary <strong>Pressure Drop and Residence Time Calculation (PDRTC)</strong> software suite alongside advanced finite element pipe stress simulations:</p>
+        <ul class="discipline-deliverables" style="margin-top: 14px;">
+          <li><strong>Hydrodynamic Balancing:</strong> Computed branch-by-branch diameters and lengths to ensure identical fluid residence time distribution (variance strictly under 2%) across all spinning positions.</li>
+          <li><strong>CAESAR II Stress Analysis:</strong> Engineered an optimized 3D expansion loop and spring hanger system, maintaining pump nozzle loads well below vendor allowables per API 610 / ASME standards.</li>
+          <li><strong>Full Jacketed Spooling:</strong> Produced 3D intelligent fabrication isometric drawings with detailed vapor/liquid HTM jacket routing and thermal insulation detailing.</li>
+        </ul>`,
+        specs: [
+          { param: 'Nominal Plant Throughput', spec: '1680 Metric Tons Per Day (TPD)', std: 'Continuous 24/7 Polycondensation' },
+          { param: 'Operating Melt Temperature', spec: '282°C – 288°C (±1.5°C)', std: 'Liquid/Vapor HTM Jacketing' },
+          { param: 'Design Operating Pressure', spec: '160 bar (Hydrotested at 240 bar)', std: 'ASME B31.3 Chemical Process Piping' },
+          { param: 'Fluid Rheology', spec: 'High-Viscosity Non-Newtonian PET Melt', std: 'PDRTC Shear Rate Simulation' },
+          { param: 'Residence Time Variance', spec: '< 2.5% across all spinning beams', std: 'Proprietary DDS Balancing Algorithm' },
+          { param: 'Piping Material', spec: 'Specialty SS316L Core / Carbon Steel Jacket', std: 'ASTM A312 / A106 Grade B' }
+        ],
+        deliverables: [
+          { title: 'PDRTC Simulation Report', desc: 'Rigorously validated residence time, velocity profiles, and shear rate maps for every line segment.' },
+          { title: 'CAESAR II Stress Package', desc: 'Complete static & dynamic stress reports, displacement envelopes, and spring support schedules.' },
+          { title: 'Spool Fabrication Isometrics', desc: 'Millimeter-accurate 3D intelligent fabrication spools with complete Bill of Materials (BOM).' },
+          { title: 'Commissioning Oversight', desc: 'On-site technical supervision for pre-commissioning HTM flushes and polymer charging.' }
+        ],
+        outcomes: `<p>The CP4/5 plant was successfully commissioned with zero delays. Continuous online sampling confirmed uniform intrinsic viscosity (IV) across all spinning positions, eliminating yarn filament breakages and saving an estimated 14% in initial Capex through optimized hydraulic routing.</p>`
+      },
+      2: {
+        id: 2,
+        title: 'Bhilosa Industries — CP2/3/6 (1650 TPD) & CP1 Redesign',
+        tag: 'TRANSFER LINE & DEBOTTLENECKING',
+        badgeColor: 'cyan',
+        heroDesc: 'Multi-phase detail engineering of the 1650 TPD CP2/3/6 transfer line coupled with complete hydraulic redesign and thermal stress re-engineering of the existing CP1 plant.',
+        client: 'Bhilosa Industries Pvt. Ltd.',
+        location: 'Naroli, Silvassa, India',
+        capacity: '1650 TPD POY/FDY + Existing Plant Optimization',
+        duration: 'Multi-Phase Turnkey Execution',
+        software: 'PDRTC &bull; CAESAR II &bull; AutoCAD Plant 3D',
+        serviceArea: 'Melt Polymer Transfer Line Design',
+        image: 'assets/dds_plant_hero.jpg',
+        overlayCaption: 'Naroli Integrated Spinning & Polymerization Facility',
+        overview: `<p>Following the successful commissioning of earlier facilities, Bhilosa Industries engaged DDS Engineering for the complex expansion of their CP2, CP3, and CP6 lines, delivering a collective 1650 TPD of molten polymer to high-speed winding machinery. Concurrently, DDS was tasked with debottlenecking and re-engineering the existing CP1 transfer network which was experiencing irregular pressure drops.</p>`,
+        challenge: `<p>Integrating new high-capacity melt lines while tying into operating brownfield facilities requires zero margin for error:</p>
+        <ul class="discipline-deliverables" style="margin-top: 14px;">
+          <li><strong>Brownfield Tie-Ins:</strong> Existing CP1 lines suffered from thermal fatigue and uncalibrated nozzle loads on older booster pumps.</li>
+          <li><strong>Space Constrained Piperacks:</strong> Routing massive jacketed pipelines within densely congested existing structural piperacks without triggering thermal collisions.</li>
+          <li><strong>Zero Interruption:</strong> Engineering the transition without halting continuous operation of running filament lines.</li>
+        </ul>`,
+        solution: `<p>DDS implemented a hybrid modernization approach:</p>
+        <ul class="discipline-deliverables" style="margin-top: 14px;">
+          <li><strong>Thermal Re-balancing:</strong> Recomputed thermal stress lines using CAESAR II, repositioning spring anchors to absorb expansion without overloading pump nozzles.</li>
+          <li><strong>PDRTC Optimization:</strong> Redesigned CP1 branch headers with revised cross-sectional flow geometry to equalize fluid velocity and residence time.</li>
+          <li><strong>3D Clash Verification:</strong> Built an intelligent 3D model of all existing and proposed lines to ensure 100% clash-free fabrication.</li>
+        </ul>`,
+        specs: [
+          { param: 'Aggregate Capacity', spec: '1650 TPD across CP2, CP3, CP6', std: 'Direct Melt Delivery' },
+          { param: 'Operating Pressure', spec: '150 – 165 bar', std: 'ASME B31.3' },
+          { param: 'Operating Temperature', spec: '285°C', std: 'Vapor HTM Jacketed' },
+          { param: 'Vibration Alleviation', spec: '< 0.8 mm/s vibration at pump headers', std: 'ISO 10816 Vibration Severity' }
+        ],
+        deliverables: [
+          { title: 'Hydraulic Redesign Package', desc: 'Complete revamp drawings for existing CP1 distribution headers.' },
+          { title: '3D Intelligent Model', desc: 'Clash-free routing through congested brownfield piperacks.' },
+          { title: 'Support & Hanger Book', desc: 'Detailed fabrication drawings for heavy-duty spring supports and rigid restraints.' },
+          { title: 'Tie-in Sequence Matrix', desc: 'Step-by-step cold and hot tie-in procedures ensuring uninterrupted plant safety.' }
+        ],
+        outcomes: `<p>The CP2/3/6 expansion went live on schedule, while the revitalized CP1 line recorded a 22% reduction in pressure fluctuations, immediately improving yarn denier consistency and reducing line breaks.</p>`
+      },
+      3: {
+        id: 3,
+        title: 'Sumilon Industries — 750 TPD Continuous Polyester Plant & Dornier Film Line',
+        tag: 'OSBL & ISBL DETAIL ENGINEERING',
+        badgeColor: 'orange',
+        heroDesc: 'Comprehensive OSBL engineering for the 750 TPD OBHE continuous polymerization plant and complete ISBL/OSBL integration with specialized Dornier BOPET film lines.',
+        client: 'Sumilon Industries Ltd.',
+        location: 'Dahej PCPIR SEZ, Gujarat, India',
+        capacity: '750 TPD Continuous Polymerization & Film Line',
+        duration: 'Greenfield EPCm Detail Engineering',
+        software: 'Aspen HYSYS &bull; CAESAR II &bull; AutoCAD Plant 3D',
+        serviceArea: 'Complete Plant Detail Engineering',
+        image: 'assets/dds_cad_piping.jpg',
+        overlayCaption: 'Sumilon Dahej Petrochemical & Film Complex',
+        overview: `<p>Sumilon Industries Ltd. established a world-class 750 TPD Continuous Polyester (PET) plant in Dahej, utilizing licensed OBHE process technology. DDS Engineering served as the principal detailed-engineering consultant for the comprehensive Outside Battery Limits (OSBL) and Inside Battery Limits (ISBL) integration, with a specific focus on direct melt coupling to a state-of-the-art Dornier BOPET film casting line.</p>`,
+        challenge: `<p>The project encompassed extensive multidisciplinary requirements:</p>
+        <ul class="discipline-deliverables" style="margin-top: 14px;">
+          <li><strong>Film Line Purity Standards:</strong> BOPET film casting demands absolute melt temperature stability (±0.5°C) and zero particulate contamination.</li>
+          <li><strong>Full Utilities Infrastructure:</strong> Designing complex HTM heater loops, chilled water, compressed air, nitrogen generation, raw materials handling (PTA/EG), and effluent recovery.</li>
+          <li><strong>Seismic & Coastal Wind Loads:</strong> Dahej coastal location mandated stringent civil and structural design codes.</li>
+        </ul>`,
+        solution: `<p>DDS provided an end-to-end multi-disciplinary design package:</p>
+        <ul class="discipline-deliverables" style="margin-top: 14px;">
+          <li><strong>Integrated Process Flow:</strong> Simulated entire utility circuits in Aspen HYSYS to guarantee maximum heat recovery and minimal utility consumption.</li>
+          <li><strong>Precision Film Header:</strong> Engineered high-spec jacketed piping directly connecting polycondensation finishers to the Dornier casting dies.</li>
+          <li><strong>Electrical & Instrumentation:</strong> Complete DCS/PLC control architecture, substation single line diagrams, and hazardous area classification.</li>
+        </ul>`,
+        specs: [
+          { param: 'Polyester Capacity', spec: '750 Metric Tons Per Day (TPD)', std: 'OBHE Technology Licensor' },
+          { param: 'Film Line Interfacing', spec: 'Direct Melt Delivery to Dornier Line', std: 'High-Clarity Optical Grade BOPET' },
+          { param: 'HTM Thermal Circuit', spec: '24 Million kcal/hr Thermal Fluid System', std: 'ASME Sec I / VIII' },
+          { param: 'Plant Layout Standards', spec: 'OISD / Factory Act Compliance', std: 'PCPIR Industrial Zone Dahej' }
+        ],
+        deliverables: [
+          { title: 'Full Utility P&IDs', desc: 'Over 120 detailed P&IDs covering steam, HTM, chilled water, and compressed air.' },
+          { title: 'Civil / Structural Models', desc: 'STAAD.Pro analysis for 6-story technological structure and piperacks.' },
+          { title: 'E&I Engineering Book', desc: 'DCS I/O assignment, cable schedules, and substation equipment sizing.' },
+          { title: 'Commissioning Assistance', desc: 'Field engineer deployment through trial runs and commercial startup.' }
+        ],
+        outcomes: `<p>Plant successfully commissioned delivering optical-grade BOPET film. The energy recovery scheme engineered by DDS reduced net fuel oil consumption by 11% compared to licensor baseline expectations.</p>`
+      },
+      4: {
+        id: 4,
+        title: 'International Transfer Lines — Koza, SASA & Indorama',
+        tag: 'GLOBAL ENGINEERING CONSULTANCY',
+        badgeColor: 'cyan',
+        heroDesc: 'Global engineering consultancy delivering polymer transfer lines for Koza Polyester (Turkey), Polymer Cooler addition at SASA (Turkey), and transfer line redesigns for Indorama Indonesia.',
+        client: 'Koza Polyester, SASA Polyester (Turkey) & Indorama (Indonesia)',
+        location: 'Gaziantep & Adana (Turkey) | Purwakarta (Indonesia)',
+        capacity: 'Multiple High-Capacity Overseas Polymer Plants',
+        duration: 'International Engineering Contracts',
+        software: 'CAESAR II &bull; PDRTC &bull; 3D Laser Scanning',
+        serviceArea: 'Melt Polymer Transfer Line Design',
+        image: 'assets/dds_melt_transfer.jpg',
+        overlayCaption: 'International Overseas Engineering Footprint',
+        overview: `<p>Demonstrating our global technical leadership, DDS Engineering has completed major international engineering contracts across the Mediterranean and Southeast Asia. These include detailed polymer melt transfer lines for Koza Polyester (Gaziantep, Turkey), specialized high-viscosity Polymer Cooler additions for SASA Polyester (Adana, Turkey), and comprehensive transfer line overhauls for Indorama and APF in Purwakarta, Indonesia.</p>`,
+        challenge: `<p>Executing high-stakes overseas industrial engineering requires bridging diverse international codes:</p>
+        <ul class="discipline-deliverables" style="margin-top: 14px;">
+          <li><strong>Polymer Cooler Pressure Surges:</strong> Adding large in-line polymer coolers at SASA required handling severe pressure differentials without triggering laminar polymer stagnation.</li>
+          <li><strong>Seismic Zone 4 Compliance:</strong> Turkey's high seismic activity necessitated rigorous dynamic seismic flexibility calculations.</li>
+          <li><strong>Remote Execution & QA/QC:</strong> Coordinating spool pre-fabrication across international workshops with millimeter precision.</li>
+        </ul>`,
+        solution: `<p>DDS deployed specialized computational tools and European engineering coordination:</p>
+        <ul class="discipline-deliverables" style="margin-top: 14px;">
+          <li><strong>Dynamic Seismic FEA:</strong> Engineered robust spring hangers with seismic snubbers and multi-directional sway braces adhering to Turkish Seismic Code.</li>
+          <li><strong>Cooler Hydraulic Balancing:</strong> Simulated non-isothermal polymer cooling flow using PDRTC to avoid localized freezing of polymer melt.</li>
+          <li><strong>Laser Scan Validation:</strong> Integrated terrestrial 3D LiDAR point clouds to eliminate brownfield tie-in mismatches before overseas fabrication.</li>
+        </ul>`,
+        specs: [
+          { param: 'Design Codes', spec: 'EN 13480 / ASME B31.3 / Turkish Seismic', std: 'International Compliance' },
+          { param: 'Operating Pressures', spec: 'Up to 180 bar', std: 'High-Pressure Jacketed Core' },
+          { param: 'Cooler Differential Temp', spec: 'Cooling from 288°C to 272°C', std: 'Uniform Radial Temperature' },
+          { param: 'Seismic Snubbers', spec: 'Zone 4 Dynamic Sway Restraints', std: 'ASCE 7 / Eurocode 8' }
+        ],
+        deliverables: [
+          { title: 'Seismic Stress Analysis', desc: 'Dynamic spectrum analysis validated for high-seismic industrial zones.' },
+          { title: 'Cooler Integration Spools', desc: 'Complete fabrication drawings for transition cones, bypass manifolds, and cooler tie-ins.' },
+          { title: 'European Coordination', desc: 'Technical documentation and validation led by DDS European Engineering head.' }
+        ],
+        outcomes: `<p>All international projects achieved flawless mechanical completion and on-schedule commercial operations, validating DDS Engineering as a trusted global engineering partner.</p>`
+      },
+      5: {
+        id: 5,
+        title: '70 TPD Continuous Polymerisation (CP) Plant',
+        tag: 'CP REACTOR & PLANT DESIGN',
+        badgeColor: 'orange',
+        heroDesc: 'Turnkey basic design, reactor equipment sizing, structural modeling, and complete detailed engineering for a 70 TPD Continuous Polymerisation (CP) plant operating with 100% in-house equipment design.',
+        client: 'Leading Synthetic Resin Manufacturer',
+        location: 'Western Industrial Corridor, India',
+        capacity: '70 TPD Continuous Resin Polymerization',
+        duration: 'Turnkey Conception to Successful Commissioning',
+        software: 'Aspen HYSYS &bull; PV Elite &bull; STAAD.Pro',
+        serviceArea: 'Continuous Polymerisation (CP) Plant',
+        image: 'assets/dds_plant_hero.jpg',
+        overlayCaption: '100% In-House Engineered CP Reactor Facility',
+        overview: `<p>DDS Engineering executed the complete basic engineering, equipment mechanical design, civil structural design, and piping detail design for a state-of-the-art 70 TPD Continuous Polymerisation (CP) plant. Unlike conventional consultants who rely on foreign proprietary licensors, all primary reactors, esterification vessels, polycondensation columns, and vacuum systems were designed 100% in-house by DDS engineers.</p>`,
+        challenge: `<p>Designing a grassroots CP plant in-house without an external technology licensor requires complete mathematical rigor:</p>
+        <ul class="discipline-deliverables" style="margin-top: 14px;">
+          <li><strong>Reaction Kinetics:</strong> Modeling accurate transesterification and polycondensation equilibria across multiple reactor stages.</li>
+          <li><strong>High Vacuum Systems:</strong> Maintaining deep vacuum (< 1 mbar abs) in the finishing reactor to pull off ethylene glycol (EG) byproducts without vacuum breakdown.</li>
+          <li><strong>Custom Agitator Drives:</strong> Designing high-torque, low-RPM agitators capable of stirring high-viscosity molten resin without dead zones.</li>
+        </ul>`,
+        solution: `<p>DDS delivered an integrated chemical and mechanical package:</p>
+        <ul class="discipline-deliverables" style="margin-top: 14px;">
+          <li><strong>Custom Reactor Mechanical Design:</strong> Sized and detailed the primary esterifier and disc-ring polycondensation reactor per ASME Section VIII Div 1.</li>
+          <li><strong>Multi-Stage Vacuum Train:</strong> Engineered multi-stage steam ejectors and EG vapor condensation spray condensers.</li>
+          <li><strong>Turnkey Detail Package:</strong> Complete 3D equipment layouts, piping isometrics, HTM circuits, and DCS automation interlocks.</li>
+        </ul>`,
+        specs: [
+          { param: 'Production Output', spec: '70 TPD Continuous Polymerization', std: 'Virgin Optical-Grade Polyester' },
+          { param: 'Finishing Reactor Vacuum', spec: '< 0.8 mbar absolute', std: 'Multi-stage Ejector System' },
+          { param: 'Reactor Design Code', spec: 'ASME Section VIII Division 1', std: 'Stainless Steel 316L Contact' },
+          { param: 'Thermal Circuit', spec: 'Liquid Phase HTM at 305°C', std: 'Multi-loop Temperature Control' }
+        ],
+        deliverables: [
+          { title: 'Process Simulation & HMB', desc: 'Rigorous heat and material balances, PFDs, and utility consumption matrices.' },
+          { title: 'Vessel Fabrication Drawings', desc: 'Manufacturing-ready mechanical drawings for reactors, esterifiers, and flash vessels.' },
+          { title: 'P&IDs with Safety Interlocks', desc: 'Comprehensive safety relief, emergency depressuring, and vacuum break logic.' },
+          { title: 'Commissioning Leadership', desc: 'Direct on-site leadership through chemical flushes, trial polymer runs, and stabilization.' }
+        ],
+        outcomes: `<p>The plant achieved on-spec polymer production within 48 hours of startup and has run continuously at over 105% of rated nameplate capacity with exemplary resin color and viscosity stability.</p>`
+      },
+      6: {
+        id: 6,
+        title: '100 TPD Texturizing (Conning) Oil Plant',
+        tag: 'PROPRIETARY TECHNICAL KNOW-HOW',
+        badgeColor: 'cyan',
+        heroDesc: 'Turnkey proprietary process know-how, chemical formulation, process simulation, equipment sizing, and detailed engineering for a 100 TPD Conning Oil plant supporting high-speed DTY machines.',
+        client: 'Textile Specialty Chemicals Producer',
+        location: 'Surat Chemical Zone, Gujarat, India',
+        capacity: '100 TPD High-Speed Conning Oil',
+        duration: 'Turnkey Know-How Supply to Commissioning',
+        software: 'Aspen HYSYS &bull; HTRI &bull; AutoCAD Plant 3D',
+        serviceArea: 'Texturizing / Conning Oil Plant',
+        image: 'assets/dds_cad_piping.jpg',
+        overlayCaption: 'Specialty Chemical Conning Oil Synthesis Unit',
+        overview: `<p>DDS supplied proprietary technical know-how, formulation chemistry, process simulation, and detailed turnkey engineering for a commercial 100 TPD Texturizing Oil (Conning Oil) Plant. Conning oils are vital performance lubricants required during high-speed Draw Texturizing Yarn (DTY) manufacturing to prevent static electricity, reduce yarn friction, and ensure perfect spool package stability.</p>`,
+        challenge: `<p>Conning oil synthesis demands stringent emulsification and viscosity control:</p>
+        <ul class="discipline-deliverables" style="margin-top: 14px;">
+          <li><strong>Homogeneous Emulsion:</strong> Blending white mineral oils, anti-static agents, and proprietary surfactants into a micro-emulsion that never stratifies.</li>
+          <li><strong>Viscosity Index Control:</strong> Maintaining consistent kinematic viscosity across high-speed spindle temperature variations.</li>
+          <li><strong>Zero Odor / Fuming:</strong> Ensuring minimal fuming and zero yellowing during subsequent polyester fabric heat-setting.</li>
+        </ul>`,
+        solution: `<p>DDS delivered complete formulation chemistry and production engineering:</p>
+        <ul class="discipline-deliverables" style="margin-top: 14px;">
+          <li><strong>Proprietary Chemical Know-How:</strong> Supplied tested formulations for water-scourable, antistatic, non-splattering conning oils.</li>
+          <li><strong>High-Shear Mixing Technology:</strong> Engineered automated batch and in-line high-shear homogenization units.</li>
+          <li><strong>Modular Skid Design:</strong> Pre-packaged equipment skids enabling rapid on-site assembly, wiring, and commissioning.</li>
+        </ul>`,
+        specs: [
+          { param: 'Production Capacity', spec: '100 TPD (30,000 MT/Year)', std: 'Continuous Automated Synthesis' },
+          { param: 'Product Viscosity', spec: '12 – 18 cSt @ 40°C', std: 'ISO VG Lubricant Classification' },
+          { param: 'Antistatic Rating', spec: 'Surface Resistivity < 10^8 ohms', std: 'High-Speed Winding Standard' },
+          { param: 'Payback Timeline', spec: 'Under 14 Months Capital Payback', std: 'High-Margin Textile Chemical' }
+        ],
+        deliverables: [
+          { title: 'Formula Master Dossier', desc: 'Complete chemical formulation, raw material testing protocols, and QA/QC procedures.' },
+          { title: 'Plant P&IDs & 3D Layout', desc: 'Explosion-proof plant layout with automated metering, batch tanks, and filtration.' },
+          { title: 'Equipment Data Sheets', desc: 'Rigorous sizing for homogenizers, blenders, thermal fluid heat exchangers, and pumps.' }
+        ],
+        outcomes: `<p>The facility was completed and commissioned ahead of schedule. The produced conning oil immediately gained certification from major polyester texturizers in Surat and Silvassa, achieving full capital payback in just 11 months.</p>`
+      },
+      7: {
+        id: 7,
+        title: 'Sanathan Textiles — Melt Polymer Piping & Spinning Manifolds',
+        tag: 'MELT POLYMER TRANSFER LINE',
+        badgeColor: 'orange',
+        heroDesc: 'Specialized CAESAR II pipe stress analysis, PDRTC residence time hydraulic modeling, and direct spinning manifold balancing for Sanathan Textiles spinning facilities.',
+        client: 'Sanathan Textiles Pvt. Ltd.',
+        location: 'Silvassa, DNH, India',
+        capacity: 'High-Speed POY/FDY Spinning Complex',
+        duration: 'Detailed Design & Stress Analysis',
+        software: 'PDRTC &bull; CAESAR II &bull; Plant 3D',
+        serviceArea: 'Melt Polymer Transfer Line Design',
+        image: 'assets/dds_melt_transfer.jpg',
+        overlayCaption: 'High-Speed POY Spinning Piping Network',
+        overview: `<p>Sanathan Textiles commissioned DDS Engineering to perform advanced stress analysis and hydraulic re-balancing for their melt polymer distribution piping. The facility features extensive high-speed spinning beams requiring uniform polymer pressure and zero thermal degradation.</p>`,
+        challenge: `<p>High thermal expansion and complex take-off geometry posed significant risks of pump nozzle overload and localized melt stagnation.</p>`,
+        solution: `<p>DDS used CAESAR II and PDRTC to optimize expansion loops, reposition spring hangers, and re-engineer branch geometries for zero degradation.</p>`,
+        specs: [
+          { param: 'Plant Type', spec: 'Continuous Spinning Manifold Network', std: 'ASME B31.3' },
+          { param: 'Melt Operating Temp', spec: '286°C Jacketed', std: 'Liquid HTM' }
+        ],
+        deliverables: [
+          { title: 'Pipe Stress Book', desc: 'Complete CAESAR II thermal flexibility analysis.' },
+          { title: 'Isometric Fabrication Spools', desc: 'Shop-ready spool drawings with full BOM.' }
+        ],
+        outcomes: `<p>Successfully commissioned with zero nozzle overloading and uniform yarn denier across all spinning heads.</p>`
+      },
+      8: {
+        id: 8,
+        title: 'Garden Silk Mills — Plant Optimization & Thermal Audits',
+        tag: 'ENERGY & DEBOTTLENECKING',
+        badgeColor: 'cyan',
+        heroDesc: 'Comprehensive thermal energy audit, vacuum column debottlenecking, and HTM heater optimization across the Garden Silk Mills polymer complex in Surat.',
+        client: 'Garden Silk Mills Ltd.',
+        location: 'Surat Chemical Complex, Gujarat, India',
+        capacity: 'Integrated Synthetic Fiber Complex',
+        duration: 'Plant Audit & Engineering Revamp',
+        software: 'HTRI &bull; Aspen HYSYS',
+        serviceArea: 'Industrial Services & Plant Audits',
+        image: 'assets/dds_plant_hero.jpg',
+        overlayCaption: 'Surat Industrial Processing Complex',
+        overview: `<p>Leveraging 20+ years of plant operational leadership, DDS performed a comprehensive thermal utility and vacuum balance audit across the Garden Silk Mills complex in Surat, unlocking significant hidden capacity and reducing energy waste.</p>`,
+        challenge: `<p>High fuel costs and vacuum instability in finishing columns caused production bottlenecks and inconsistent polymer intrinsic viscosity.</p>`,
+        solution: `<p>DDS re-engineered the HTM boiler loops, installed high-efficiency heat recovery exchangers, and tuned vacuum ejector interstage condensers.</p>`,
+        specs: [
+          { param: 'Audit Scope', spec: 'Thermal Fluid Circuits & Vacuum Columns', std: 'ASME PTC' },
+          { param: 'Energy Savings', spec: '14.2% Fuel Reduction Achieved', std: 'Verified Post-Audit' }
+        ],
+        deliverables: [
+          { title: 'Comprehensive Energy Audit Report', desc: 'Identified thermal waste streams and hydraulic pinch points.' },
+          { title: 'Revamp Engineering Package', desc: 'Process modifications for vacuum condensers and boiler circuits.' }
+        ],
+        outcomes: `<p>Achieved immediate 14.2% thermal energy savings and stabilized vacuum column performance, yielding millions in annual operating cost reductions.</p>`
+      },
+      9: {
+        id: 9,
+        title: 'DNH Spinners & Beekaylon Synthetics — Jacketed Piping',
+        tag: 'JACKETED PIPING & STRESS MODELING',
+        badgeColor: 'orange',
+        heroDesc: 'Intelligent 3D plant layout, CAESAR II thermal flexibility analysis, and spring hanger distribution for high-temperature jacketed melt lines.',
+        client: 'DNH Spinners & Beekaylon Synthetics',
+        location: 'Silvassa / DNH, India',
+        capacity: 'High-Performance Polyester Filament Lines',
+        duration: 'Detail Piping & Stress Engineering',
+        software: 'CAESAR II &bull; AutoCAD Plant 3D',
+        serviceArea: 'Piping Design & Stress Analysis',
+        image: 'assets/dds_cad_piping.jpg',
+        overlayCaption: 'Jacketed Piping Isometric Spool Verification',
+        overview: `<p>DDS completed the detailed piping engineering and stress analysis for jacketed melt lines at DNH Spinners and Beekaylon Synthetics, ensuring zero-clash installation and optimized thermal flexibility.</p>`,
+        challenge: `<p>Routing dual-wall jacketed pipelines through tight technological structures while eliminating nozzle stress on booster pumps.</p>`,
+        solution: `<p>Built full 3D intelligent plant models in AutoCAD Plant 3D and verified thermal loads with CAESAR II.</p>`,
+        specs: [
+          { param: 'Piping Specification', spec: 'Jacketed Core SS316L / CS Jacket', std: 'ASME B31.3' },
+          { param: 'Design Temperature', spec: '290°C', std: 'Continuous Thermal Service' }
+        ],
+        deliverables: [
+          { title: 'Intelligent 3D Piping Model', desc: 'Clash-free routing and interference reports.' },
+          { title: 'Fabrication Spools & BOM', desc: 'Precise isometric fabrication spool drawings.' }
+        ],
+        outcomes: `<p>Flawless installation with zero on-site spool rework, leading to smooth startup and reliable continuous production.</p>`
+      }
+    };
+
+    let currentCaseStudyId = 1;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Parse ID from URL: case-study.html?id=3
+      const params = new URLSearchParams(window.location.search);
+      const reqId = parseInt(params.get('id'), 10);
+      currentCaseStudyId = (reqId && comprehensiveCaseStudies[reqId]) ? reqId : 1;
+
+      renderCaseStudy(currentCaseStudyId);
+      renderCaseStudyNav(currentCaseStudyId);
+      renderSwitcherGrid(currentCaseStudyId);
+    });
+
+    function renderCaseStudy(id) {
+      const study = comprehensiveCaseStudies[id];
+      if (!study) return;
+
+      currentCaseStudyId = id;
+
+      // Update Page Meta
+      document.title = `${study.title} | Case Study | DDS Engineering`;
+      const metaDesc = document.getElementById('pageMetaDesc');
+      if (metaDesc) metaDesc.content = `${study.title} — Detailed engineering case study by DDS Engineering (INDIA) Pvt. Ltd.`;
+
+      // Hero Elements
+      document.getElementById('caseBreadcrumbTitle').textContent = study.title.split('—')[0].trim();
+      
+      const heroBadge = document.getElementById('caseHeroBadge');
+      heroBadge.textContent = study.tag;
+      heroBadge.className = `section-badge-pill ${study.badgeColor || 'orange'}`;
+
+      document.getElementById('caseHeroTitle').textContent = study.title;
+      document.getElementById('caseHeroDesc').innerHTML = study.heroDesc;
+
+      // Hero Metadata Chips
+      const metaContainer = document.getElementById('caseHeroMeta');
+      metaContainer.innerHTML = `
+        <div class="case-meta-chip">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#FF5E14" stroke-width="2"><path d="M3 21h18M3 7v14M21 7v14M6 21V11M10 21V11M14 21V11M18 21V11M3 7l9-4 9 4"/></svg>
+          Client: <strong>${study.client}</strong>
+        </div>
+        <div class="case-meta-chip">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#00D2FF" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Location: <strong>${study.location}</strong>
+        </div>
+        <div class="case-meta-chip">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#10B981" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Capacity: <strong>${study.capacity}</strong>
+        </div>
+        <div class="case-meta-chip">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#FF5E14" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          Tools: <strong>${study.software}</strong>
+        </div>
+      `;
+
+      // Hero Visual & Overlay
+      const imgEl = document.getElementById('caseMainImage');
+      if (imgEl) {
+        imgEl.src = study.image;
+        imgEl.alt = study.title;
+      }
+      document.getElementById('caseOverlayCaption').textContent = study.overlayCaption || study.client;
+      document.getElementById('caseOverlayMetric').textContent = study.capacity.split(' ')[0] + ' ' + (study.capacity.split(' ')[1] || 'TPD');
+      document.getElementById('caseOverlayTag').textContent = study.tag;
+
+      // Executive Overview
+      document.getElementById('caseOverviewBody').innerHTML = study.overview;
+
+      // Challenge & Solution
+      document.getElementById('caseChallengeBody').innerHTML = study.challenge;
+      document.getElementById('caseSolutionBody').innerHTML = study.solution;
+
+      // Technical Specs Table
+      const specsBody = document.getElementById('caseSpecsBody');
+      if (specsBody && study.specs) {
+        specsBody.innerHTML = study.specs.map(s => `
+          <tr>
+            <td><strong>${s.param}</strong></td>
+            <td><span style="color: #00D2FF; font-family: 'JetBrains Mono', monospace; font-weight: 600;">${s.spec}</span></td>
+            <td>${s.std || 'Industry Standard'}</td>
+          </tr>
+        `).join('');
+      }
+
+      // Deliverables Grid
+      const delivGrid = document.getElementById('caseDeliverablesGrid');
+      if (delivGrid && study.deliverables) {
+        delivGrid.innerHTML = study.deliverables.map(d => `
+          <div class="case-deliverable-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <div>
+              <div class="d-title">${d.title}</div>
+              <div class="d-desc">${d.desc}</div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Outcomes
+      document.getElementById('caseOutcomesBody').innerHTML = study.outcomes;
+
+      // Sidebar Quick Meta
+      const quickMeta = document.getElementById('caseQuickMetaList');
+      if (quickMeta) {
+        quickMeta.innerHTML = `
+          <li>
+            <span class="lbl">Client Organization</span>
+            <span class="val">${study.client}</span>
+          </li>
+          <li>
+            <span class="lbl">Facility Location</span>
+            <span class="val">${study.location}</span>
+          </li>
+          <li>
+            <span class="lbl">Throughput Capacity</span>
+            <span class="val" style="color: #FF5E14;">${study.capacity}</span>
+          </li>
+          <li>
+            <span class="lbl">Engineering Scope</span>
+            <span class="val">${study.duration}</span>
+          </li>
+          <li>
+            <span class="lbl">Design &amp; Simulation Software</span>
+            <span class="val">${study.software}</span>
+          </li>
+        `;
+      }
+
+      // Scroll to top of main content on switch
+      const banner = document.getElementById('caseHeroBanner');
+      if (banner && window.scrollY > 300) {
+        banner.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function renderCaseStudyNav(activeId) {
+      const navList = document.getElementById('caseNavList');
+      if (!navList) return;
+
+      const keys = Object.keys(comprehensiveCaseStudies);
+      navList.innerHTML = keys.map(k => {
+        const item = comprehensiveCaseStudies[k];
+        const isActive = parseInt(k, 10) === activeId;
+        return `
+          <li>
+            <a href="case-study.html?id=${item.id}" class="related-case-link ${isActive ? 'active' : ''}" onclick="event.preventDefault(); switchCaseStudy(${item.id});">
+              <span>${item.title.split('—')[0].trim()}</span>
+              <span class="badge-num">#${item.id}</span>
+            </a>
+          </li>
+        `;
+      }).join('');
+    }
+
+    function renderSwitcherGrid(activeId) {
+      const grid = document.getElementById('caseSwitcherGrid');
+      if (!grid) return;
+
+      const keys = Object.keys(comprehensiveCaseStudies);
+      grid.innerHTML = keys.map(k => {
+        const item = comprehensiveCaseStudies[k];
+        const isActive = parseInt(k, 10) === activeId;
+        return `
+          <a href="case-study.html?id=${item.id}" class="switcher-card ${isActive ? 'active' : ''}" onclick="event.preventDefault(); switchCaseStudy(${item.id});">
+            <div>
+              <div class="sw-badge">${item.tag}</div>
+              <h4 class="sw-title">${item.title}</h4>
+            </div>
+            <div class="sw-metric">
+              ${item.capacity} &rarr;
+            </div>
+          </a>
+        `;
+      }).join('');
+    }
+
+    function switchCaseStudy(id) {
+      if (history.pushState) {
+        const newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?id=' + id;
+        window.history.pushState({ path: newurl }, '', newurl);
+      }
+      renderCaseStudy(id);
+      renderCaseStudyNav(id);
+      renderSwitcherGrid(id);
+    }
+
+    function handleCaseStudyInquiry() {
+      const study = comprehensiveCaseStudies[currentCaseStudyId];
+      const targetService = study ? (study.serviceArea || study.tag) : 'Engineering';
+      openQuoteModal(targetService);
+    }
+  </script>
+</body>
+</html>

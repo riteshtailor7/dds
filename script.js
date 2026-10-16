@@ -403,29 +403,8 @@ const projectData = {
 };
 
 function openProjectModal(projectId) {
-  const data = projectData[projectId];
-  if (!data) return;
-
-  const content = `
-    <span class="pill-mini orange">${data.tag}</span>
-    <h3 class="modal-title">${data.title}</h3>
-    <p class="modal-subtitle" style="margin-bottom: 20px;">Client: <strong>${data.client}</strong> &bull; Scope: <strong>${data.duration}</strong></p>
-    <img src="${data.image}" alt="${data.title}" style="width:100%; height: 240px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
-    <div style="background: rgba(255,94,20,0.1); border-left: 3px solid #FF5E14; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px;">
-      <strong style="color: #FF5E14; display:block; font-size: 0.8125rem;">KEY OUTCOME / CAPACITY:</strong>
-      <span style="font-weight: 700; color: #FFFFFF;">${data.impact}</span>
-    </div>
-    <p style="color: #CBD5E1; line-height: 1.7; font-size: 0.9375rem; margin-bottom: 24px;">${data.overview}</p>
-    <button class="btn btn-primary btn-block btn-glow" onclick="closeProjectModal(); openQuoteModal();">INQUIRE ABOUT SIMILAR DETAILED ENGINEERING</button>
-  `;
-
-  const modalContent = document.getElementById('projectModalContent');
-  const backdrop = document.getElementById('projectModalBackdrop');
-  if (modalContent && backdrop) {
-    modalContent.innerHTML = content;
-    backdrop.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
+  // Redirect to dedicated Case Study single page instead of modal popup
+  window.location.href = `case-study.html?id=${projectId || 1}`;
 }
 
 function closeProjectModal(e) {
@@ -461,31 +440,86 @@ const serviceData = {
 
 function openServiceModal(serviceKey) {
   const item = serviceData[serviceKey];
-  if (!item) return;
-
-  const content = `
-    <span class="pill-mini orange">${item.tag}</span>
-    <h3 class="modal-title">${item.title}</h3>
-    <p style="color: #CBD5E1; line-height: 1.7; font-size: 1rem; margin: 20px 0 24px 0;">${item.desc}</p>
-    <button class="btn btn-primary btn-block btn-glow" onclick="closeProjectModal(); openQuoteModal();">REQUEST DETAILED TECHNICAL PROPOSAL</button>
-  `;
-
   const modalContent = document.getElementById('projectModalContent');
   const backdrop = document.getElementById('projectModalBackdrop');
-  if (modalContent && backdrop) {
+
+  if (item && modalContent && backdrop) {
+    const content = `
+      <span class="pill-mini orange">${item.tag}</span>
+      <h3 class="modal-title">${item.title}</h3>
+      <p style="color: #CBD5E1; line-height: 1.7; font-size: 1rem; margin: 20px 0 24px 0;">${item.desc}</p>
+      <button class="btn btn-primary btn-block btn-glow" onclick="closeProjectModal(); openQuoteModal('${item.title}');">REQUEST DETAILED TECHNICAL PROPOSAL</button>
+    `;
     modalContent.innerHTML = content;
     backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
+  } else {
+    // Graceful fallback to proposal / RFQ modal directly
+    const fallbackService = item ? item.title : 'Engineering';
+    openQuoteModal(fallbackService);
   }
 }
 
-/* -------------------- 11. REQUEST RFQ MODAL -------------------- */
-function openQuoteModal() {
+/* -------------------- 11. REQUEST RFQ / PROPOSAL MODAL -------------------- */
+function openQuoteModal(serviceName) {
   const backdrop = document.getElementById('quoteModalBackdrop');
-  if (backdrop) {
-    backdrop.classList.add('open');
-    document.body.style.overflow = 'hidden';
+  if (!backdrop) return;
+
+  const select = document.getElementById('quoteServiceSelect') || backdrop.querySelector('select');
+  const title = document.getElementById('quoteModalTitle') || backdrop.querySelector('.modal-title');
+  const badge = document.getElementById('quoteModalBadge') || backdrop.querySelector('.pill-mini');
+
+  if (serviceName) {
+    const cleanTarget = serviceName.toString().replace(/&amp;/g, '&').trim();
+
+    if (select) {
+      let matched = false;
+      const lowerTarget = cleanTarget.toLowerCase();
+
+      for (let i = 0; i < select.options.length; i++) {
+        const optText = select.options[i].text.toLowerCase();
+        const optVal = select.options[i].value.toLowerCase();
+        if (optText === lowerTarget || optVal === lowerTarget ||
+            optText.includes(lowerTarget) || lowerTarget.includes(optText) ||
+            optVal.includes(lowerTarget)) {
+          select.selectedIndex = i;
+          matched = true;
+          break;
+        }
+      }
+
+      // Keyword fallback match if exact phrase was not found
+      if (!matched) {
+        const keywords = lowerTarget.split(/[\s,&()]+/).filter(w => w.length > 3);
+        for (let i = 0; i < select.options.length; i++) {
+          const optText = select.options[i].text.toLowerCase();
+          if (keywords.some(k => optText.includes(k))) {
+            select.selectedIndex = i;
+            matched = true;
+            break;
+          }
+        }
+      }
+    }
+
+    if (title) {
+      title.textContent = `Request ${cleanTarget} Proposal`;
+    }
+    if (badge) {
+      badge.textContent = `${cleanTarget.toUpperCase()} PROPOSAL`;
+    }
+  } else {
+    // Default RFQ modal heading
+    if (title) {
+      title.textContent = 'Request Detailed Engineering RFQ';
+    }
+    if (badge) {
+      badge.textContent = 'ENGINEERING RFQ';
+    }
   }
+
+  backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeQuoteModal(e) {
