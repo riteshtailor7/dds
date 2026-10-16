@@ -2831,3 +2831,31 @@ section:first-of-type::before {
   }
 }
 
+/* ==================== HARDWARE COMPOSITOR & RENDER OPTIMIZATIONS ==================== */
+.kpi-card,
+.service-card,
+.pillar-card,
+.project-card,
+.feature-card,
+.tech-card,
+.team-card,
+.faq-item,
+.calc-card,
+.case-card,
+.resource-card,
+.tool-card {
+  contain: layout style;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.engineering-pillars,
+.specialized-preview,
+.faq-section,
+.cta-banner-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
+}
+
+

@@ -95,9 +95,9 @@
     <section class="hero-section" id="hero">
       <!-- Hero Background Image -->
       <div class="hero-bg-wrap">
-        <img src="assets/hero_skyline.png" alt="Tech Skyline" class="hero-bg-full" loading="eager">
-        <img src="assets/team_meeting.png" alt="Team Collaboration" class="hero-bg-full" loading="eager">
-        <img src="assets/datacenter.png" alt="Datacenter Infrastructure" class="hero-bg-full" loading="eager">
+        <img src="assets/hero_skyline.png" alt="Tech Skyline" class="hero-bg-full active" loading="eager" fetchpriority="high" decoding="async">
+        <img src="assets/team_meeting.png" alt="Team Collaboration" class="hero-bg-full" loading="eager" decoding="async">
+        <img src="assets/datacenter.png" alt="Datacenter Infrastructure" class="hero-bg-full" loading="eager" decoding="async">
         <div class="hero-bg-overlay"></div>
       </div>
 
@@ -1467,8 +1467,7 @@
     </svg>
   </button>
 
-  <script src="assets/motion.js"></script>
-  <script src="animations.js"></script>
-  <script src="script.js"></script>
+  <script src="animations.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

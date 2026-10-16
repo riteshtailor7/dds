@@ -42,7 +42,7 @@ function initNavigation() {
         link.classList.add('active');
       }
     });
-  });
+  }, { passive: true });
 
   // Mobile Drawer Toggle
   const mobileToggle = document.getElementById('mobileMenuToggle');
@@ -475,7 +475,7 @@ function initBackToTop() {
     } else {
       backBtn.classList.remove('visible');
     }
-  });
+  }, { passive: true });
 }
 
 function scrollToTop() {

@@ -40,7 +40,7 @@ function initNavigation() {
       } else {
         header.classList.remove('scrolled');
       }
-    });
+    }, { passive: true });
   }
 
   // Mobile Drawer Toggle
@@ -625,7 +625,7 @@ function initBackToTop() {
     } else {
       backToTopBtn.classList.remove('visible');
     }
-  });
+  }, { passive: true });
 }
 
 function scrollToTop() {

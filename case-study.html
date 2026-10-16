@@ -142,7 +142,7 @@
 
             <!-- High-Res Plant Visual & Telemetry Box -->
             <div class="case-study-media-wrap">
-              <img id="caseMainImage" src="assets/dds_melt_transfer.jpg" alt="Case Study Facility" class="case-study-hero-img">
+              <img id="caseMainImage" src="assets/dds_melt_transfer.jpg" alt="Case Study Facility" class="case-study-hero-img" loading="eager" fetchpriority="high" decoding="async">
               <div class="case-study-img-overlay">
                 <div>
                   <span class="pill-mini orange" id="caseOverlayTag">COMMISSIONED FACILITY</span>
@@ -498,9 +498,8 @@
     </svg>
   </button>
 
-  <script src="assets/motion.js"></script>
-  <script src="animations.js"></script>
-  <script src="script.js"></script>
+  <script src="animations.js" defer></script>
+  <script src="script.js" defer></script>
 
   <!-- ==================== DYNAMIC CASE STUDY CONTROLLER ==================== -->
   <script>
