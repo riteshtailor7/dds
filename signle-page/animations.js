@@ -61,16 +61,21 @@ function initUniversalScrollProgress() {
   const counterAnimatedMap = new Set();
 
   function updateAllSections() {
+    const header = document.getElementById('siteHeader') || document.querySelector('.site-header');
+    const headerHeight = header ? header.offsetHeight : 80;
     const windowHeight = window.innerHeight;
+    const usableHeight = Math.max(windowHeight - headerHeight, 300);
 
     sections.forEach(sec => {
       if (sec.classList.contains('hero-section') || sec.classList.contains('page-hero-banner')) return;
 
       const rect = sec.getBoundingClientRect();
-      if (rect.bottom < -120 || rect.top > windowHeight + 120) return;
+      if (rect.bottom < headerHeight - 120 || rect.top > windowHeight + 120) return;
 
       const secHeight = rect.height || 450;
-      const progressRaw = (windowHeight - rect.top) / (windowHeight * 0.65 + secHeight * 0.35);
+      // Complete settlement well before reaching the fixed site-header
+      const travelDistance = usableHeight * 0.72 + Math.min(secHeight, usableHeight) * 0.28;
+      const progressRaw = (windowHeight - rect.top) / travelDistance;
       const p = Math.min(Math.max(progressRaw, 0), 1);
       const easeP = Math.sin(p * Math.PI / 2);
 
@@ -83,46 +88,49 @@ function initUniversalScrollProgress() {
       );
 
       if (gridItems.length >= 4) {
-        const col1Offset = -150 * (1 - easeP);
-        const col2Offset = -120 * (1 - easeP);
-        const col3Offset = 120 * (1 - easeP);
-        const col4Offset = 150 * (1 - easeP);
+        // 4-Column Safe Convergence (Lateral + Bottom-Up, No upward overshoot into header)
+        const col1Offset = -90 * (1 - easeP);
+        const col2Offset = 65 * (1 - easeP);
+        const col3Offset = 85 * (1 - easeP);
+        const col4Offset = 90 * (1 - easeP);
 
         gridItems.forEach((item, index) => {
           const mod = index % 4;
           let transform = '';
-          if (mod === 0) transform = `translate3d(${col1Offset}px, 0, 0) scale(${0.86 + (easeP * 0.14)})`;
-          else if (mod === 1) transform = `translate3d(0, ${col2Offset}px, 0) scale(${0.86 + (easeP * 0.14)})`;
-          else if (mod === 2) transform = `translate3d(0, ${col3Offset}px, 0) scale(${0.86 + (easeP * 0.14)})`;
-          else transform = `translate3d(${col4Offset}px, 0, 0) scale(${0.86 + (easeP * 0.14)})`;
+          if (mod === 0) transform = `translate3d(${col1Offset}px, 0, 0) scale(${0.9 + (easeP * 0.1)})`;
+          else if (mod === 1) transform = `translate3d(0, ${col2Offset}px, 0) scale(${0.9 + (easeP * 0.1)})`;
+          else if (mod === 2) transform = `translate3d(0, ${col3Offset}px, 0) scale(${0.9 + (easeP * 0.1)})`;
+          else transform = `translate3d(${col4Offset}px, 0, 0) scale(${0.9 + (easeP * 0.1)})`;
 
           item.style.transform = transform;
           item.style.opacity = easeP;
         });
       } else if (gridItems.length === 3) {
-        const leftOffset = -150 * (1 - easeP);
-        const bottomOffset = 120 * (1 - easeP);
-        const rightOffset = 150 * (1 - easeP);
+        // 3-Column Directional Convergence (Left, Bottom-Up, Right)
+        const leftOffset = -90 * (1 - easeP);
+        const bottomOffset = 75 * (1 - easeP);
+        const rightOffset = 90 * (1 - easeP);
 
         if (gridItems[0]) {
-          gridItems[0].style.transform = `translate3d(${leftOffset}px, 0, 0) scale(${0.88 + (easeP * 0.12)})`;
+          gridItems[0].style.transform = `translate3d(${leftOffset}px, 0, 0) scale(${0.9 + (easeP * 0.1)})`;
           gridItems[0].style.opacity = easeP;
         }
         if (gridItems[1]) {
-          gridItems[1].style.transform = `translate3d(0, ${bottomOffset}px, 0) scale(${0.88 + (easeP * 0.12)})`;
+          gridItems[1].style.transform = `translate3d(0, ${bottomOffset}px, 0) scale(${0.9 + (easeP * 0.1)})`;
           gridItems[1].style.opacity = easeP;
         }
         if (gridItems[2]) {
-          gridItems[2].style.transform = `translate3d(${rightOffset}px, 0, 0) scale(${0.88 + (easeP * 0.12)})`;
+          gridItems[2].style.transform = `translate3d(${rightOffset}px, 0, 0) scale(${0.9 + (easeP * 0.1)})`;
           gridItems[2].style.opacity = easeP;
         }
       } else if (gridItems.length === 2) {
-        const leftOffset = -150 * (1 - easeP);
-        const rightOffset = 150 * (1 - easeP);
+        // 2-Column Split (Left, Right)
+        const leftOffset = -90 * (1 - easeP);
+        const rightOffset = 90 * (1 - easeP);
 
-        gridItems[0].style.transform = `translate3d(${leftOffset}px, 0, 0) scale(${0.88 + (easeP * 0.12)})`;
+        gridItems[0].style.transform = `translate3d(${leftOffset}px, 0, 0) scale(${0.9 + (easeP * 0.1)})`;
         gridItems[0].style.opacity = easeP;
-        gridItems[1].style.transform = `translate3d(${rightOffset}px, 0, 0) scale(${0.88 + (easeP * 0.12)})`;
+        gridItems[1].style.transform = `translate3d(${rightOffset}px, 0, 0) scale(${0.9 + (easeP * 0.1)})`;
         gridItems[1].style.opacity = easeP;
       } else {
         const leftCol = sec.querySelector(
@@ -135,22 +143,23 @@ function initUniversalScrollProgress() {
         );
 
         if (leftCol && rightCol) {
-          const leftOffset = -140 * (1 - easeP);
-          const rightOffset = 140 * (1 - easeP);
+          const leftOffset = -80 * (1 - easeP);
+          const rightOffset = 80 * (1 - easeP);
 
-          leftCol.style.transform = `translate3d(${leftOffset}px, 0, 0) scale(${0.88 + (easeP * 0.12)})`;
+          leftCol.style.transform = `translate3d(${leftOffset}px, 0, 0) scale(${0.9 + (easeP * 0.1)})`;
           leftCol.style.opacity = easeP;
 
-          rightCol.style.transform = `translate3d(${rightOffset}px, 0, 0) scale(${0.88 + (easeP * 0.12)})`;
+          rightCol.style.transform = `translate3d(${rightOffset}px, 0, 0) scale(${0.9 + (easeP * 0.1)})`;
           rightCol.style.opacity = easeP;
         } else if (!sec.querySelector('.interactive-map-wrapper') && !sec.classList.contains('global-map-card')) {
           const secContainer = sec.querySelector('.container') || sec;
-          const yOffset = 50 * (1 - easeP);
-          secContainer.style.transform = `translate3d(0, ${yOffset}px, 0) scale(${0.93 + (easeP * 0.07)})`;
+          const yOffset = 40 * (1 - easeP);
+          secContainer.style.transform = `translate3d(0, ${yOffset}px, 0) scale(${0.95 + (easeP * 0.05)})`;
           secContainer.style.opacity = easeP;
         }
       }
 
+      // Stat Counters trigger when section aligns into view below header
       if (easeP > 0.6 && !counterAnimatedMap.has(sec)) {
         counterAnimatedMap.add(sec);
         sec.querySelectorAll('.kpi-number').forEach(numEl => {
