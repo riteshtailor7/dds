@@ -117,6 +117,7 @@ button {
 .text-gradient-orange {
   background: linear-gradient(135deg, #FF7A38 0%, #FF5E14 60%, #FF3D00 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
@@ -124,6 +125,7 @@ button {
 .text-gradient-cyan {
   background: linear-gradient(135deg, #A5F3FC 0%, #00D2FF 60%, #0284C7 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
