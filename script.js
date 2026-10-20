@@ -634,4 +634,3 @@ function scrollToTop() {
     behavior: 'smooth'
   });
 }
-
