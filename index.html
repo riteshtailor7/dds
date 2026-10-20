@@ -308,7 +308,20 @@
     </div>
 
     <!-- ==================== 4. ENGINEERING DISCIPLINES GRID ==================== -->
-    <section class="services-section dark-section" id="servicesPreview">
+    <section class="services-section dark-section interactive-parallax-section" id="servicesPreview" data-interactive-parallax="services">
+      <!-- Interactive Futuristic Parallax Background Canvas -->
+      <div class="interactive-bg-stage" aria-hidden="true">
+        <div class="interactive-grid-mesh"></div>
+        <div class="interactive-glow-orb orb-cyan"></div>
+        <div class="interactive-glow-orb orb-orange"></div>
+        <div class="floating-particle p-node-1" data-depth="0.10"></div>
+        <div class="floating-particle p-node-2" data-depth="0.16"></div>
+        <div class="floating-particle p-node-3" data-depth="-0.12"></div>
+        <div class="floating-particle p-glyph p-glyph-1" data-depth="0.20">&lt; / &gt;</div>
+        <div class="floating-particle p-glyph p-glyph-2" data-depth="-0.14">&#x25C7;</div>
+        <div class="floating-particle p-glyph p-glyph-3" data-depth="0.11">&#x2B21;</div>
+      </div>
+
       <div class="container">
         <div class="section-header text-center">
           <span class="section-badge-pill orange">WHAT WE DELIVER</span>
@@ -574,6 +587,12 @@
 
     <!-- ==================== 6. SPOTLIGHT CASE STUDIES PREVIEW ==================== -->
     <section class="projects-section light-section" id="projectsPreview">
+      <!-- Parallax Background Layer -->
+      <div class="portfolio-parallax-bg-wrap" aria-hidden="true">
+        <img src="assets/dds_cad_piping.jpg" alt="" class="portfolio-parallax-bg" loading="lazy" decoding="async">
+        <div class="portfolio-parallax-overlay"></div>
+      </div>
+
       <div class="container">
         <div class="section-header text-center">
           <span class="section-badge-pill">CASE STUDIES</span>

@@ -2860,4 +2860,434 @@ section:first-of-type::before {
   contain-intrinsic-size: 1px 600px;
 }
 
+/* ==================== MODERN MINIMAL PARALLAX STYLES ==================== */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
 
+.hero-bg-wrap {
+  position: absolute;
+  top: -18%;
+  left: 0;
+  width: 100%;
+  height: 136%;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.page-hero-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-bg-wrap {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 140%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.hero-content,
+.page-hero-container {
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.1s linear;
+}
+
+/* Portfolio Section Parallax Background */
+.projects-section,
+.subpage-section.bg-light#projects {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-parallax-bg-wrap {
+  position: absolute;
+  top: -25%;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.portfolio-parallax-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.055;
+  filter: grayscale(100%) contrast(120%);
+  transform: scale(1.06);
+  will-change: transform;
+}
+
+.portfolio-parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.96) 100%),
+              linear-gradient(180deg, var(--bg-white, #FFFFFF) 0%, transparent 15%, transparent 85%, var(--bg-white, #FFFFFF) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.projects-section > .container,
+.subpage-section#projects > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Project Card Thumbnail Parallax Window */
+.project-thumb {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+}
+
+.project-thumb img {
+  position: absolute;
+  top: -12%;
+  left: 0;
+  width: 100%;
+  height: 124%;
+  object-fit: cover;
+  will-change: transform;
+  transition: filter 0.4s ease;
+}
+
+.project-card:hover .project-thumb img {
+  filter: brightness(1.06);
+}
+
+/* Responsive & Accessibility Controls */
+@media (max-width: 768px) {
+  .hero-bg-wrap {
+    top: -10%;
+    height: 120%;
+  }
+  .portfolio-parallax-bg-wrap {
+    top: -15%;
+    height: 130%;
+  }
+  .project-thumb img {
+    top: -8%;
+    height: 116%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-wrap,
+  .hero-content,
+  .page-hero-bg-wrap,
+  .page-hero-container,
+  .portfolio-parallax-bg-wrap,
+  .portfolio-parallax-bg,
+  .project-thumb img {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}
+
+/* ==================== FUTURISTIC INTERACTIVE PARALLAX STYLES ==================== */
+.interactive-parallax-section {
+  position: relative;
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+/* Background Interactive Stage */
+.interactive-bg-stage {
+  position: absolute;
+  inset: -15% -10% -15% -10%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Futuristic Cyber Grid Mesh */
+.interactive-grid-mesh {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(0, 210, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 210, 255, 0.07) 1px, transparent 1px);
+  background-size: 52px 52px;
+  background-position: center center;
+  mask-image: radial-gradient(circle at 50% 50%, black 25%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 25%, transparent 80%);
+  opacity: 0.85;
+  will-change: transform;
+  transform-origin: 50% 50%;
+}
+
+.interactive-grid-mesh.light-mode {
+  background-image: 
+    linear-gradient(rgba(255, 94, 20, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 210, 255, 0.08) 1px, transparent 1px);
+  opacity: 0.65;
+}
+
+/* Luminous Neon Floating Glow Orbs */
+.interactive-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(65px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.orb-cyan {
+  width: 440px;
+  height: 440px;
+  top: 8%;
+  left: 3%;
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.28) 0%, rgba(0, 210, 255, 0.06) 50%, transparent 70%);
+}
+
+.orb-orange {
+  width: 480px;
+  height: 480px;
+  bottom: 8%;
+  right: 3%;
+  background: radial-gradient(circle, rgba(255, 94, 20, 0.24) 0%, rgba(255, 94, 20, 0.05) 50%, transparent 70%);
+}
+
+.orb-cyan-soft {
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  right: 5%;
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.18) 0%, transparent 70%);
+}
+
+.orb-orange-soft {
+  width: 420px;
+  height: 420px;
+  bottom: 10%;
+  left: 5%;
+  background: radial-gradient(circle, rgba(255, 94, 20, 0.15) 0%, transparent 70%);
+}
+
+/* Floating Playful Futuristic Glyphs & Nodes */
+.floating-particle {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+  user-select: none;
+}
+
+.p-node-1 {
+  width: 14px;
+  height: 14px;
+  top: 22%;
+  left: 10%;
+  border-radius: 50%;
+  background: #00D2FF;
+  box-shadow: 0 0 16px #00D2FF, 0 0 32px rgba(0, 210, 255, 0.6);
+  opacity: 0.75;
+}
+
+.p-node-2 {
+  width: 18px;
+  height: 18px;
+  top: 72%;
+  right: 12%;
+  border-radius: 50%;
+  background: #FF5E14;
+  box-shadow: 0 0 18px #FF5E14, 0 0 36px rgba(255, 94, 20, 0.6);
+  opacity: 0.7;
+}
+
+.p-node-3 {
+  width: 11px;
+  height: 11px;
+  top: 38%;
+  right: 28%;
+  border-radius: 50%;
+  background: #00E676;
+  box-shadow: 0 0 14px #00E676;
+  opacity: 0.65;
+}
+
+.p-glyph {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: rgba(0, 210, 255, 0.5);
+  text-shadow: 0 0 16px rgba(0, 210, 255, 0.6);
+}
+
+.p-glyph.light {
+  color: rgba(255, 94, 20, 0.45);
+  text-shadow: 0 0 16px rgba(255, 94, 20, 0.45);
+}
+
+.p-glyph-1 { top: 18%; right: 16%; }
+.p-glyph-2 { bottom: 22%; left: 14%; font-size: 1.7rem; color: rgba(255, 94, 20, 0.5); }
+.p-glyph-3 { top: 58%; left: 6%; font-size: 1.5rem; }
+
+/* 3D Card Hover Parallax & Holographic Specular Sheen */
+.service-card,
+.team-card,
+.discipline-card,
+.pillar-card,
+.case-block-card,
+.switcher-card,
+.case-study-media-wrap,
+.resource-card,
+.calc-card,
+.swimlane-card,
+.architecture-card,
+.spec-card,
+.feature-card {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  overflow: hidden;
+}
+
+/* Holographic Glare Sheen Reflection */
+.service-card::after,
+.team-card::after,
+.discipline-card::after,
+.pillar-card::after,
+.case-block-card::after,
+.switcher-card::after,
+.case-study-media-wrap::after,
+.resource-card::after,
+.calc-card::after,
+.swimlane-card::after,
+.architecture-card::after,
+.spec-card::after,
+.feature-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle 260px at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(0, 210, 255, 0.09) 35%,
+    transparent 80%
+  );
+  opacity: var(--glare-opacity, 0);
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.team-card::after {
+  background: radial-gradient(
+    circle 240px at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(255, 94, 20, 0.12) 0%,
+    rgba(0, 210, 255, 0.08) 40%,
+    transparent 80%
+  );
+}
+
+/* 3D Pop-out Depth Elements */
+.service-icon-box,
+.member-avatar,
+.discipline-icon-sq {
+  transform: translateZ(30px);
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.service-title,
+.member-name,
+.discipline-title {
+  transform: translateZ(20px);
+  transform-style: preserve-3d;
+}
+
+.service-desc,
+.member-role,
+.discipline-desc {
+  transform: translateZ(14px);
+  transform-style: preserve-3d;
+}
+
+.service-features,
+.director-highlights,
+.deliverables-list {
+  transform: translateZ(10px);
+  transform-style: preserve-3d;
+}
+
+.service-card .btn,
+.member-info .linkedin-badge,
+.director-badge {
+  transform: translateZ(24px);
+  transform-style: preserve-3d;
+}
+
+/* Section container sits securely above interactive canvas */
+.interactive-parallax-section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .interactive-bg-stage {
+    inset: -5%;
+  }
+  .interactive-glow-orb {
+    filter: blur(45px);
+  }
+  .service-card,
+  .team-card,
+  .discipline-card {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-bg-stage,
+  .interactive-grid-mesh,
+  .interactive-glow-orb,
+  .floating-particle,
+  .service-card,
+  .team-card,
+  .discipline-card {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* 3D Pop-out Depth Elements for Extended Pages */
+.sw-badge,
+.res-icon-wrap,
+.visual-header,
+.case-study-img-overlay {
+  transform: translateZ(26px);
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.sw-title,
+.res-title,
+.lane-header,
+.case-block-title {
+  transform: translateZ(20px);
+  transform-style: preserve-3d;
+}
+
+.sw-metric,
+.res-desc,
+.pane-text,
+.case-specs-table-wrap {
+  transform: translateZ(12px);
+  transform-style: preserve-3d;
+}
